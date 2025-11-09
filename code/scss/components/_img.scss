@@ -1,0 +1,67 @@
+@use "../globals/" as g;
+@use "../util/" as u;
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+// Images container and styling
+.img {
+  min-width: 20rem;
+  min-height: 25rem;
+  max-width: 20rem;
+  max-height: 25rem;
+  object-fit: contain; // Ensure images fit within their container
+
+  &__button {
+    background: none;
+    border: 0.2rem solid transparent;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: transparent;
+    width: 20rem;
+    height: 25rem;
+    border: var(--border);
+    transform: scale(1);
+    border-radius: var(--br); // Consistent border radius
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; // Smooth hover effect
+    &:hover {
+      transform: scale(0.95); // Slightly enlarge on hover
+    }
+    &:focus {
+      border-color: g.$clr-bg-dark;
+      transform: scale(0.95);
+    }
+  }
+}
+
+.imgs {
+  overflow-y: auto; // Enable horizontal scrolling
+  max-width: fit-content;
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  scrollbar-gutter: stable;
+
+  &__container {
+    padding: 0.5rem;
+    display: flex;
+    width: 100%;
+    height: 32rem;
+    overflow: hidden;
+    flex-direction: column;
+    box-shadow: var(--div-shadow);
+    border-radius: var(--br);
+  }
+}

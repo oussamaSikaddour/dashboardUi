@@ -1,0 +1,67 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+input[type="checkbox"] {
+  display: none; // Hide the default checkbox
+
+  // Style the label associated with the checkbox
+  & + label {
+    display: flex;
+    cursor: pointer;
+    padding: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--fs);
+    text-wrap: nowrap; // Prevent text wrapping
+
+    // Custom checkbox design using a pseudo-element
+    &:before {
+      content: "\2714"; // Checkmark symbol
+      border: var(--border);
+      border-radius: var(--br);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      padding: 0.5rem;
+      color: transparent; // Hide the checkmark initially
+      transition: 0.2s; // Smooth transition for hover/active states
+
+      // Responsive sizing for smaller screens
+      @include u.breakpoint(sm) {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+
+      @include u.breakpoint(md) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+
+    // Scale down the checkbox when clicked
+    &:active:before {
+      transform: scale(0);
+    }
+  }
+
+  // Style for the checked state
+  &:checked + label:before {
+    background-color: g.$clr-primary;
+    color: #fff; // Show the checkmark
+    border-color: g.$clr-primary-dark;
+  }
+
+  // Style for the disabled state
+  &:disabled + label:before {
+    transform: scale(1); // Reset scale
+  }
+
+  // Style for the checked and disabled state
+  &:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: g.$clr-primary-light;
+    border-color: g.$clr-primary-light;
+  }
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Select | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Select</h1>
+        <div class="row">
+          <div class="select__input">
+            <div class="select__group">
+              <label for="selectOne">Select an Options:</label>
+              <div class="select">
+                <select
+                  id="selectOne"
+                  aria-invalid="false"
+                  aria-describedby="selectOneError"
+                >
+                  <option value="" selected disabled>-- empty Option --</option>
+                  <option value="Option 1">Option One</option>
+                  <option value="Option 2">Option Two</option>
+                </select>
+              </div>
+            </div>
+            <div class="input__error" id="selectOneError">
+              ⚠ Example error message to demonstrate form validation
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="section" id="selects">
+        <h2>Select / Dropdown Inputs</h2>
+
+        <p>
+          The select component uses semantic HTML and BEM-structured utility
+          classes to create accessible dropdowns with optional icons and
+          validation messages. Every select begins with the base
+          <code>.select</code> class, while supporting elements like
+          <code>.select__label</code>, <code>.select__item</code>, and
+          <code>.select__error</code> provide structure for options and
+          feedback.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.select</strong> — base class for dropdown styling, spacing,
+            and behavior
+          </li>
+          <li>
+            <strong>.select__group</strong> — wrapper that positions label,
+            select box, and icons
+          </li>
+          <li>
+            <strong>.select__label</strong> — label describing the dropdown
+          </li>
+          <li>
+            <strong>.select__item</strong> — individual option or item inside
+            the select
+          </li>
+          <li>
+            <strong>.item__error</strong> — validation message shown on error
+          </li>
+        </ul>
+
+        <p>
+          Options are wrapped inside <code>.select__group</code> for layout
+          consistency. Each item is marked with <code>.select__item</code> for
+          styling and accessibility. Validation messages appear beneath the
+          select using <code>.item__error</code>.
+        </p>
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+&lt;div class="select__input"&gt;
+  &lt;div class="select__group"&gt;
+    &lt;label class="select__label" for="selectOne"&gt;Choose an Option:&lt;/label&gt;
+  &lt;div  class="select" &gt;
+    &lt;select id="selectOne"  required&gt;
+      &lt;option class="select__item" value="" disabled selected&gt;--Select--&lt;/option&gt;
+      &lt;option class="select__item" value="option 1"&gt;Option One&lt;/option&gt;
+      &lt;option class="select__item" value="option 2"&gt;Option Two&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="item__error"&gt;Please select an Option.&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
+        <p><strong>Css :</strong></p>
+
+        <pre><code class="language--css">
+.select {
+  position: relative;
+  background-color: var(--clr-light);
+  border-radius: var(--br);
+  max-height: 5rem;
+}
+
+
+.select, .select * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+.select select {
+  font-size: var(--fs);
+  font-weight: normal;
+  max-width: 100%;
+  min-width: 10rem;
+  color: var(--clr-font);
+  height: 44.5px;
+  padding: 0.8rem 1.6rem;
+  padding-right: 2.8rem;
+  border: var(--border);
+  border-radius: var(--br);
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline-color: #087EA4;
+  width: 28rem;
+  width: 28rem;
+}
+
+
+@media (min-width: 48em) {
+  .select select {
+    width: 30rem;
+  }
+}
+
+
+.select select:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.select:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  width: 0;
+  height: 0;
+  margin-top: -0.2rem;
+  border-top: 0.7rem solid #087EA4;
+  border-right: 0.7rem solid transparent;
+  border-left: 0.7rem solid transparent;
+}
+
+
+.select:hover {
+  background-color: #E9EAF4;
+}
+
+
+.select__input {
+  margin-top: 1rem;
+  display: flex;
+  font-size: var(--fs);
+  flex-direction: column;
+}
+
+@media (min-width: 48em) {
+  .select__input > .input__error {
+    max-width: 60rem;
+  }
+}
+
+
+.select__group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 48em) {
+  .select__group {
+    flex-direction: row;
+  }
+}
+
+  </code></pre>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

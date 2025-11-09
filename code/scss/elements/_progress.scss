@@ -1,0 +1,36 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+progress[value] {
+  appearance: none; /* remove default styling across browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 20rem;
+  height: 2rem;
+  margin: 0 1rem;
+
+  border: 0.1rem solid g.$clr-bg;
+  border-radius: var(--br);
+  background: g.$clr-bg-light;
+  box-shadow: var(--div-shadow);
+
+  /* WebKit browsers (Chrome, Safari) */
+  &::-webkit-progress-bar {
+    border-radius: var(--br);
+    background: g.$clr-bg-light;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: var(--br);
+    background: g.$clr-primary;
+    transition: width 0.3s ease;
+  }
+
+  /* Firefox */
+  &::-moz-progress-bar {
+    border-radius: var(--br);
+    background: g.$clr-primary;
+    transition: width 0.3s ease;
+  }
+}

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Tabs | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="./assets/Logo-14f4ddeb.ico" />
+    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
+    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Tabs</h1>
+
+        <div class="tabs__container">
+          <div role="tablist" aria-label="tabs" class="tab__triggers">
+            <button
+              class="tab__trigger"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-1"
+              id="tab-1"
+              tabindex="0"
+            >
+              Forms
+            </button>
+            <button
+              class="tab__trigger"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-2"
+              id="tab-2"
+              tabindex="-1"
+            >
+              Example of a long title
+            </button>
+            <button
+              class="tab__trigger"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-3"
+              id="tab-3"
+              tabindex="-1"
+            >
+              Tables
+            </button>
+          </div>
+
+          <div class="tab__panels">
+            <div
+              class="tab__panel"
+              id="panel-1"
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby="tab-1"
+            >
+              <h2>Forms Panel</h2>
+              <p>
+                This is the content for the Forms tab. Here you can add form
+                elements, inputs, and other related content.
+              </p>
+            </div>
+            <div
+              class="tab__panel"
+              id="panel-2"
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby="tab-2"
+              hidden
+            >
+              <h2>Title Panel</h2>
+              <p>
+                This is the content for the Title tab. This tab has a very long
+                title to demonstrate overflow handling.
+              </p>
+            </div>
+            <div
+              class="tab__panel"
+              id="panel-3"
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby="tab-3"
+              hidden
+            >
+              <h2>Tables Panel</h2>
+              <p>
+                This is the content for the Tables tab. You can display tables,
+                data grids, or other tabular content here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <ul>
+          <li>
+            <h2>✅ Overview: What This Code Does</h2>
+            <ul>
+              <li>
+                This HTML, CSS, and JavaScript code creates an
+                <strong>accessible Tabs component</strong> where each tab has a
+                corresponding panel.
+              </li>
+              <li>
+                It allows users to switch between content sections using
+                **clicks** or **keyboard navigation**.
+              </li>
+              <li>
+                Accessibility is handled with <code>role="tablist"</code>,
+                <code>role="tab"</code>, <code>aria-selected</code>, and
+                <code>aria-controls</code>.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🏗️ HTML Structure</h2>
+            <ul>
+              <li>
+                <strong>Tab Triggers:</strong> Each
+                <code>&lt;button&gt;</code> has <code>role="tab"</code> and
+                connects to a panel with <code>aria-controls</code>.
+              </li>
+              <li>
+                <strong>Tab Panels:</strong> Each <code>&lt;div&gt;</code> has
+                <code>role="tabpanel"</code> and is labeled with
+                <code>aria-labelledby</code>.
+              </li>
+              <li>
+                <strong>Active Tab:</strong> The first tab has
+                <code>aria-selected="true"</code> and is focused by default.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+&lt;div class="tabs__container"&gt;
+
+  &lt;div role="tablist" aria-label="tabs" class="tab__triggers"&gt;
+
+    &lt;button
+      class="tab__trigger"
+      role="tab"
+      aria-selected="true"
+      aria-controls="panel-1"
+      id="tab-1"
+      tabindex="0"
+    &gt;
+
+      Forms
+
+    &lt;/button&gt;
+
+    &lt;button
+      class="tab__trigger"
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-2"
+      id="tab-2"
+      tabindex="-1"
+    &gt;
+
+      Example of a long title
+
+    &lt;/button&gt;
+
+    &lt;button
+      class="tab__trigger"
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-3"
+      id="tab-3"
+      tabindex="-1"
+    &gt;
+
+      Tables
+
+    &lt;/button&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class="tab__panels"&gt;
+
+    &lt;div
+      class="tab__panel"
+      id="panel-1"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-1"
+    &gt;
+
+      &lt;h2&gt;Forms Panel&lt;/h2&gt;
+
+      &lt;p&gt;
+
+        This is the content for the Forms tab. Here you can add form
+        elements, inputs, and other related content.
+
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+
+    &lt;div
+
+      class="tab__panel"
+      id="panel-2"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-2"
+      hidden
+
+    &gt;
+      &lt;h2&gt;Title Panel&lt;/h2&gt;
+
+      &lt;p&gt;
+
+        This is the content for the Title tab. This tab has a very long
+        title to demonstrate overflow handling.
+
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+
+    &lt;div
+
+      class="tab__panel"
+      id="panel-3"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-3"
+      hidden
+
+    &gt;
+
+      &lt;h2&gt;Tables Panel&lt;/h2&gt;
+
+      &lt;p&gt;
+
+        This is the content for the Tables tab. You can display tables,
+        data grids, or other tabular content here.
+
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+
+        <p><strong>CSS:</strong></p>
+
+        <pre><code class="language--css">
+    .tabs__container {
+
+  margin-top: 4.5rem;
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-inline: 0.5rem;
+  border-radius: var(--br);
+  border: var(--border);
+  border-width: 0.2rem;
+  border-color: #CED0D4;
+  box-shadow: var(--div-shadow);
+
+}
+
+.tab__trigger {
+
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs);
+  color: var(--clr-font);
+  text-transform: uppercase;
+  border: var(--border);
+  background-color: var(--clr-light);
+  border-color: var(--clr-bg);
+  cursor: pointer;
+
+}
+
+.tab__triggers {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+@media (min-width: 48em) {
+
+  .tab__triggers {
+
+    position: absolute;
+    flex-direction: row;
+    left: 1rem;
+    top: -4rem;
+    z-index: 1;
+    gap: 0.5rem;
+    height: 4rem;
+
+  }
+
+}
+
+@media (min-width: 48em) {
+
+  .tab__trigger {
+    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
+    transform: translateY(-0.2rem);
+    transition: 0.3s ease-in-out transform;
+  }
+
+}
+
+.tab__trigger.active {
+
+  background-color: var(--clr-bg);
+  color: var(--clr-dark);
+
+}
+
+@media (min-width: 48em) {
+
+  .tab__trigger.active {
+    border-bottom: 0rem;
+    transform: translateY(0);
+  }
+
+}
+
+.tab__panel {
+
+  min-height: 100%;
+  padding: 2rem;
+  background-color: var(--clr-light);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--br);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+
+}
+
+.tab__panels {
+
+  height: 100%;
+  display: block;
+
+}
+
+    </code></pre>
+
+        <h2>🎨 CSS Styling and Behavior</h2>
+        <ul>
+          <li>
+            <strong>Container:</strong>
+            <code>.tabs__container</code> handles spacing, borders, and shadows.
+          </li>
+          <li>
+            <strong>Triggers:</strong> <code>.tab__trigger</code> are styled as
+            buttons, uppercase text, and transition on hover/active states.
+          </li>
+          <li>
+            <strong>Active Tab:</strong>
+            <code>.tab__trigger.active</code> changes background and text color.
+          </li>
+          <li>
+            <strong>Panels:</strong> <code>.tab__panel</code> is hidden by
+            default (<code>display: none</code>) and shown only for the active
+            tab.
+          </li>
+          <li>
+            <strong>Responsive Layout:</strong> On wider screens, tab buttons
+            switch from vertical to horizontal layout.
+          </li>
+        </ul>
+
+        <p><strong>JS:</strong></p>
+
+        <pre><code class="language--js">
+
+    
+
+const toggleActiveTab=(panel,trigger,isActive,tabIndexValue)=>{
+
+    trigger.setAttribute("aria-selected", isActive);
+
+  trigger.setAttribute("tabindex", tabIndexValue);
+
+  panel.setAttribute("tabindex", tabIndexValue);
+
+  trigger.classList.toggle("active", isActive);
+
+}
+// Toggle ARIA and visual state for a specific trigger-panel pair based on active state
+const whenTriggerIsActive = (index, isActive, triggers, panels) => {
+
+  const trigger = triggers[index];
+
+  const panel = panels[index];
+
+  const tabIndexValue = isActive ? "0" : "-1";
+
+  const displayValue = isActive ? "flex" : "none"
+  ;
+toggleActiveTab(panel,trigger,isActive,tabIndexValue)
+
+  panel.style.display = displayValue;
+
+};
+
+// When a trigger is pressed (click or key), activate its tab and focus it
+
+const handelPressedTrigger = (index, tabTriggers, tabPanels) => {
+
+  tabTriggers.forEach((_, i) => {
+
+    const isActive = index === i;
+
+    whenTriggerIsActive(i, isActive, tabTriggers, tabPanels);
+
+  });
+
+  // Focus the selected tab trigger
+  tabTriggers[index].focus();
+
+};
+
+// Handle restoring or keeping the currently active tab based on its class
+const handelActiveTrigger = (index, tabTriggers, tabPanels) => {
+
+  const isActive = tabTriggers[index].classList.contains("active");
+
+  whenTriggerIsActive(index, isActive, tabTriggers, tabPanels);
+
+  if (isActive) tabTriggers[index].focus();
+
+};
+
+// Update all triggers and panels to reflect the current active tab state
+
+const updateTabTriggerStates = (tabTriggers, tabPanels) => {
+
+  tabTriggers.forEach((_, i) => handelActiveTrigger(i, tabTriggers, tabPanels));
+
+};
+
+// Manage keyboard navigation between tabs using arrow keys
+const handleTabTriggersKeyEvents = (event, index, tabTriggers, tabPanels) => {
+
+  const { key } = event;
+
+  const currentIndex = index;
+
+  const lastIndex = tabTriggers.length - 1;
+
+
+  switch (key) {
+
+    case 'ArrowRight':
+
+      event.preventDefault();
+      if (currentIndex &lt; lastIndex) {
+        handelPressedTrigger(currentIndex + 1, tabTriggers, tabPanels);
+      }
+      break;
+
+    case 'ArrowLeft':
+
+      event.preventDefault();
+      if (currentIndex > 0) {
+        handelPressedTrigger(currentIndex - 1, tabTriggers, tabPanels);
+      }
+      break;
+
+    default:
+      break;
+  }
+};
+
+// Main initialization function for all tab containers
+const Tabs = () => {
+
+  const tabsContainers = document.querySelectorAll('.tabs__container');
+
+
+  tabsContainers.forEach(tabContainer => {
+
+    const tabTriggers = tabContainer.querySelectorAll('.tab__trigger');
+
+    const tabPanels = tabContainer.querySelectorAll('.tab__panel');
+
+    // Set up interaction handlers for each tab trigger
+    tabTriggers.forEach((trigger, i) => {
+
+      // Mouse click switches tab
+      trigger.addEventListener("click", () => {
+
+        tabTriggers.forEach(t => t.classList.remove('active'));
+
+        trigger.classList.add('active');
+
+        updateTabTriggerStates(tabTriggers, tabPanels);
+
+
+      });
+
+      // Keyboard arrow navigation
+      trigger.addEventListener("keydown", (e) => {
+
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+
+          handleTabTriggersKeyEvents(e, i, tabTriggers, tabPanels);
+          
+
+        }
+
+      });
+
+    });
+
+    // Initialize first tab as active on load
+    tabTriggers[0]?.classList.add("active");
+
+    updateTabTriggerStates(tabTriggers, tabPanels);
+
+  });
+
+};
+
+export default Tabs;
+
+    </code></pre>
+        <ul>
+          <li>
+            <h2>💻 JavaScript Behavior</h2>
+            <ul>
+              <li>
+                <strong>Initialization:</strong> Finds all tab containers and
+                triggers, sets the first tab as active.
+              </li>
+              <li>
+                <strong>Click Event:</strong> Clicking a tab triggers
+                <code>handelPressedTrigger</code>, updating active state for
+                triggers and panels.
+              </li>
+              <li>
+                <strong>Keyboard Navigation:</strong> ArrowLeft and ArrowRight
+                switch between tabs, maintaining focus.
+              </li>
+              <li>
+                <strong>ARIA Updates:</strong> <code>aria-selected</code> and
+                <code>tabindex</code> are toggled for accessibility.
+              </li>
+              <li>
+                <strong>Panel Display:</strong> Only the active panel is
+                <code>display: flex</code>, others are hidden.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 1️⃣ DOM Utilities</h2>
+            <ul>
+              <li>
+                Functions like <code>whenTriggerIsActive</code> toggle visual
+                and ARIA state for each trigger-panel pair.
+              </li>
+              <li>
+                <code>updateTabTriggerStates</code> ensures all triggers reflect
+                the correct active state.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 2️⃣ Event Handling</h2>
+            <ul>
+              <li>
+                <strong>Click:</strong> Adds/removes <code>active</code> class
+                and updates panel display.
+              </li>
+              <li>
+                <strong>Keyboard:</strong> Handles ArrowLeft/ArrowRight
+                navigation and focuses active tab.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 3️⃣ Accessibility</h2>
+            <ul>
+              <li>
+                <strong>ARIA Attributes:</strong> <code>aria-selected</code>,
+                <code>aria-controls</code>, and <code>tabindex</code> update
+                dynamically.
+              </li>
+              <li>
+                <strong>Focus Management:</strong> Active tab receives focus for
+                keyboard users.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 4️⃣ Responsive Design</h2>
+            <ul>
+              <li>
+                Tab triggers stack vertically on small screens and switch to
+                horizontal layout on larger screens using media queries.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 5️⃣ Exportable Component</h2>
+            <ul>
+              <li>
+                <code>Tabs()</code> initializes all tab containers on the page.
+              </li>
+              <li>
+                Automatically sets the first tab as active and attaches event
+                listeners for clicks and keyboard navigation.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            For more information about JavaScript integration, visit the
+            documentation
+            <a href="javascript.html">[here]</a>.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    
+  </body>
+</html>

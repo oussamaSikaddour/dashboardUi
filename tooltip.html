@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Tooltip | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="./assets/Logo-14f4ddeb.ico" />
+    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
+    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Tooltip</h1>
+
+        <div class="row">
+          <button
+            class="button rounded button--info hasTooltip"
+            aria-describedby="tip-content-id"
+          >
+            <i class="fa-solid fa-info"></i>
+            <span class="tooltip__content">
+              Tooltip Info about the element One
+            </span>
+          </button>
+
+          <button
+            class="button rounded button--info hasTooltip"
+            aria-describedby="tip-content-id"
+          >
+            <i class="fa-solid fa-info"></i>
+            <span class="tooltip__content">
+              Tooltip Info about the element Two
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <section class="section" id="tooltip-section">
+        <h2>Tooltip Component</h2>
+
+        <p>
+          The <strong>Tooltip</strong> component provides small contextual hints
+          that appear when users hover or focus on interactive elements such as
+          buttons, icons, or links. Tooltips help clarify an element’s purpose
+          without cluttering the interface.
+        </p>
+
+        <p>
+          Each tooltip is defined with a <code>.tooltip__content</code> element
+          nested inside a trigger element (like a button). The actual floating
+          tooltip box (<code>.tooltip</code>) is placed globally and reuses the
+          same container to show different content dynamically.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.hasTooltip</strong> — the trigger element (button, icon,
+            etc.) that activates the tooltip.
+          </li>
+          <li>
+            <strong>.tooltip__content</strong> — hidden text or HTML stored
+            inside the trigger, later injected into the visible tooltip.
+          </li>
+          <li>
+            <strong>.tooltip</strong> — global tooltip box positioned
+            dynamically relative to the hovered element.
+          </li>
+          <li>
+            <strong>.tooltip.show</strong> — visible tooltip state; sets
+            <code>z-index</code> and <code>visibility</code> for display.
+          </li>
+        </ul>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+&lt;button class="button rounded button--info hasTooltip" aria-describedby="tip-content-id"&gt;
+
+  &lt;i class="fa-solid fa-info"&gt;&lt;/i&gt;
+
+  &lt;span class="tooltip__content"&gt;Tooltip Info about this element&lt;/span&gt;
+
+&lt;/button&gt;
+
+
+&lt;div id="tip-content-id" role="tooltip" class="tooltip"&gt;&lt;/div&gt;
+</code></pre>
+
+        <p><strong>CSS:</strong></p>
+
+        <pre><code class="language--css">
+/* =============================================================
+   Tooltip Styles
+============================================================= */
+.tooltip {
+
+  position: absolute;
+  z-index: -1;
+  visibility: hidden;
+  padding: 0.5rem;
+  background-color: #3b82f6;
+  max-width: 28rem;
+  font-size: var(--fs);
+  border-radius: var(--br);
+  font-weight: bold;
+  color: var(--clr-light);
+  box-shadow: var(--div-shadow);
+  transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+
+}
+
+.tooltip__content {
+
+  display: none;
+
+}
+
+.tooltip.show {
+
+  z-index: 300;
+  visibility: visible;
+
+}
+</code></pre>
+
+        <p>
+          This CSS controls how the tooltip is displayed and hidden. By default,
+          the tooltip is invisible (<code>visibility: hidden</code> and
+          <code>z-index: -1</code>). When the <code>.show</code> class is added
+          via JavaScript, it becomes visible above all other elements.
+        </p>
+
+        <ul>
+          <li>
+            The tooltip box has a subtle shadow and rounded corners to match the
+            design system.
+          </li>
+          <li>
+            The transition on <code>left</code> and <code>right</code> allows
+            smooth position adjustments when it appears near different elements.
+          </li>
+          <li>
+            The inner <code>.tooltip__content</code> is hidden by default and
+            used only as a template source.
+          </li>
+        </ul>
+
+        <p><strong>JS:</strong></p>
+
+        <pre><code class="language--js">
+/**
+ * Tooltip Utility (Simplified + Dynamic Content)
+ * ----------------------------------------------
+ * Handles tooltip show/hide and dynamic content loading
+ * from `.tooltip__content` inside each `.hasTooltip` element.
+ */
+
+
+import { positionRelativeTo } from "../utils/positioning";
+
+
+/**
+ * Get tooltip content from element
+ * @param {Element} el
+ * @returns {string}
+ */
+
+const getTooltipContent = (el) => {
+  const contentEl = el.querySelector(".tooltip__content");
+  return contentEl ? contentEl.innerHTML.trim() : "";
+};
+
+
+/**
+ * Set tooltip content into global tooltip
+ * @param {Element} tooltip
+ * @param {string} content
+ */
+const setTooltipContent = (tooltip, content) => {
+  tooltip.innerHTML = content;
+};
+
+const ToolTip = () => {
+  const tooltip = document.querySelector(".tooltip");
+  if (!tooltip) {
+    console.warn("ToolTip: No tooltip element found");
+    return;
+  }
+
+
+  const elements = document.querySelectorAll(".hasTooltip");
+
+
+  elements.forEach((el) => {
+    const show = () => {
+      const content = getTooltipContent(el);
+      if (!content) return;
+
+      setTooltipContent(tooltip, content);
+      positionRelativeTo(el, tooltip, 4);
+      tooltip.classList.add("show");
+    };
+
+    const hide = () => {
+      tooltip.classList.remove("show");
+      setTooltipContent(tooltip, ""); // clear after hide
+    };
+
+
+    // Hover events
+    el.addEventListener("mouseenter", show);
+    el.addEventListener("mouseleave", hide);
+
+    // Touch (mobile)
+    el.addEventListener("touchstart", (e) => {
+      e.stopPropagation();
+      show();
+      setTimeout(hide, 1500);
+    });
+  });
+};
+
+export default ToolTip;
+</code></pre>
+
+        <p>
+          This JavaScript module manages tooltip behavior. When a user hovers or
+          taps on an element with the <code>.hasTooltip</code> class, the script
+          extracts its hidden <code>.tooltip__content</code> and injects it into
+          the global tooltip container. It then positions the tooltip next to
+          the hovered element using <code>positionRelativeTo</code>.
+        </p>
+
+        <ul>
+          <li>
+            <code>getTooltipContent()</code> retrieves text or HTML from the
+            element.
+          </li>
+          <li>
+            <code>setTooltipContent()</code> injects the content into the global
+            tooltip container.
+          </li>
+          <li>
+            <code>positionRelativeTo()</code> calculates and applies correct
+            positioning (above, below, or beside).
+          </li>
+          <li>
+            The tooltip becomes visible by adding the <code>.show</code> class,
+            and hidden when removed.
+          </li>
+          <li>
+            On touch devices, it briefly appears for 1.5 seconds after tapping.
+          </li>
+          <li>
+            The module is self-initializing: import it once (<code
+              >import ToolTip from './tooltip'; ToolTip();</code
+            >) and it will handle all tooltips automatically.
+          </li>
+          <li>
+            For more information about JavaScript integration, visit the
+            documentation
+            <a href="javascript.html">[here]</a>.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="tip-content-id" role="tooltip" class="tooltip"></div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,100 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+.footer {
+  max-width: 120rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Link styles - consolidated
+
+    a, a:focus, a:hover {
+      color: var(--clr-light);
+      text-decoration: none;
+    }
+  
+  
+  &__container {
+    width: 100%;
+    background-color: g.$clr-primary-dark;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: fit-content;
+
+    & > li {
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.2rem solid var(--clr-light);
+      border-radius: 50%;
+      transform: translateY(0);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+
+      & > a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--clr-light);
+
+        i {
+          width: 1.9rem;
+          height: 1.9rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.9rem;
+        }
+      }
+
+      &:hover {
+        transform: translateY(0.2rem);
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    margin-top: 3rem;
+    align-items: center;
+    gap: 1rem;
+
+    .logo {
+      width: 5rem;
+      height: 5rem;
+      object-fit: contain;
+    }
+
+    p {
+      color: var(--clr-light);
+    }
+
+    // Pseudo-element for the top line
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1.75rem;
+      left: 0;
+      width: 28rem;
+      height: 0.1rem;
+      border-radius: 1rem;
+      background-color: var(--clr-light);
+    }
+  }
+}

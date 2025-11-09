@@ -1,0 +1,1 @@
+const o=()=>{const e=document.querySelector(".upload__group"),c=e==null?void 0:e.querySelector("input[type='file']");e==null||e.addEventListener("keypress",t=>{const n=t.key||t.keyCode;(n===" "||n==="Enter"||n===13)&&(t.preventDefault(),c.click())})};export{o as default};

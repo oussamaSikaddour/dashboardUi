@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Accordion | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Accordion</h1>
+
+        <div class="accordion">
+          <div class="accordion__panel">
+            <h2
+              id="panel1-heading"
+              class="accordion__header"
+              tabindex="0"
+              role="button"
+            >
+              <div class="accordion__header__details">Boating</div>
+              <div
+                class="accordion__trigger button--closer"
+                aria-controls="panel1-content"
+              >
+                <span></span>
+                <span></span>
+              </div>
+            </h2>
+
+            <div
+              class="accordion__content"
+              id="panel1-content"
+              aria-labelledby="panel1-heading"
+              role="region"
+            >
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion__panel">
+            <h2
+              id="panel2-heading"
+              class="accordion__header"
+              tabindex="0"
+              role="button"
+            >
+              <div class="accordion__header__details">shipping</div>
+              <div class="accordion__trigger" aria-controls="panel2-content">
+                <span></span>
+                <span></span>
+              </div>
+            </h2>
+
+            <div
+              class="accordion__content"
+              id="panel2-content"
+              aria-labelledby="panel2-heading"
+              role="region"
+            >
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+              <p>
+                Port mutiny draught handsomely ye furl flogging line shrouds
+                hulk. Spirits Plate Fleet code of conduct.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" id="accordion-section">
+        <h2>Accordion</h2>
+
+        <p>
+          The <strong>Accordion</strong> component groups collapsible panels.
+          Each panel uses a header that toggles the associated content region.
+          This pattern keeps long text blocks concise and improves scannability.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.accordion</strong> — wrapper for all accordion panels.
+          </li>
+          <li>
+            <strong>.accordion__panel</strong> — individual panel container.
+          </li>
+          <li>
+            <strong>.accordion__header</strong> — clickable header (has
+            role="button" and tabindex="0").
+          </li>
+          <li>
+            <strong>.accordion__header__details</strong> — title/content inside
+            the header.
+          </li>
+          <li>
+            <strong>.accordion__trigger</strong> — circular trigger element with
+            two spans forming the “+” / “×”.
+          </li>
+          <li>
+            <strong>.accordion__content</strong> — collapsible region
+            (role="region", aria-labelledby header).
+          </li>
+          <li>
+            <strong>.accordion__panel.open</strong> — modifier for the expanded
+            state (applies border/radius/rotation and expands content).
+          </li>
+        </ul>
+
+        <p>
+          Accessibility: headers are focusable and paired with content via
+          <code>aria-controls</code> / <code>aria-labelledby</code>. Toggle the
+          <code>.open</code> class on <code>.accordion__panel</code> to open a
+          panel.
+        </p>
+        <p>
+          Users can navigate between accordion tabs using the Tab key and open
+          or close a panel with the Space or Enter key. By default, only one
+          panel can be open at a time. To allow multiple panels to remain open
+          simultaneously, add the
+          <code class="language--css">all-tabs-can-open</code> class to the
+          accordion container. For more information about JavaScript
+          integration, visit the documentation
+          <a href="javascript.html">[here]</a>.
+        </p>
+
+        <p><strong>Example markup:</strong></p>
+
+ <pre><code class="language--html">
+&lt;div class="accordion"&gt;
+  &lt;div class="accordion__panel"&gt;
+    &lt;h2 id="panel1-heading" class="accordion__header" tabindex="0" role="button"&gt;
+      &lt;div class="accordion__header__details"&gt;Boating&lt;/div&gt;
+      &lt;div class="accordion__trigger" aria-controls="panel1-content"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;/h2&gt;
+
+    &lt;div id="panel1-content" class="accordion__content" aria-labelledby="panel1-heading" role="region"&gt;
+      &lt;p&gt;Panel content...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- more panels --&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <p><strong>CSS:</strong></p>
+
+        <pre><code class="language--css">
+      .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-inline: 0.5rem;
+  border-radius: var(--br);
+}
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+  gap: 1rem;
+  font-size: var(--fs);
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s ease-in-out;
+  background-color: #E9EAF4;
+  cursor: pointer;
+}
+.accordion__header__details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.accordion__trigger {
+  width: 3.6rem;
+  height: 3.6rem;
+  position: relative;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+.accordion__trigger span {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0.2rem;
+  height: 3rem;
+  background-color: #6D6F73;
+  border-radius: 40rem;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+.accordion__trigger span:nth-of-type(1) {
+  transform: rotate(0deg);
+}
+.accordion__trigger span:nth-of-type(2) {
+  transform: rotate(90deg);
+  transition-delay: 0.3s;
+}
+.accordion__panel {
+  width: 100%;
+  background-color: var(--clr-light);
+  border: var(--border);
+  border-radius: var(--br);
+  transition: all 0.5s ease-in-out;
+  box-shadow: var(--div-shadow);
+}
+.accordion__panel:not(:first-child) {
+  margin-top: 1rem;
+}
+.accordion__panel.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.accordion__panel.open .accordion__header {
+  border-bottom: var(--border);
+}
+.accordion__panel.open .accordion__content {
+  max-height: 30rem;
+  border-radius: unset;
+}
+.accordion__panel.open .accordion__trigger span:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+.accordion__panel.open .accordion__trigger span:nth-of-type(2) {
+  transform: rotate(135deg);
+}
+.accordion__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  background-color: var(--clr-light);
+  border-radius: var(--br);
+  transition: all 0.5s ease-in-out;
+  max-height: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+.accordion__content p {
+  margin: 1rem;
+}
+
+
+    </code></pre>
+
+        <p><strong>JS:</strong></p>
+
+        <pre><code class="language--js"> 
+
+import { handleKeyEvents } from "../utils/KeyEventHandlers";
+
+// DOM State Management
+
+const getAccordionState = (header) => {
+
+  return header.classList.contains('active');
+
+};
+
+const setAccordionHeaderState = (header, isActive) => {
+
+  header.classList.toggle('active', isActive);
+
+  header.setAttribute('aria-expanded', isActive);
+
+};
+
+const setAccordionPanelState = (panel, isActive) => {
+
+  panel.classList.toggle('open', isActive);
+
+  panel.setAttribute('aria-hidden', !isActive);
+
+};
+
+const updateAccordionItemState = (header, panel, isActive) => {
+
+  setAccordionHeaderState(header, isActive);
+
+  setAccordionPanelState(panel, isActive);
+
+};
+
+// Accordion Mode Detection
+
+const isAccordionOpenAllMode = (accordion) => {
+
+  return accordion.classList.contains('all-tabs-can-open');
+
+};
+
+// Accordion Toggle Logic
+
+const closeAllAccordionItems = (accordionHeaders, accordionPanels) => {
+
+  accordionHeaders.forEach((header, index) => {
+
+    updateAccordionItemState(header, accordionPanels[index], false);
+
+  });
+
+};
+
+const openAccordionItem = (index, accordionHeaders, accordionPanels) => {
+
+  updateAccordionItemState(accordionHeaders[index], accordionPanels[index], true);
+
+};
+
+const closeAccordionItem = (index, accordionHeaders, accordionPanels) => {
+
+  updateAccordionItemState(accordionHeaders[index], accordionPanels[index], false);
+
+};
+
+
+const toggleSingleAccordionItem = (index, accordionHeaders, accordionPanels) => {
+
+  const isCurrentlyActive = getAccordionState(accordionHeaders[index]);
+
+  
+  closeAllAccordionItems(accordionHeaders, accordionPanels);
+
+  
+  if (!isCurrentlyActive) {
+
+    openAccordionItem(index, accordionHeaders, accordionPanels);
+
+  }
+
+};
+
+const toggleMultiAccordionItem = (index, accordionHeaders, accordionPanels) => {
+
+  const isCurrentlyActive = getAccordionState(accordionHeaders[index]);
+
+  
+  if (isCurrentlyActive) {
+
+    closeAccordionItem(index, accordionHeaders, accordionPanels);
+
+  } else {
+
+    openAccordionItem(index, accordionHeaders, accordionPanels);
+
+  }
+
+};
+
+const toggleAccordion = (index, accordionHeaders, accordionPanels, accordion) => {
+
+  const isMultiOpen = isAccordionOpenAllMode(accordion);
+
+  
+  if (isMultiOpen) {
+
+    toggleMultiAccordionItem(index, accordionHeaders, accordionPanels);
+
+  } else {
+
+    toggleSingleAccordionItem(index, accordionHeaders, accordionPanels);
+
+  }
+
+};
+
+// Event Handling
+
+const getClickedHeaderIndex = (event, accordionHeaders) => {
+
+  const header = event.target.closest('.accordion__header');
+
+  if (!header) return -1;
+
+  return accordionHeaders.indexOf(header);
+
+};
+
+const handleAccordionClick = (event, accordionHeaders, accordionPanels, accordion) => {
+
+  const index = getClickedHeaderIndex(event, accordionHeaders);
+
+  if (index === -1) return;
+
+  
+  toggleAccordion(index, accordionHeaders, accordionPanels, accordion);
+
+};
+
+const handleAccordionKeyDown = (event, accordionHeaders, accordionPanels, accordion) => {
+
+  const index = getClickedHeaderIndex(event, accordionHeaders);
+
+  if (index === -1) return;
+
+  
+  const toggleCallback = () => toggleAccordion(index, accordionHeaders, accordionPanels, accordion);
+
+  handleKeyEvents(event, index, toggleCallback, accordionHeaders);
+
+};
+
+const manageAccordionEvent = (event, accordionHeaders, accordionPanels, accordion) => {
+
+  if (event.type === "click") {
+
+    handleAccordionClick(event, accordionHeaders, accordionPanels, accordion);
+
+  } else if (event.type === "keydown") {
+
+    handleAccordionKeyDown(event, accordionHeaders, accordionPanels, accordion);
+
+  }
+
+};
+
+// Initialization
+const initializeAccordionEventListeners = (accordion, accordionHeaders, accordionPanels) => {
+
+  const eventHandler = (event) => {
+
+    manageAccordionEvent(event, accordionHeaders, accordionPanels, accordion);
+
+  };
+  
+  accordion.addEventListener('click', eventHandler);
+
+  accordion.addEventListener('keydown', eventHandler);
+
+};
+
+const initializeFirstAccordion = (accordionHeaders, accordionPanels) => {
+
+  if (accordionHeaders.length > 0) {
+
+    openAccordionItem(0, accordionHeaders, accordionPanels);
+
+  }
+
+};
+
+const validateAccordionStructure = (accordionHeaders, accordionPanels, accordion) => {
+
+  if (accordionHeaders.length === 0) {
+
+    console.warn('Accordion has no headers', accordion);
+
+    return false;
+
+  }
+  
+  if (accordionHeaders.length !== accordionPanels.length) {
+
+    console.warn('Accordion has mismatched headers and panels', accordion);
+
+    return false;
+
+  }
+
+  
+  return true;
+
+};
+
+// Main Accordion Component
+
+const Accordion = () => {
+
+  const accordions = document.querySelectorAll('.accordion');
+
+  
+  accordions.forEach((accordion) => {
+
+    const accordionHeaders = Array.from(accordion.querySelectorAll('.accordion__header'));
+
+    const accordionPanels = Array.from(accordion.querySelectorAll('.accordion__panel'));
+
+    
+    if (!validateAccordionStructure(accordionHeaders, accordionPanels, accordion)) {
+
+      return;
+
+    }
+    
+    initializeAccordionEventListeners(accordion, accordionHeaders, accordionPanels);
+
+    
+    // Only auto-open first item if not in multi-open mode
+
+    if (!isAccordionOpenAllMode(accordion)) {
+
+      initializeFirstAccordion(accordionHeaders, accordionPanels);
+
+    }
+
+  });
+};
+
+export default Accordion;
+
+        </code> </pre>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+.errors {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 50rem;
+  padding: 1rem;
+  gap: 1rem;
+  overflow: auto; // Enable scrolling for overflow content
+
+  // Individual error message styling
+  .error {
+    font-size: var(--fs);
+    color: var(--clr-light);
+    font-weight: bold;
+  }
+
+  // Error container styling
+  &__container {
+    padding: 0.2rem 0.3rem;
+    font-family: var(--ff);
+    display: none; // Hidden by default
+    position: fixed; // Stay in place
+    z-index: 25; // Sit on top
+    margin: auto;
+    background-color:g.$clr-danger-dark;
+    border-radius: var(--br);
+    min-width: 27rem;
+    max-width: 60rem; // Responsive max-width
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -300%) scale(0); // Initial position for animation
+    animation: 1s ease-in-out forwards slideCenterForAbsolute; // Slide-in animation
+    box-shadow: rgba(156, 25, 25, 0.19) 0 1rem 2rem, rgba(156, 25, 25, 0.23) 0 0.6rem 0.6rem; // Shadow for depth
+    
+    // Show container when open
+    &.open {
+      display: flex;
+    }
+
+    // Custom scrollbar styling
+    ::-webkit-scrollbar-thumb {
+      background-color: g.$clr-danger-dark; // Scrollbar thumb color
+      border-radius: var(--br); // Rounded corners for the thumb
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: g.$clr-danger-light; // Scrollbar track color
+    }
+  }
+
+  // Close button styling
+  &__closer {
+    position: absolute;
+    right: -1.75rem;
+    top: -1.75rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border:0.5rem solid g.$clr-danger-dark;
+    border-color: g.$clr-danger-dark;
+    border-radius: 50%; // Circular shape
+    background-color: g.$clr-danger-light;
+    transition: color 0.3s ease-in-out; // Smooth hover transition
+    cursor: pointer;
+
+    // Close button lines (X shape)
+    span {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 2.8rem;
+      height: 0.2rem;
+      background-color: g.$clr-danger-dark;
+      border-radius: 40rem; // Rounded edges for the lines
+      transition: transform 0.3s ease-in-out; // Smooth rotation animation
+      transform-origin: center;
+
+      // First line of the X
+      &:first-of-type {
+        transform: rotate(45deg);
+      }
+
+      // Second line of the X
+      &:nth-of-type(2) {
+        transform: rotate(135deg);
+      }
+    }
+  }
+}

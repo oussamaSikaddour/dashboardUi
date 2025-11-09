@@ -1,0 +1,111 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+.toast {
+  font-size: var(--fs);
+  color: var(--clr-light);
+  &__container {
+    position: fixed;
+    bottom: 10rem;
+    right: 2rem;
+    z-index: 25;
+    transform: scale(1)  translate(300%, 0);
+    opacity: 0;
+    border-radius: var(--br);
+    background-color:g.$clr-success-dark;
+   box-shadow: rgba( 23, 132, 0.25,0.19) 0rem 1rem 2rem,
+    rgb(23, 132, 0.25,0.23) 0rem 0.6rem 0.6rem;
+    padding: 1.75rem;
+    transition: transform 0.3s ease-in-out 0.2s;
+    display: none;
+    justify-content: center;
+    align-items: center;
+      width: 28rem;
+     @include u.breakpoint(md) {
+      width: fit-content;
+      max-width: 40rem;
+  }
+    &.open {
+      display: flex;
+      animation: 0.3s ease-in-out forwards slideInRight;
+
+    }
+    &.warning{
+      background-color: g.$clr-warning-dark;
+      box-shadow: rgba( 172, 111, 7,0.19) 0rem 1rem 2rem,
+       rgb(172, 111, 7,0.23) 0rem 0.6rem 0.6rem;
+        > .toast__closer{
+          border-color: g.$clr-warning-dark;
+          background-color: g.$clr-warning-light;
+
+          span{
+            background-color: g.$clr-warning-dark;
+          }
+        }
+    }
+    &.warning{
+      background-color: g.$clr-warning-dark;
+      box-shadow: rgba( 172, 111, 7,0.19) 0rem 1rem 2rem,
+       rgb(172, 111, 7,0.23) 0rem 0.6rem 0.6rem;
+        > .toast__closer{
+          border-color: g.$clr-warning-dark;
+          background-color: g.$clr-warning-light;
+
+          span{
+            background-color: g.$clr-warning-dark;
+          }
+        }
+    }
+    &.info{
+      background-color: g.$clr-info-dark;
+      box-shadow: rgba(59 ,130, 246,0.19) 0rem 1rem 2rem,
+       rgba(59 ,130 ,246,0.19) 0rem 0.6rem 0.6rem;
+        > .toast__closer{
+          border-color: g.$clr-info-dark;
+          background-color: g.$clr-info-light;
+
+          span{
+            background-color: g.$clr-info-dark;
+          }
+        }
+    }
+  }
+
+
+
+    &__closer {
+    position: absolute;
+    right: -1.75rem;
+    top: -1.75rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border:0.5rem solid g.$clr-success-dark;
+    border-color: g.$clr-success-dark;
+    border-radius: 50%; // Circular shape
+    background-color: g.$clr-success-light;
+    transition: color 0.3s ease-in-out; // Smooth hover transition
+    cursor: pointer;
+
+    // Close button lines (X shape)
+    span {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 2.8rem;
+      height: 0.2rem;
+      background-color: g.$clr-success-dark;
+      border-radius: 40rem; // Rounded edges for the lines
+      transition: transform 0.3s ease-in-out; // Smooth rotation animation
+      transform-origin: center;
+
+      // First line of the X
+      &:first-of-type {
+        transform: rotate(45deg);
+      }
+
+      // Second line of the X
+      &:nth-of-type(2) {
+        transform: rotate(135deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html >
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Badge | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/Logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Badges</h1>
+
+        <div class="row">
+          <div class="button">success badge <span class="badge">100</span></div>
+          <div class="button">
+            warning badge <span class="badge badge--warning">50</span>
+          </div>
+          <div class="button">
+            danger badge <span class="badge badge--danger">10</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" id="badges-section">
+        <h2>Button Badges</h2>
+
+        <p>
+          Badges are small indicators that can be attached to buttons or other
+          elements to display counts, statuses, or notifications. Each badge
+          uses the
+          <code>.badge</code> class, with optional modifier classes such as
+          <code>.badge--warning</code> or <code>.badge--danger</code> to
+          indicate different states.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.badge</strong> — default badge style (used for success or
+            primary indicators)
+          </li>
+          <li>
+            <strong>.badge--warning</strong> — warning state badge, typically
+            styled in yellow/orange
+          </li>
+          <li>
+            <strong>.badge--danger</strong> — danger state badge, typically
+            styled in red
+          </li>
+          <li>
+            <strong>.button</strong> — wrapper for the badge, showing it in
+            context of a clickable element
+          </li>
+        </ul>
+
+        <p>
+          Badges can be used to display numbers, counts, or alerts attached to a
+          button or other elements. The style and color can be modified with the
+          appropriate modifier classes.
+        </p>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+
+  &lt;div class="button"&gt;
+
+    success badge &lt;span class="badge"&gt;100&lt;/span&gt;
+
+  &lt;/div>
+
+
+  &lt;div class="button"&gt;
+
+    warning badge &lt;span class="badge badge--warning"&gt;50&lt;/span&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class="button"&gt;
+
+    danger badge &lt;span class="badge badge--danger"&gt;10&lt;/span&gt;
+
+  &lt;/div&gt;
+
+</code></pre>
+        <p><strong>CSS:</strong></p>
+
+        <pre><code class="language--css">
+
+
+ .badge {
+
+  padding: 0.15rem 0.75rem;
+  border-radius: 0.1rem solid rgb(22.7402597403, 131.7597402597, 62.8701298701);
+  background-color: #22c55e;
+  font-size: 1.3rem;
+  border-radius: 0.2rem;
+  color: black;
+  font-weight: bold;
+
+}
+
+.badge--danger {
+
+  border-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  background-color: #dc2626;
+  color: white;
+
+}
+
+.badge--warning {
+
+  border-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+  background-color: #f59e0b;
+
+}
+
+</code></pre>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

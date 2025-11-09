@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Combobox | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/Logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Combobox</h1>
+
+        <div class="row">
+          <div class="combobox__group">
+            <div class="combobox" id="comboxTwo">
+              <div class="combobox__input">
+                <div class="input__group">
+                  <input
+                    placeholder="Select Employee"
+                    name="selectEmployee"
+                    id="selectEmpleeId"
+                    class="input"
+                    type="text"
+                    role="combobox"
+                    aria-autocomplete="both"
+                    aria-expanded="false"
+                    aria-controls="listbox"
+                    autocomplete="off"
+                  />
+                  <label for="selectEmployee" class="input__label"
+                    >Select Employee</label
+                  >
+                </div>
+                <button
+                  type="button"
+                  id="cb1-button"
+                  aria-label="States"
+                  aria-expanded="false"
+                  aria-controls="listbox"
+                  tabindex="-1"
+                >
+                  <i class="fa-solid fa-caret-down"></i>
+                </button>
+              </div>
+              <ul id="cb1-listbox" role="listbox" aria-label="States">
+                <li id="employee-1" role="option">
+                  <strong class="key">1</strong>
+                  <div>130257</div>
+                  <div>Si Kaddour</div>
+                  <div>Oussama</div>
+                </li>
+
+                <li id="employee-2" role="option">
+                  <strong class="key">2</strong>
+                  <div>130321</div>
+                  <div>Djawed</div>
+                  <div>Mansouri</div>
+                </li>
+
+                <li id="employee-3" role="option">
+                  <strong class="key">3</strong>
+                  <div>130458</div>
+                  <div>Amine</div>
+                  <div>Belkacem</div>
+                </li>
+
+                <li id="employee-4" role="option">
+                  <strong class="key">4</strong>
+                  <div>130562</div>
+                  <div>Sara</div>
+                  <div>Mehdi</div>
+                </li>
+
+                <li id="employee-5" role="option">
+                  <strong class="key">5</strong>
+                  <div>130678</div>
+                  <div>Youssef</div>
+                  <div>Hamraoui</div>
+                </li>
+
+                <li id="employee-6" role="option">
+                  <strong class="key">6</strong>
+                  <div>130789</div>
+                  <div>Leila</div>
+                  <div>Bensalem</div>
+                </li>
+
+                <li id="employee-7" role="option">
+                  <strong class="key">7</strong>
+                  <div>130890</div>
+                  <div>Hassan</div>
+                  <div>Chakroun</div>
+                </li>
+
+                <li id="employee-8" role="option">
+                  <strong class="key">8</strong>
+                  <div>131002</div>
+                  <div>Imane</div>
+                  <div>Zerrouki</div>
+                </li>
+
+                <li id="employee-9" role="option">
+                  <strong class="key">9</strong>
+                  <div>131118</div>
+                  <div>Walid</div>
+                  <div>Benali</div>
+                </li>
+
+                <li id="employee-10" role="option">
+                  <strong class="key">10</strong>
+                  <div>131225</div>
+                  <div>Nadia</div>
+                  <div>Saidi</div>
+                </li>
+              </ul>
+            </div>
+            <div class="input__error">error msg</div>
+          </div>
+          <div class="combobox__group">
+            <div class="combobox" id="comboxOne">
+              <div class="combobox__input">
+                <div class="input__group">
+                  <input
+                    placeholder="Select Department"
+                    name="selectDepartment"
+                    id="selectDepartmentId"
+                    class="input"
+                    type="text"
+                    role="combobox"
+                    aria-autocomplete="both"
+                    aria-expanded="false"
+                    aria-controls="listbox"
+                    autocomplete="off"
+                  />
+                  <label for="selectDepartment" class="input__label"
+                    >Select Department</label
+                  >
+                </div>
+                <button
+                  type="button"
+                  id="cb2-button"
+                  aria-label="Departments"
+                  aria-expanded="false"
+                  aria-controls="listbox"
+                  tabindex="-1"
+                >
+                  <i class="fa-solid fa-caret-down"></i>
+                </button>
+              </div>
+              <ul id="cb2-listbox" role="listbox" aria-label="Departments">
+                <li id="dept-1" role="option">
+                  <strong class="key">1</strong>
+                  <div>HR001</div>
+                  <div>Human Resources</div>
+                  <div>Management</div>
+                </li>
+
+                <li id="dept-2" role="option">
+                  <strong class="key">2</strong>
+                  <div>IT001</div>
+                  <div>Information Technology</div>
+                  <div>Development</div>
+                </li>
+
+                <li id="dept-3" role="option">
+                  <strong class="key">3</strong>
+                  <div>FN001</div>
+                  <div>Finance</div>
+                  <div>Accounting</div>
+                </li>
+
+                <li id="dept-4" role="option">
+                  <strong class="key">4</strong>
+                  <div>MK001</div>
+                  <div>Marketing</div>
+                  <div>Digital</div>
+                </li>
+
+                <li id="dept-5" role="option">
+                  <strong class="key">5</strong>
+                  <div>OP001</div>
+                  <div>Operations</div>
+                  <div>Logistics</div>
+                </li>
+
+                <li id="dept-6" role="option">
+                  <strong class="key">6</strong>
+                  <div>SL001</div>
+                  <div>Sales</div>
+                  <div>Enterprise</div>
+                </li>
+
+                <li id="dept-7" role="option">
+                  <strong class="key">7</strong>
+                  <div>RD001</div>
+                  <div>Research & Development</div>
+                  <div>Innovation</div>
+                </li>
+
+                <li id="dept-8" role="option">
+                  <strong class="key">8</strong>
+                  <div>CS001</div>
+                  <div>Customer Service</div>
+                  <div>Support</div>
+                </li>
+              </ul>
+            </div>
+            <div class="input__error">error msg</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <ul>
+          <li>
+            <h2>✅ Overview: What This Code Does</h2>
+            <ul>
+              <li>
+                This HTML and CSS code creates an
+                <strong>accessible combobox</strong> component, which is a
+                design pattern combining a text
+                <strong>input field</strong> with a selectable
+                <strong>dropdown list</strong>.
+              </li>
+              <li>
+                It is designed for selecting an <strong>employee</strong> by ID,
+                first name, or last name.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>
+              🏗️ HTML Structure
+              <code>&lt;div&gt;, &lt;input&gt;, &lt;ul&gt;</code>
+            </h2>
+            <ul>
+              <li>
+                <strong>Input Field:</strong> An
+                <code>&lt;input type="text"&gt;</code> (ID
+                <code>selectEmpleeId</code>) is where the user types. It has
+                <code>aria-autocomplete="both"</code> and
+                <code>role="combobox"</code> for <strong>accessibility</strong>.
+              </li>
+              <li>
+                <strong>Dropdown Button:</strong> A
+                <code>&lt;button&gt;</code> (ID <code>cb1-button</code>) sits
+                next to the input. It uses a font icon
+                <code>&lt;i class="fa-solid fa-caret-down"&gt;&lt;/i&gt;</code>
+                as the dropdown arrow.
+              </li>
+              <li>
+                <strong>Employee List:</strong> The
+                <code>&lt;ul id="cb1-listbox" role="listbox"&gt;</code> holds
+                all the options.
+              </li>
+              <li>
+                <strong>Employee Options:</strong> Each employee is an
+                <code>&lt;li&gt;</code> with <code>role="option"</code>. The
+                data for each employee (key number, ID, first name, last name)
+                is organized using <code>&lt;div&gt;</code> elements inside the
+                <code>&lt;li&gt;</code>.
+              </li>
+              <li>
+                <strong>Error Handling:</strong> A
+                <code>&lt;div class="input__error"&gt;</code> is included to
+                display error messages when needed.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🎨 CSS Styling and Behavior</h2>
+            <ul>
+              <li>
+                <strong>Hiding the List:</strong> The CSS initially hides the
+                list of employees with
+                <code
+                  >.combobox__group ul[role="listbox"] { display: none; }</code
+                >.
+              </li>
+              <li>
+                <strong>Toggle Animation:</strong> When the dropdown is open
+                (<code>button[aria-expanded="true"]</code>), the CSS rotates the
+                arrow icon <code>&lt;i&gt;</code>
+                <strong>180 degrees</strong> for visual feedback.
+              </li>
+              <li>
+                <strong>List Appearance:</strong> The list is styled to be a
+                floating element (<code>position: absolute;</code>) that appears
+                when the <code>.show</code> class is added (this class is
+                controlled by JavaScript).
+              </li>
+              <li>
+                <strong>Hover Effect:</strong> The rule
+                <code>li:hover, li.active</code> provides a
+                <strong>blue background</strong> (<code>#087EA4</code>) when an
+                option is highlighted, making selection clear to the user.
+              </li>
+              <li>
+                <strong>Filtering Prep:</strong> The class
+                <code>.combobox__list li.hide</code> is available for JavaScript
+                to <strong>hide non-matching employees</strong> during a search.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Example markup:</strong></p>
+        <pre><code class="language--html">
+&lt;div class="combobox__group"&gt;
+  &lt;div class="combobox" id="comboxTwo"&gt;
+    &lt;div class="combobox__input"&gt;
+      &lt;div class="input__group"&gt;
+        &lt;input
+          placeholder="Select Employee"
+          name="selectEmployee"
+          id="selectEmpleeId"
+          class="input"
+          type="text"
+          role="combobox"
+          aria-autocomplete="both"
+          aria-expanded="false"
+          aria-controls="listbox"
+          autocomplete="off"
+        /&gt;
+        &lt;label for="selectEmployee" class="input__label"&gt;
+          Select Employee
+        &lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;button
+        type="button"
+        id="cb1-button"
+        aria-label="States"
+        aria-expanded="false"
+        aria-controls="listbox"
+        tabindex="-1"
+      &gt;
+        &lt;i class="fa-solid fa-caret-down"&gt;&lt;/i&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;ul id="cb1-listbox" role="listbox" aria-label="States"&gt;
+      &lt;li id="employee-1" role="option"&gt;
+        &lt;strong class="key"&gt;1&lt;/strong&gt;
+        &lt;div&gt;130257&lt;/div&gt;
+        &lt;div&gt;Si Kaddour&lt;/div&gt;
+        &lt;div&gt;Oussama&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-2" role="option"&gt;
+        &lt;strong class="key"&gt;2&lt;/strong&gt;
+        &lt;div&gt;130321&lt;/div&gt;
+        &lt;div&gt;Djawed&lt;/div&gt;
+        &lt;div&gt;Mansouri&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-3" role="option"&gt;
+        &lt;strong class="key"&gt;3&lt;/strong&gt;
+        &lt;div&gt;130458&lt;/div&gt;
+        &lt;div&gt;Amine&lt;/div&gt;
+        &lt;div&gt;Belkacem&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-4" role="option"&gt;
+        &lt;strong class="key"&gt;4&lt;/strong&gt;
+        &lt;div&gt;130562&lt;/div&gt;
+        &lt;div&gt;Sara&lt;/div&gt;
+        &lt;div&gt;Mehdi&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-5" role="option"&gt;
+        &lt;strong class="key"&gt;5&lt;/strong&gt;
+        &lt;div&gt;130678&lt;/div&gt;
+        &lt;div&gt;Youssef&lt;/div&gt;
+        &lt;div&gt;Hamraoui&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-6" role="option"&gt;
+        &lt;strong class="key"&gt;6&lt;/strong&gt;
+        &lt;div&gt;130789&lt;/div&gt;
+        &lt;div&gt;Leila&lt;/div&gt;
+        &lt;div&gt;Bensalem&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-7" role="option"&gt;
+        &lt;strong class="key"&gt;7&lt;/strong&gt;
+        &lt;div&gt;130890&lt;/div&gt;
+        &lt;div&gt;Hassan&lt;/div&gt;
+        &lt;div&gt;Chakroun&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-8" role="option"&gt;
+        &lt;strong class="key"&gt;8&lt;/strong&gt;
+        &lt;div&gt;131002&lt;/div&gt;
+        &lt;div&gt;Imane&lt;/div&gt;
+        &lt;div&gt;Zerrouki&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-9" role="option"&gt;
+        &lt;strong class="key"&gt;9&lt;/strong&gt;
+        &lt;div&gt;131118&lt;/div&gt;
+        &lt;div&gt;Walid&lt;/div&gt;
+        &lt;div&gt;Benali&lt;/div&gt;
+      &lt;/li&gt;
+
+      &lt;li id="employee-10" role="option"&gt;
+        &lt;strong class="key"&gt;10&lt;/strong&gt;
+        &lt;div&gt;131225&lt;/div&gt;
+        &lt;div&gt;Nadia&lt;/div&gt;
+        &lt;div&gt;Saidi&lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;div class="input__error"&gt;error msg&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <p><strong>Css:</strong></p>
+        <pre><code class="language--css">
+ .combobox__group {
+
+  display: flex;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  align-self: center;
+  flex-direction: column;
+  overflow: visible;
+
+}
+
+@media (min-width: 48em) {
+
+  .combobox__group {
+    align-self: unset;
+  }
+
+}
+
+.combobox__group ul[role=listbox] {
+
+  display: none;
+
+}
+
+.combobox__input {
+
+  display: inline-flex;
+  cursor: pointer;
+
+}
+
+.combobox__input .input__group {
+
+  max-width: 26rem;
+
+}
+
+.combobox__input input {
+
+  border-top-right-radius: unset;
+  border-bottom-right-radius: unset;
+  border-right: none;
+
+}
+
+.combobox__input button {
+
+  width: 2rem;
+  background-color: var(--clr-light);
+  border: var(--border);
+  border-radius: var(--br);
+  border-top-left-radius: unset;
+  border-bottom-left-radius: unset;
+  border-left: none;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  color: var(--clr-bg);
+  font-size: 1.8rem;
+
+}
+
+.combobox__input button i {
+
+  transition: transform 0.2s ease-in-out;
+
+}
+
+.combobox__input button[aria-expanded=true] {
+
+  border-color: #087EA4;
+  color: var(--clr-primary);
+
+}
+
+.combobox__input button[aria-expanded=true] i {
+
+  transform: rotate(180deg) translate(0, -3px);
+
+}
+
+.combobox__list {
+
+  position: absolute;
+  padding: 0.25rem;
+  list-style: none;
+  background-color: var(--clr-light);
+  display: flex;
+  border: var(--border);
+  min-width: 28rem;
+  max-width: 30rem;
+  max-height: 28rem;
+  overflow-y: auto;
+  font-size: 1.4rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: var(--br);
+  box-shadow: var(--div-shadow);
+  z-index: -1;
+  visibility: hidden;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  max-width: 28rem;
+  transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+
+}
+
+.combobox__list.show {
+
+  z-index: 9999;
+  visibility: visible;
+
+}
+.combobox__list li {
+
+  border-radius: var(--br);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.combobox__list li:hover, .combobox__list li.active {
+
+  background-color: #087EA4;
+  color: var(--clr-light);
+
+}
+
+.combobox__list li.hide {
+
+  display: none;
+
+}
+
+.combobox__list li > div {
+
+  flex: 1;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.combobox__list li > div:first-of-type {
+
+  justify-content: flex-start;
+
+}
+
+.combobox__list li > div:not(:last-of-type) {
+
+  border-right: 0.3rem solid var(--clr-light);
+  text-wrap: nowrap;
+
+}
+
+.combobox__list li > .key {
+
+  display: none;
+
+}
+
+        </code></pre>
+
+        <p><strong>Js:</strong></p>
+        <pre><code class="language--js">
+
+          // ===========================================================
+// Combobox Component — Optimized Version
+// ===========================================================
+// Purpose: Accessible autocomplete Combobox with modular design
+// Dependencies: setAriaAttributes, debounce, positionRelativeTo
+// ===========================================================
+
+import { setAriaAttributes } from "../utils/Aria";
+import { debounce } from "../utils/General";
+import { positionRelativeTo } from "../utils/positioning";
+
+// ===========================================================
+// 1️⃣ DOM UTILITIES
+// ===========================================================
+const comboboxList = document.querySelector(".combobox__list"); // shared floating listbox
+let activeCombobox = null; // keep track of currently active combobox
+
+const getComboboxElements = () => document.querySelectorAll(".combobox");
+const getButtonFromCombobox = (node) => node.querySelector("button");
+const getInputFromCombobox = (node) => node.querySelector(".input");
+const getAllListItems = (listBox) => Array.from(listBox.querySelectorAll("li"));
+const getVisibleListItems = (listBox) =>
+  getAllListItems(listBox).filter((li) => !li.classList.contains("hide"));
+const getActiveListItem = (listBox) => listBox.querySelector("li.active");
+
+const getComboboxElementListContent = (el) => {
+  const contentEl = el.querySelector("ul[role='listbox']");
+  return contentEl ? contentEl.innerHTML.trim() : "";
+};
+
+const setComboboxListContent = (listBox, content) => {
+  listBox.innerHTML = content;
+};
+
+// ===========================================================
+// 2️⃣ STATE MANAGEMENT
+// ===========================================================
+const extractTextFromLi = (li) =>
+  Array.from(li.querySelectorAll("div"))
+    .map((div) => div.textContent.trim())
+    .join(" ")
+    .toLowerCase();
+
+const getDivTextFromLiByPosition = (li, pos) =>
+  li.querySelectorAll("div")[pos - 1]?.textContent.trim() || "";
+
+const setActiveListItem = (item, input, allItems) => {
+  input.value = getDivTextFromLiByPosition(item, 2);
+  allItems.forEach((li) => li.classList.remove("active"));
+  item.classList.add("active");
+  item.setAttribute("tabindex", "0");
+  item.focus();
+};
+
+const clearActiveItems = (listBox) => {
+  getAllListItems(listBox).forEach((li) => {
+    li.classList.remove("active");
+    li.setAttribute("tabindex", "-1");
+  });
+};
+
+// ===========================================================
+// 3️⃣ FILTERING
+// ===========================================================
+const filterOptions = (value, listBox) => {
+  const filter = value.toLowerCase();
+  let hasVisible = false;
+
+  getAllListItems(listBox).forEach((item) => {
+    const match = extractTextFromLi(item).includes(filter);
+    item.classList.toggle("hide", !match);
+    if (match) hasVisible = true;
+  });
+
+  listBox.classList.toggle("open", hasVisible);
+};
+
+// ===========================================================
+// 4️⃣ NAVIGATION
+// ===========================================================
+const getIndex = (item, items) => items.indexOf(item);
+const nextIndex = (i, max) => (i &lt; max ? i + 1 : 0);
+const prevIndex = (i, max) => (i > 0 ? i - 1 : max);
+
+const handleKeyEvents = (event, listBox, button, input, state, toggleFn) => {
+  const listItems = getVisibleListItems(listBox);
+  if (!listItems.length) return;
+
+  const active = getActiveListItem(listBox);
+  const currentIndex = active ? getIndex(active, listItems) : -1;
+  const lastIndex = listItems.length - 1;
+
+  switch (event.key) {
+    case "Escape":
+    case "Enter":
+    case " ":
+      event.preventDefault();
+      toggleFn(false);
+      break;
+    case "ArrowDown":
+      event.preventDefault();
+      setActiveListItem(listItems[nextIndex(currentIndex, lastIndex)], input, listItems);
+      break;
+    case "ArrowUp":
+      event.preventDefault();
+      setActiveListItem(listItems[prevIndex(currentIndex, lastIndex)], input, listItems);
+      break;
+    case "Home":
+      event.preventDefault();
+      setActiveListItem(listItems[0], input, listItems);
+      break;
+    case "End":
+      event.preventDefault();
+      setActiveListItem(listItems[lastIndex], input, listItems);
+      break;
+  }
+};
+
+// ===========================================================
+// 5️⃣ ACTIVE COMBOBOX TRACKING
+// ===========================================================
+const setActiveCombobox = (combobox, input, button, state) => {
+  if (activeCombobox && activeCombobox.combobox !== combobox) {
+    const { combobox: prev, button: prevBtn, input: prevInput, state: prevState } = activeCombobox;
+    toggleListbox(prev, false, comboboxList, prevBtn, prevInput, prevState);
+  }
+  activeCombobox = { combobox, input, button, state };
+};
+
+const clearActiveCombobox = () => (activeCombobox = null);
+
+// ===========================================================
+// 6️⃣ UI STATE — Toggle & Position Listbox
+// ===========================================================
+const toggleListbox = (combobox, isShown, listBox, button, input, state) => {
+  if (isShown) {
+    setActiveCombobox(combobox, input, button, state);
+  } else if (activeCombobox?.combobox === combobox) {
+    clearActiveCombobox();
+  }
+
+  listBox.classList.toggle("show", isShown);
+  input.setAttribute("aria-expanded", isShown);
+  button.setAttribute("aria-expanded", isShown);
+  setAriaAttributes(isShown ? "false" : "true", isShown ? 0 : -1, listBox);
+  state.isShown = isShown;
+
+  const content = getComboboxElementListContent(combobox);
+  if (!content) return;
+
+  if (isShown) {
+    setComboboxListContent(listBox, content);
+    positionRelativeTo(input, listBox, 4);
+  } else {
+    clearActiveItems(listBox);
+    setComboboxListContent(listBox, "");
+  }
+};
+
+// ===========================================================
+// 7️⃣ EVENT INITIALIZATION
+// ===========================================================
+const handleInputKeydown = (input, listBox) =>
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      const first = listBox.querySelector("li:not(.hide)");
+      if (first) setActiveListItem(first, input, getAllListItems(listBox));
+    }
+  });
+
+const initializeFocusEvents = (listBox) => {
+  document.addEventListener("focusin", (e) => {
+    const combobox = e.target.closest(".combobox");
+    if (combobox) {
+      const input = getInputFromCombobox(combobox);
+      const button = getButtonFromCombobox(combobox);
+      const state = { isShown: false };
+      setActiveCombobox(combobox, input, button, state);
+      toggleListbox(combobox, true, listBox, button, input, state);
+    }
+  });
+
+  document.addEventListener("focusout", (e) => {
+    if (
+      activeCombobox &&
+      !activeCombobox.combobox.contains(e.relatedTarget) &&
+      !listBox.contains(e.relatedTarget)
+    ) {
+      const { combobox, button, input, state } = activeCombobox;
+      toggleListbox(combobox, false, listBox, button, input, state);
+    }
+  });
+};
+
+const initializeInputEvents = (listBox) => {
+  const onInput = debounce((e) => filterOptions(e.target.value.trim(), listBox), 300);
+  document.addEventListener("input", (e) => {
+    if (activeCombobox?.input === e.target) onInput(e);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (activeCombobox?.input === e.target) handleInputKeydown(e.target, listBox);
+  });
+};
+
+const initializeKeyboardEvents = (listBox) => {
+  listBox.addEventListener("keydown", (e) => {
+    if (!activeCombobox) return;
+    const { input, button, state, combobox } = activeCombobox;
+    handleKeyEvents(e, listBox, button, input, state, (show) =>
+      toggleListbox(combobox, show, listBox, button, input, state)
+    );
+  });
+};
+
+// ===========================================================
+// 8️⃣ GLOBAL CLICK HANDLERS
+// ===========================================================
+comboboxList.addEventListener("click", (e) => {
+  if (!activeCombobox) return;
+  const { combobox, input, button, state } = activeCombobox;
+  const li = e.target.closest("li");
+  if (li) {
+    input.value = getDivTextFromLiByPosition(li, 2);
+    filterOptions(input.value, comboboxList);
+    toggleListbox(combobox, false, comboboxList, button, input, state);
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    activeCombobox &&
+    !comboboxList.contains(e.target) &&
+    !activeCombobox.combobox.contains(e.target)
+  ) {
+    const { combobox, button, input, state } = activeCombobox;
+    toggleListbox(combobox, false, comboboxList, button, input, state);
+  }
+});
+
+// ===========================================================
+// 9️⃣ MAIN INITIALIZER
+// ===========================================================
+const initializeCombobox = (listBox) => {
+  initializeFocusEvents(listBox);
+  initializeInputEvents(listBox);
+  initializeKeyboardEvents(listBox);
+};
+
+// ===========================================================
+// 🔟 EXPORTABLE INITIALIZER
+// ===========================================================
+const Combobox = () => {
+  getComboboxElements().forEach((combobox) => {
+    const input = getInputFromCombobox(combobox);
+    const button = getButtonFromCombobox(combobox);
+    const state = { isShown: false };
+
+    // Button click toggles listbox
+    button.addEventListener("click", () => {
+      toggleListbox(combobox, !state.isShown, comboboxList, button, input, state);
+    });
+  });
+
+  initializeCombobox(comboboxList);
+};
+
+export default Combobox;
+
+        </code></pre>
+
+        <ul>
+          <li>
+            <h2>✅ Overview: What This Code Does</h2>
+            <ul>
+              <li>
+                This JavaScript code makes your **combobox work**: it’s an
+                interactive input field where users can type to filter employees
+                and select one from a dropdown.
+              </li>
+              <li>
+                It handles **accessibility**, **keyboard navigation**,
+                **filtering**, and **dynamic positioning** of the dropdown list.
+              </li>
+              <li>
+                The component is **modular**, so you can have multiple
+                comboboxes on the page using the same logic.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🧩 Modules & Dependencies</h2>
+            <ul>
+              <li>
+                <code>setAriaAttributes</code>: Updates accessibility attributes
+                like <code>aria-hidden</code> and <code>tabindex</code>.
+              </li>
+              <li>
+                <code>debounce</code>: Limits how often a function runs (used
+                for input filtering to avoid lag).
+              </li>
+              <li>
+                <code>positionRelativeTo</code>: Positions the floating dropdown
+                below the input field.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 1️⃣ DOM Utilities</h2>
+            <ul>
+              <li>
+                These functions help **find and manage elements** inside each
+                combobox: the input, button, list items, and active item.
+              </li>
+              <li>
+                Example: <code>getAllListItems(listBox)</code> returns an array
+                of all <code>&lt;li&gt;</code> items inside a listbox.
+              </li>
+              <li>
+                It also handles copying the HTML of the list from the combobox
+                into the shared floating listbox
+                (<code>setComboboxListContent</code>).
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 2️⃣ State Management</h2>
+            <ul>
+              <li>
+                Tracks which **item is currently active** (selected or
+                highlighted).
+              </li>
+              <li>
+                <code>setActiveListItem</code> highlights a list item, updates
+                the input value with the employee's name, and focuses it for
+                keyboard navigation.
+              </li>
+              <li>
+                <code>clearActiveItems</code> removes the highlight from all
+                items.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 3️⃣ Filtering</h2>
+            <ul>
+              <li>
+                <code>filterOptions(value, listBox)</code> checks every employee
+                <code>&lt;li&gt;</code> and hides ones that don't match what the
+                user typed.
+              </li>
+              <li>
+                It also automatically shows or hides the dropdown depending on
+                whether any results match.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 4️⃣ Keyboard Navigation</h2>
+            <ul>
+              <li>
+                Users can navigate the list using the keyboard arrows,
+                <code>Home</code>, <code>End</code>, and select with
+                <code>Enter</code>.
+              </li>
+              <li>
+                <code>handleKeyEvents</code> listens for these keys and updates
+                which list item is active.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 5️⃣ Active Combobox Tracking</h2>
+            <ul>
+              <li>Only one combobox can be “active” at a time.</li>
+              <li>
+                <code>activeCombobox</code> keeps track of the currently open
+                combobox, so other comboboxes close automatically.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 6️⃣ Toggle & Position Listbox</h2>
+            <ul>
+              <li>
+                <code>toggleListbox</code> shows or hides the dropdown, updates
+                accessibility attributes, and positions it below the input.
+              </li>
+              <li>
+                It also fills the floating listbox with the HTML content from
+                the combobox.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 7️⃣ Event Initialization</h2>
+            <ul>
+              <li>
+                Sets up **input events** like typing (filtering), keyboard
+                events, and **focus events** to open the dropdown when the input
+                is focused.
+              </li>
+              <li>
+                Example: When typing, <code>debounce</code> ensures filtering
+                doesn’t happen on every keystroke, only after the user pauses
+                briefly.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 8️⃣ Global Click Handlers</h2>
+            <ul>
+              <li>Detects clicks on list items to select an employee.</li>
+              <li>
+                Closes the dropdown if the user clicks outside the combobox.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 9️⃣ Main Initializer</h2>
+            <ul>
+              <li>
+                <code>initializeCombobox</code> sets up all the events so the
+                combobox works properly.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2>🔹 🔟 Exportable Component</h2>
+            <ul>
+              <li>
+                <code>Combobox()</code> is the function you call to make all
+                comboboxes on the page interactive.
+              </li>
+              <li>
+                It loops through each combobox, attaches the **button click
+                toggle**, and initializes filtering, keyboard, and focus events.
+              </li>
+
+              <li>
+                For more information about JavaScript integration, visit the
+                documentation
+                <a href="javascript.html">[here]</a>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <ul class="combobox__list" role="listbox"></ul>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

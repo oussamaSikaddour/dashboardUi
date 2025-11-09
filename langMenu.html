@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Lang Menu | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="img/logo.ico" />
+    
+    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
+    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+    <link rel="stylesheet" href="./assets/style-e408b1ef.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+
+        <div class="lang__menu__container">
+          <button
+            id="menuLangbutton"
+            aria-haspopup="true"
+            aria-controls="menu"
+            class="lang__btn button rounded"
+          ></button>
+          <ul
+            id="langMenu"
+            role="menu"
+            aria-labelledby="menubutton"
+            class="lang__menu"
+          ></ul>
+        </div>
+      </nav>
+    </header>
+
+    <!--                       --------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------                            Nav Phone--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+ -->
+
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="navPhone"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+    <!-- Nav Phone -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">main navigation for phone</h2>
+
+      <ul class="nav__items" id="navPhone" hidden role="menubar">
+        <li class="nav__item" role="none">
+          <a class="nav__link" href="index.html" tabindex="0">home</a>
+        </li>
+        <div class="lang__menu__container">
+          <button
+            id="menuLangbutton"
+            aria-haspopup="true"
+            aria-controls="menu"
+            class="lang__btn button"
+          ></button>
+          <ul
+            id="langMenu"
+            role="menu"
+            aria-labelledby="menubutton"
+            class="lang__menu"
+          ></ul>
+        </div>
+      </ul>
+    </nav>
+
+    <main class="container container--fit">
+      <section class="section" id="lang-layout">
+        <h2>Language Menu</h2>
+
+        <p>
+          The <code>.lang</code> component provides a language selector that can
+          toggle a dropdown list of available languages. It adapts for both
+          desktop and mobile navigation through the
+          <code>.nav--phone</code> context.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.lang</strong> — flex container that aligns the language
+            button and icon horizontally with spacing.
+          </li>
+          <li>
+            <strong>.lang__btn</strong> — the button that triggers the language
+            dropdown. It can contain a flag, language code, or label.
+          </li>
+          <li>
+            <strong>.lang__menu</strong> — dropdown menu listing available
+            languages, positioned absolutely relative to the button.
+          </li>
+          <li>
+            <strong>.lang__menu__item</strong> — individual language option with
+            hover states and rounded borders.
+          </li>
+          <li>
+            <strong>.lang__menu.open</strong> — visible state of the dropdown
+            menu when the user opens it.
+          </li>
+          <li>
+            <strong>.nav--phone .lang</strong> — mobile adaptation that makes
+            the language selector span full width and integrates with the mobile
+            nav design.
+          </li>
+        </ul>
+
+        <p>
+          The language menu provides accessible focus styles and ensures visual
+          consistency across breakpoints, using CSS variables like
+          <code>--br</code>, <code>--clr-light</code>, and
+          <code>--clr-primary</code>.
+        </p>
+        <p>
+          Users can navigate Language Menu using the
+          <strong>Tab</strong> key, and select options with
+          <strong>Enter</strong> or <strong>Spacebar</strong>. Detailed
+          instructions for integrating JavaScript functionality are available
+          <a href="javascript.html">here</a>.
+        </p>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+&lt;div class="lang__menu__container"&gt;
+  &lt;button class="lang__btn" aria-haspopup="true" aria-expanded="false"&gt;
+    &lt;img src="assets/img/flags/en.png" alt="English flag" /&gt;
+    &lt;p&gt;EN&lt;/p&gt;
+  &lt;/button&gt;
+
+  &lt;div class="lang__menu"&gt;
+    &lt;div class="lang__menu__item"&gt;EN&lt;/div&gt;
+    &lt;div class="lang__menu__item"&gt;FR&lt;/div&gt;
+    &lt;div class="lang__menu__item"&gt;AR&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <p><strong>CSS :</strong></p>
+
+        <pre><code class="language--css">
+/* ---------------------- */
+/* Base Language Styles   */
+/* ---------------------- */
+
+.lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.lang__btn:focus {
+  border-width: 0.2rem;
+  border-color: #CED0D4;
+}
+
+.lang__btn p {
+  font-weight: bold;
+}
+
+.lang__btn img {
+  display: none;
+}
+
+.lang img {
+  height: 1.5rem;
+  width: 2.2rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border: 0.1rem solid #087EA4;
+}
+
+.lang__menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--clr-light);
+  color: var(--clr-primary);
+  bottom: -6rem;
+  left: -1.5rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: var(--br);
+  z-index: 1;
+  box-shadow: var(--div-shadow);
+}
+
+.lang__menu__container {
+  position: relative;
+}
+
+.lang__menu.open {
+  display: flex;
+}
+
+.lang__menu__item {
+  padding: 0.25rem 0.5rem;
+  min-height: 2rem;
+  min-width: 5rem;
+}
+
+.lang__menu__item:not(:last-of-type) {
+  border-bottom: 0.2rem solid var(--clr-bg);
+}
+
+.lang__menu__item:hover {
+  background-color: #E9EAF4;
+}
+
+.lang__menu__item:hover:first-of-type {
+  border-top-right-radius: var(--br);
+  border-top-left-radius: var(--br);
+}
+
+.lang__menu__item:hover:last-of-type {
+  border-bottom-right-radius: var(--br);
+  border-bottom-left-radius: var(--br);
+}
+
+/* ---------------------- */
+/* Mobile Navigation Mode */
+/* ---------------------- */
+
+.nav--phone .lang__btn {
+  max-width: unset;
+  width: 100%;
+  border-radius: unset;
+  border-bottom-left-radius: var(--br);
+  background-color: rgb(4.4418604651, 69.9593023256, 91.0581395349);
+  color: var(--clr-light);
+}
+
+.nav--phone .lang__btn img {
+  display: block;
+}
+
+.nav--phone .lang__btn.open {
+  border-radius: unset;
+}
+
+.nav--phone .lang__menu__item:hover:first-of-type,
+.nav--phone .lang__menu__item:hover:last-of-type {
+  border-radius: unset;
+}
+
+.nav--phone .lang {
+  width: 100%;
+  justify-content: space-between;
+  height: 4.5rem;
+  border-radius: unset;
+}
+
+.nav--phone .lang__menu {
+  width: 100%;
+  bottom: -10rem;
+  left: 0;
+  border-radius: unset;
+  border: var(--border);
+  border-bottom-left-radius: var(--br);
+}
+</code></pre>
+
+        <p><strong>JS:</strong></p>
+
+        <pre><code class="language--js">
+
+// Import key event handler helper and custom event dispatcher
+
+import { dispatchCustomEvent } from "../utils/DespatchCustomEvent";
+
+import { handleKeyEvents } from "../utils/KeyEventHandlers";
+
+
+// Storage management
+
+const saveLanguageToStorage = (language) => {
+  localStorage.setItem('language', language);
+};
+
+
+const getLanguageFromStorage = () => {
+  return localStorage.getItem('language') || 'Fr'; // Default to French
+};
+
+// DOM manipulation utilities
+
+const toggleRtlClass = (language) => {
+  document.documentElement.classList.toggle('rtl', language === 'Ar');
+
+};
+
+const setAriaAttributes = (langBtn, langMenu, isOpen) => {
+
+  langBtn.setAttribute("aria-expanded", isOpen);
+
+  langMenu.setAttribute("aria-hidden", !isOpen);
+
+};
+
+
+const toggleMenuVisibility = (langBtn, langMenu) => {
+
+  const isOpen = langMenu.classList.toggle("open");
+
+  setAriaAttributes(langBtn, langMenu, isOpen);
+
+  return isOpen;
+
+};
+
+// Language data utilities
+
+const findLanguageIndex = (languageCode, languages) => {
+
+  return languages.findIndex((language) => language.lang === languageCode);
+
+};
+
+const getSelectedLanguage = (languageCode, languages) => {
+
+  const index = findLanguageIndex(languageCode, languages);
+
+  return languages[index];
+
+};
+
+const getRemainingLanguages = (selectedLang, languages) => {
+
+  return languages.filter((language) => language.lang !== selectedLang);
+
+};
+
+// UI rendering functions
+
+const createLanguageButtonHTML = (language) => {
+
+  return `
+
+     &lt;div class="lang" &gt;
+
+       &lt;p &gt;${language.lang} &lt;/p &gt;
+
+       &lt;img src="${language.flag}" alt="${language.lang} language" / &gt;
+
+     &lt;/div &gt;
+
+  `;
+
+};
+
+const createMenuItemHTML = (language) => {
+
+  return `
+
+     &lt;li role="menuitem" class="lang__menu__item" tabindex="0" &gt;
+
+       &lt;div class="lang" &gt;
+
+         &lt;p &gt;${language.lang} &lt;/p &gt;
+
+         &lt;img src="${language.flag}" alt="${language.lang} language" / &gt;
+
+       &lt;/=div &gt;
+
+     &lt;/li &gt;
+
+  `;
+};
+
+const updateLanguageButtons = (selectedLanguage, langBtns) => {
+
+  langBtns.forEach((langBtn) => {
+
+    langBtn.innerHTML = createLanguageButtonHTML(selectedLanguage);
+
+  });
+
+};
+
+const updateLanguageMenus = (remainingLanguages, langMenus) => {
+
+  langMenus.forEach(langMenu => {
+
+    langMenu.innerHTML = remainingLanguages.map(createMenuItemHTML).join("");
+
+  });
+
+};
+
+// Language preference management
+
+const setLanguagePreference = (language) => {
+
+  saveLanguageToStorage(language);
+
+  toggleRtlClass(language);
+
+};
+
+const populateLangMenu = (languages, selectedLang) => {
+
+  const selectedLanguage = getSelectedLanguage(selectedLang, languages);
+
+  const remainingLanguages = getRemainingLanguages(selectedLang, languages);
+
+
+  const langMenus = document.querySelectorAll(".lang__menu");
+
+  const langBtns = document.querySelectorAll(".lang__btn");
+
+
+  updateLanguageButtons(selectedLanguage, langBtns);
+
+  updateLanguageMenus(remainingLanguages, langMenus);
+
+  setLanguagePreference(selectedLang);
+
+};
+
+// Event handlers
+
+const handleLangBtnClick = (langBtn, langMenu) => {
+
+  toggleMenuVisibility(langBtn, langMenu);
+
+  const langMenuItems = Array.from(langMenu.querySelectorAll('.lang__menu__item'));
+
+  langMenuItems[1]?.focus(); // Optional: focus second item after opening
+
+};
+
+const getSelectedLanguageFromMenuItem = (menuItem) => {
+
+  return menuItem?.querySelector("p").textContent;
+
+};
+
+const selectLanguage = (index, langBtn, langMenu, languages) => {
+
+  const langMenuItems = Array.from(langMenu.querySelectorAll('.lang__menu__item'));
+
+  const selectedLang = getSelectedLanguageFromMenuItem(langMenuItems[index]);
+
+
+  populateLangMenu(languages, selectedLang);
+
+  toggleMenuVisibility(langBtn, langMenu);
+
+  langBtn.focus();
+
+
+  dispatchCustomEvent("set-locale", { lang: selectedLang });
+
+};
+
+const handleMenuItemInteraction = (event, langBtn, langMenu, languages) => {
+
+  const langMenuItem = event.target.closest('.lang__menu__item');
+
+  if (!langMenuItem) return;
+
+
+  const langMenuItems = Array.from(langMenu.querySelectorAll('.lang__menu__item'));
+
+  const index = langMenuItems.indexOf(langMenuItem);
+
+
+  if (event.type === "keydown") {
+
+    handleKeyEvents(event, index, () => selectLanguage(index, langBtn, langMenu, languages), langMenuItems);
+
+  } else if (event.type === "click") {
+
+    selectLanguage(index, langBtn, langMenu, languages);
+
+  }
+
+};
+
+// Initialization functions
+
+const initializeLanguageMenu = (langMenuContainer, languages) => {
+
+  const langMenu = langMenuContainer.querySelector(".lang__menu");
+
+  const langBtn = langMenuContainer.querySelector(".lang__btn");
+
+
+  if (!langBtn) return;
+
+
+  const selectedLang = getLanguageFromStorage();
+
+  populateLangMenu(languages, selectedLang);
+
+
+  langBtn.addEventListener('click', () => handleLangBtnClick(langBtn, langMenu));
+
+
+  const eventHandler = (event) => {
+
+    handleMenuItemInteraction(event, langBtn, langMenu, languages);
+
+  };
+
+  langMenuContainer.addEventListener('keydown', eventHandler);
+
+  langMenuContainer.addEventListener('click', eventHandler);
+
+};
+
+// Main function that initializes all language menus on the page
+
+const Lang = () => {
+
+  const languages = [
+
+    { lang: 'En', flag: './assets/img/en.png' },
+
+    { lang: 'Fr', flag: './assets/img/fr.png' },
+
+    { lang: 'Ar', flag: './assets/img/ar.png' },
+
+  ];
+
+  const langMenuContainers = document.querySelectorAll(".lang__menu__container");
+
+  langMenuContainers.forEach(langMenuContainer => {
+
+    initializeLanguageMenu(langMenuContainer, languages);
+
+  });
+  
+};
+
+
+export default Lang;
+
+
+    </code></pre>
+      </section>
+    </main>
+    <!-- breadcrumb -->
+    
+  </body>
+</html>

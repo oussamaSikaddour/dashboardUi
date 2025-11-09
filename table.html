@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Badge | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="./assets/Logo-14f4ddeb.ico" />
+    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
+    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Table</h1>
+        <div class="table__container">
+          <div class="table__header">
+            <h3>Table Header</h3>
+            <div class="table__header__actions">
+              <div
+                class="file__input__group icon_only hasTooltip"
+                role="input"
+                tabindex="0"
+              >
+                <span class="tooltip__content">Upload File</span>
+                <button class="button rounded">
+                  <i class="fa-solid fa-file-import"></i>
+                </button>
+                <input type="file" name="myfile" />
+              </div>
+
+              <button
+                class="button rounded hasTooltip"
+                id="tabel-to-excel-btn"
+                aria-label="export data to excel"
+              >
+                <span class="tooltip__content">
+                  telecharger fichier Excel
+                </span>
+                <i class="fa-solid fa-file-excel"></i>
+              </button>
+              <button
+                class="button rounded hasTooltip table__form__opener button--primary"
+                id="table-add-new"
+                aria-label="add New"
+              >
+                <span class="tooltip__content"> Add New </span>
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <button
+                class="button rounded table__filters__btn hasTooltip"
+                id="filter"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="tableFilters"
+              >
+                <span class="tooltip__content"> Manage Filters </span>
+                <i class="fa-solid fa-filter"></i>
+              </button>
+
+              <div class="select__group hasTooltip">
+                <span class="tooltip__content">Per Page</span>
+                <div class="select">
+                  <select id="perPageId" aria-invalid="false">
+                    <option value="25" selected disabled>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="table__form"
+            id="tableForm"
+            role="menu"
+            aria-labelledby="filter"
+          >
+            <div class="form__container">
+              <form class="form" method="POST">
+                <div class="row">
+                  <div class="column">
+                    <div class="input__item">
+                      <div class="input__group">
+                        <input
+                          type="text"
+                          class="input"
+                          placeholder="Name"
+                          name="name"
+                          id="nameId"
+                          required
+                        />
+                        <label for="nameId" class="input__label">Name</label>
+                        <span class="input__span"
+                          ><i class="fa-solid fa-user"></i
+                        ></span>
+                      </div>
+                      <div class="input__error">
+                        ⚠ Example error message to demonstrate form validation
+                      </div>
+                    </div>
+                    <div class="input__item">
+                      <div class="input__group">
+                        <input
+                          type="text"
+                          class="input"
+                          placeholder="Email"
+                          name="email"
+                          id="emailId"
+                          required
+                        />
+                        <label for="emailId" class="input__label">Email</label>
+                        <span class="input__span"
+                          ><i class="fa-solid fa-message"></i
+                        ></span>
+                      </div>
+                      <div class="input__error">
+                        ⚠ Example error message to demonstrate form validation
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="file__input__item" role="input">
+                      <div class="image__input__group profile-image">
+                        <button class="button">
+                          <img
+                            src="./assets/default-50586b64.png"
+                            alt="defaultImg"
+                            class="image__input__placeholder"
+                          />
+                          <img
+                            src="./assets/camera-0f2be4f5.png"
+                            class="image__input__button"
+                          />
+                        </button>
+                        <input type="file" name="myfile" />
+                      </div>
+
+                      <div class="input__error">
+                        ⚠ Example error message to demonstrate form validation
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="checkbox__group">
+                    <h2 id="checkbox-choices" class="sr-only">
+                      List des choix
+                    </h2>
+                    <div
+                      class="choices"
+                      role="group"
+                      aria-labelledby="checkbox-choices"
+                    >
+                      <input
+                        type="checkbox"
+                        id="optionOneId"
+                        name="options"
+                        value="option-1"
+                        aria-checked="false"
+                        aria-describedby="option-error"
+                      />
+                      <label for="optionOneId" tabindex="0">Option One</label>
+
+                      <input
+                        type="checkbox"
+                        id="optionTwoId"
+                        name="options"
+                        value="option-2"
+                        aria-checked="false"
+                        aria-describedby="option-error"
+                      />
+                      <label for="optionTwoId" tabindex="0">Option Two</label>
+
+                      <input
+                        type="checkbox"
+                        id="optionThreeId"
+                        name="options"
+                        value="option-3"
+                        aria-checked="false"
+                        aria-describedby="option-error"
+                      />
+                      <label for="optionThreeId" tabindex="0"
+                        >Option Three</label
+                      >
+                    </div>
+                    <div id="option-error" class="input__error">
+                      ⚠ Example error message to demonstrate form validation
+                    </div>
+                  </div>
+                </div>
+                <div class="form__actions">
+                  <div>
+                    <button class="button button--primary" type="submit">
+                      Save
+
+                      <div class="loader xs">
+                        <div class="loader__circle"></div>
+                        <div class="loader__circle"></div>
+                      </div>
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      class="button button--danger hasTooltip table__form__close rounded"
+                    >
+                      <span class="tooltip__content">close Form</span>
+                      <i class="fa-solid fa-arrows-up-to-line"></i>
+                    </button>
+
+                    <button class="button button--warning hasTooltip rounded">
+                      <span class="tooltip__content">Rest From</span>
+                      <i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div
+            class="table__filters"
+            id="tableFilters"
+            role="menu"
+            aria-labelledby="filter"
+          >
+            <div class="form__container">
+              <form class="form" method="POST">
+                <div class="row">
+                  <div class="input__item">
+                    <div class="input__group">
+                      <input
+                        type="text"
+                        class="input"
+                        placeholder="Name"
+                        name="name"
+                        id="nameIdF"
+                        required
+                      />
+                      <label for="nameIdF" class="input__label">Name</label>
+                      <span class="input__span"
+                        ><i class="fa-solid fa-user"></i
+                      ></span>
+                    </div>
+                    <div class="input__error">
+                      ⚠ Example error message to demonstrate form validation
+                    </div>
+                  </div>
+                  <div class="input__item">
+                    <div class="input__group">
+                      <input
+                        type="text"
+                        class="input"
+                        placeholder="Email"
+                        name="email"
+                        id="emailIdF"
+                        required
+                      />
+                      <label for="emailIdF" class="input__label">Email</label>
+                      <span class="input__span"
+                        ><i class="fa-solid fa-message"></i
+                      ></span>
+                    </div>
+                    <div class="input__error">
+                      ⚠ Example error message to demonstrate form validation
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form__actions">
+                  <button class="button rounded button--primary hasTooltip">
+                    <span class="tooltip__content"> reset Filters </span>
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="table__body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"><div>actions</div></th>
+                  <th scope="col">
+                    <div>Last Name<i class="fa-solid fa-sort"></i></div>
+                  </th>
+                  <th scope="col">
+                    <div>First Name<i class="fa-solid fa-sort"></i></div>
+                  </th>
+                  <th scope="col">
+                    <div>Email<i class="fa-solid fa-sort"></i></div>
+                  </th>
+                  <th scope="col">
+                    <div>Address<i class="fa-solid fa-sort"></i></div>
+                  </th>
+                  <th scope="col">
+                    <div>Phone<i class="fa-solid fa-sort"></i></div>
+                  </th>
+                  <th scope="col">
+                    <div>Status <i class="fa-solid fa-sort"></i></div>
+                  </th>
+
+                  <th scope="col">
+                    <div>Image</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-1"
+                        aria-label="Delete Person-1"
+                      >
+                        <span class="tooltip__content">Delete Williams</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-1"
+                        aria-label="Update Person-1"
+                      >
+                        <span class="tooltip__content">Update Williams</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Williams</td>
+                  <td>Michael</td>
+                  <td>michael.w@email.com</td>
+                  <td>789 Pine Rd, Chicago, IL</td>
+                  <td>(555) 345-6789</td>
+                  <td class="warning">Pending</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-1-29ae7ee9.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-2"
+                        aria-label="Delete Person-2"
+                      >
+                        <span class="tooltip__content">Delete Smith</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-2"
+                        aria-label="Update Person-2"
+                      >
+                        <span class="tooltip__content">Update Smith</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Smith</td>
+                  <td>Emma</td>
+                  <td>emma.smith@email.com</td>
+                  <td>123 Maple St, New York, NY</td>
+                  <td>(555) 111-2233</td>
+                  <td class="warning">Pending</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-2-c5e18c6d.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-3"
+                        aria-label="Delete Person-3"
+                      >
+                        <span class="tooltip__content">Delete Johnson</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-3"
+                        aria-label="Update Person-3"
+                      >
+                        <span class="tooltip__content">Update Johnson</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Johnson</td>
+                  <td>Oliver</td>
+                  <td>oliver.j@email.com</td>
+                  <td>456 Oak Ave, Dallas, TX</td>
+                  <td>(555) 987-6543</td>
+                  <td class="success">active</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-3-95e2b600.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-4"
+                        aria-label="Delete Person-4"
+                      >
+                        <span class="tooltip__content">Delete Brown</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-4"
+                        aria-label="Update Person-4"
+                      >
+                        <span class="tooltip__content">Update Brown</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Brown</td>
+                  <td>Sophia</td>
+                  <td>sophia.b@email.com</td>
+                  <td>321 Cedar Ln, Miami, FL</td>
+                  <td>(555) 222-3344</td>
+                  <td class="success">Active</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-4-a8d4f3e0.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-5"
+                        aria-label="Delete Person-5"
+                      >
+                        <span class="tooltip__content">Delete Jones</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-5"
+                        aria-label="Update Person-5"
+                      >
+                        <span class="tooltip__content">Update Jones</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Jones</td>
+                  <td>Lucas</td>
+                  <td>lucas.j@email.com</td>
+                  <td>999 Elm Blvd, Seattle, WA</td>
+                  <td>(555) 333-4455</td>
+                  <td class="danger">Inactive</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-5-d7ef2087.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-6"
+                        aria-label="Delete Person-6"
+                      >
+                        <span class="tooltip__content">Delete Davis</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-6"
+                        aria-label="Update Person-6"
+                      >
+                        <span class="tooltip__content">Update Davis</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Davis</td>
+                  <td>Ava</td>
+                  <td>ava.d@email.com</td>
+                  <td>14 Birch St, Denver, CO</td>
+                  <td>(555) 444-5566</td>
+                  <td class="success">active</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-6-16146e0d.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-7"
+                        aria-label="Delete Person-7"
+                      >
+                        <span class="tooltip__content">Delete Garcia</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-7"
+                        aria-label="Update Person-7"
+                      >
+                        <span class="tooltip__content">Update Garcia</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Garcia</td>
+                  <td>Noah</td>
+                  <td>noah.g@email.com</td>
+                  <td>77 Pineview Dr, Austin, TX</td>
+                  <td>(555) 555-6677</td>
+                  <td class="warning">Pending</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-7-345e3ac6.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-8"
+                        aria-label="Delete Person-8"
+                      >
+                        <span class="tooltip__content">Delete Miller</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-8"
+                        aria-label="Update Person-8"
+                      >
+                        <span class="tooltip__content">Update Miller</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Miller</td>
+                  <td>Charlotte</td>
+                  <td>charlotte.m@email.com</td>
+                  <td>42 Palm Rd, Phoenix, AZ</td>
+                  <td>(555) 666-7788</td>
+                  <td class="success">active</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-8-1140b87c.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-9"
+                        aria-label="Delete Person-9"
+                      >
+                        <span class="tooltip__content">Delete Wilson</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-9"
+                        aria-label="Update Person-9"
+                      >
+                        <span class="tooltip__content">Update Wilson</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Wilson</td>
+                  <td>James</td>
+                  <td>james.w@email.com</td>
+                  <td>65 Bay St, San Diego, CA</td>
+                  <td>(555) 777-8899</td>
+                  <td class="danger">inactive</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-9-400cc508.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-10"
+                        aria-label="Delete Person-10"
+                      >
+                        <span class="tooltip__content">Delete Martinez</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-10"
+                        aria-label="Update Person-10"
+                      >
+                        <span class="tooltip__content">Update Martinez</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Martinez</td>
+                  <td>Amelia</td>
+                  <td>amelia.m@email.com</td>
+                  <td>301 Ridge Ave, Atlanta, GA</td>
+                  <td>(555) 888-9900</td>
+                  <td class="warning">Pending</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-10-34b6499f.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-11"
+                        aria-label="Delete Person-11"
+                      >
+                        <span class="tooltip__content">Delete Anderson</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-11"
+                        aria-label="Update Person-11"
+                      >
+                        <span class="tooltip__content">Update Anderson</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Anderson</td>
+                  <td>Harper</td>
+                  <td>harper.a@email.com</td>
+                  <td>505 Willow Way, Boston, MA</td>
+                  <td>(555) 999-0011</td>
+                  <td class="danger">inactive</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-11-8b613a50.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <button
+                        class="button rounded hasTooltip button--danger"
+                        id="delete-person-12"
+                        aria-label="Delete Person-12"
+                      >
+                        <span class="tooltip__content">Delete Thompson</span>
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                      <button
+                        class="button rounded hasTooltip table__form__opener button--info"
+                        id="update-person-12"
+                        aria-label="Update Person-12"
+                      >
+                        <span class="tooltip__content">Update Thompson</span>
+                        <i class="fa-solid fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>Thompson</td>
+                  <td>Ella</td>
+                  <td>ella.t@email.com</td>
+                  <td>777 Grove Rd, Portland, OR</td>
+                  <td>(555) 000-1122</td>
+                  <td class="success">active</td>
+                  <td>
+                    <div class="table__img__preview rounded">
+                      <img
+                        src="./assets/person-12-2e4b3547.png"
+                        alt="Profile"
+                        class="avatar"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination__container">
+            <nav
+              role="navigation"
+              aria-label="Pagination Navigation"
+              class="pagination"
+            >
+              <div class="pagination__content">
+                <div class="pagination__info">
+                  <p>
+                    Showing
+                    <strong>1</strong>
+                    to
+                    <strong>2</strong>
+                    of
+                    <strong>3</strong>
+                    results
+                  </p>
+                </div>
+
+                <div class="pagination__links">
+                  <button
+                    type="button"
+                    class="button"
+                    aria-label="First page"
+                    disabled
+                  >
+                    <i class="fa-solid fa-angles-left"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="button"
+                    aria-label="Previous page"
+                    disabled
+                  >
+                    <i class="fa-solid fa-angle-left"></i>
+                  </button>
+
+                  <button type="button" class="button" aria-label="Next page">
+                    <i class="fa-solid fa-angle-right"></i>
+                  </button>
+
+                  <button type="button" class="button" aria-label="Last page">
+                    <i class="fa-solid fa-angles-right"></i>
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <h3>Html Markup</h3>
+        <pre><code class="language--html">
+&lt;div class="table__container"&gt;
+  &lt;div class="table__header"&gt;
+    &lt;h3&gt;Table Header&lt;/h3&gt;
+    &lt;div class="table__header__actions"&gt;
+      &lt;div class="file__input__group icon_only hasTooltip" role="input" tabindex="0"&gt;
+        &lt;span class="tooltip__content"&gt;Upload File&lt;/span&gt;
+        &lt;button class="button rounded"&gt;
+          &lt;i class="fa-solid fa-file-import"&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;input type="file" name="myfile" /&gt;
+      &lt;/div&gt;
+
+      &lt;button class="button rounded hasTooltip" id="tabel-to-excel-btn" aria-label="export data to excel"&gt;
+        &lt;span class="tooltip__content"&gt;telecharger fichier Excel&lt;/span&gt;
+        &lt;i class="fa-solid fa-file-excel"&gt;&lt;/i&gt;
+      &lt;/button&gt;
+
+      &lt;button class="button rounded hasTooltip table__form__opener button--primary" id="table-add-new" aria-label="add New"&gt;
+        &lt;span class="tooltip__content"&gt;Add New&lt;/span&gt;
+        &lt;i class="fa-solid fa-plus"&gt;&lt;/i&gt;
+      &lt;/button&gt;
+
+      &lt;button class="button rounded table__filters__btn hasTooltip" id="filter" aria-haspopup="true" aria-expanded="false" aria-controls="tableFilters"&gt;
+        &lt;span class="tooltip__content"&gt;Manage Filters&lt;/span&gt;
+        &lt;i class="fa-solid fa-filter"&gt;&lt;/i&gt;
+      &lt;/button&gt;
+
+      &lt;div class="select__group hasTooltip"&gt;
+        &lt;span class="tooltip__content"&gt;Per Page&lt;/span&gt;
+        &lt;div class="select"&gt;
+          &lt;select id="perPageId" aria-invalid="false"&gt;
+            &lt;option value="25" selected disabled&gt;25&lt;/option&gt;
+            &lt;option value="50"&gt;50&lt;/option&gt;
+            &lt;option value="100"&gt;100&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="table__form" id="tableForm" role="menu" aria-labelledby="filter"&gt;
+    form for add or update ... here
+  &lt;/div&gt;
+
+  &lt;div class="table__filters" id="tableFilters" role="menu" aria-labelledby="filter"&gt;
+    form for filters
+  &lt;/div&gt;
+
+  &lt;div class="table__body"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Actions&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Last Name&lt;i class="fa-solid fa-sort"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;First Name&lt;i class="fa-solid fa-sort"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Email&lt;i class="fa-solid fa-sort"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Address&lt;i class="fa-solid fa-sort"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Phone&lt;i class="fa-solid fa-sort"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Status&lt;i class="fa-solid fa-sort"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/th&gt;
+          &lt;th scope="col"&gt;&lt;div&gt;Image&lt;/div&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;div&gt;
+              &lt;button class="button rounded hasTooltip button--danger" id="delete-person-1" aria-label="Delete Person-1"&gt;
+                &lt;span class="tooltip__content"&gt;Delete Williams&lt;/span&gt;
+                &lt;i class="fa-solid fa-trash"&gt;&lt;/i&gt;
+              &lt;/button&gt;
+              &lt;button class="button rounded hasTooltip table__form__opener button--info" id="update-person-1" aria-label="Update Person-1"&gt;
+                &lt;span class="tooltip__content"&gt;Update Williams&lt;/span&gt;
+                &lt;i class="fa-solid fa-edit"&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td&gt;Williams&lt;/td&gt;
+          &lt;td&gt;Michael&lt;/td&gt;
+          &lt;td&gt;michael.w@email.com&lt;/td&gt;
+          &lt;td&gt;789 Pine Rd, Chicago, IL&lt;/td&gt;
+          &lt;td&gt;(555) 345-6789&lt;/td&gt;
+          &lt;td&gt;&lt;span class="badge badge--warning"&gt;Pending&lt;/span&gt;&lt;/td&gt;
+          &lt;td&gt;
+            &lt;div class="table__img__preview rounded"&gt;
+              &lt;img src="assets/img/default/person-1.png" alt="Profile" class="avatar"/&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pagination__container"&gt;
+    &lt;nav role="navigation" aria-label="Pagination Navigation" class="pagination"&gt;
+      &lt;div class="pagination__content"&gt;
+        &lt;div class="pagination__info"&gt;
+          &lt;p&gt;
+            Showing &lt;strong&gt;1&lt;/strong&gt; to &lt;strong&gt;2&lt;/strong&gt; of &lt;strong&gt;3&lt;/strong&gt; results
+          &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="pagination__links"&gt;
+          &lt;button type="button" class="button" aria-label="First page" disabled&gt;&lt;i class="fa-solid fa-angles-left"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;button type="button" class="button" aria-label="Previous page" disabled&gt;&lt;i class="fa-solid fa-angle-left"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;button type="button" class="button" aria-label="Next page"&gt;&lt;i class="fa-solid fa-angle-right"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;button type="button" class="button" aria-label="Last page"&gt;&lt;i class="fa-solid fa-angles-right"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <h3>Css</h3>
+        <pre>
+  <code class="language--css">
+
+    .table__container {
+  position: relative;
+  margin-top: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  max-width: 95vw;
+  margin-inline: auto;
+  justify-content: start;
+  flex-direction: column;
+}
+.table__container select {
+  max-width: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.table__container .pagination__container {
+  border-radius: unset;
+  border-bottom-left-radius: var(--br);
+  border-bottom-right-radius: var(--br);
+}
+
+.table__img__preview {
+  max-width: 10rem;
+  max-height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  border-radius: var(--br);
+  box-shadow: var(--div-shadow);
+}
+.table__img__preview.rounded {
+  width: 10rem;
+  height: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.table__img__preview.rounded img {
+  border-radius: 50%;
+}
+.table__img__preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+.table__img__preview img:hover {
+  transform: scale(1.05);
+}
+
+.table__filters {
+  background-color: var(--clr-bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.table__filters.open {
+  opacity: 1;
+  padding: 1rem;
+  overflow: visible;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  border: var(--border);
+  border-top: unset;
+}
+.table__filters > .form__container {
+  box-shadow: var(--div-shadow);
+}
+
+.table__form {
+  background-color: var(--clr-bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.table__form.open {
+  opacity: 1;
+  padding: 1rem;
+  overflow: visible;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  border: var(--border);
+  border-top: unset;
+}
+.table__form > .form__container {
+  box-shadow: var(--div-shadow);
+}
+
+.table__header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: unset;
+  gap: 0.5rem;
+}
+@media (min-width: 48em) {
+  .table__header__actions {
+    margin-left: auto;
+  }
+}
+
+.table {
+  margin: 0 auto;
+  padding: 0;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+.table thead {
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.table tr {
+  background-color: var(--clr-light);
+}
+.table tr:last-of-type .toolTip {
+  bottom: unset;
+  top: -95%;
+}
+.table tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: var(--br);
+}
+.table tr:nth-child(even) {
+  background-color: #E9EAF4;
+}
+.table tr:hover {
+  background-color: #E9EAF4;
+}
+.table th,
+.table td {
+  color: var(--clr-font);
+  font-size: var(--fs);
+  text-align: left;
+  height: 5rem;
+  white-space: nowrap;
+}
+.table th > div,
+.table td > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+.table td {
+  font-size: var(--fs);
+  transition: color 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+.table td.danger {
+  background-color: var(--clr-danger);
+  font-weight: bold;
+  color: var(--clr-light);
+}
+.table td.success {
+  background-color: var(--clr-success);
+  font-weight: bold;
+  color: var(--clr-dark);
+}
+.table td.warning {
+  background-color: var(--clr-warning);
+  font-weight: bold;
+  color: var(--clr-dark);
+}
+.table th {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  background-color: #087EA4;
+  color: var(--clr-light);
+}
+.table th > div {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.table__header {
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  align-items: center;
+  border-top-left-radius: var(--br);
+  border-top-right-radius: var(--br);
+  background-color: var(--clr-light);
+  border: var(--border);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.table__header h3 {
+  display: none;
+}
+@media (min-width: 48em) {
+  .table__header h3 {
+    display: block;
+  }
+}
+
+.table__body {
+  position: relative;
+  max-height: 80vh;
+  overflow: auto;
+  border: var(--border);
+  border-bottom: unset;
+  border-top: unset;
+}
+
+.table__footer {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--clr-light);
+  border: var(--border);
+  border-bottom-left-radius: var(--br);
+  border-bottom-right-radius: var(--br);
+  min-height: 5rem;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+}
+
+  </code>
+</pre>
+
+        <h2>Table Structure and CSS Explanation</h2>
+
+        <ul>
+          <li>
+            <p>
+              <strong
+                >1. Main Container (<code>.table__container</code>)</strong
+              >
+            </p>
+            <p>The container wraps the entire table and related elements.</p>
+            <ul>
+              <li>
+                <code>position: relative;</code> – positions children relative
+                to the container.
+              </li>
+              <li>
+                <code>display: flex; flex-direction: column;</code> – stacks
+                children vertically.
+              </li>
+              <li>
+                <code>max-width: 95vw; margin-inline: auto;</code> – centers the
+                table and limits width.
+              </li>
+              <li>
+                <code>height: fit-content;</code> – container adjusts to content
+                height.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p>
+              <strong>2. Table Header (<code>.table__header</code>)</strong>
+            </p>
+            <p>
+              Contains the table title and action buttons like add, upload,
+              export, and filters.
+            </p>
+            <ul>
+              <li>
+                <code
+                  >display: flex; justify-content: space-between; align-items:
+                  center;</code
+                >
+                – places title and actions at opposite ends.
+              </li>
+              <li>
+                <code>position: sticky; top: 0;</code> – header stays visible
+                while scrolling.
+              </li>
+              <li>
+                <code>padding: 1rem; border; border-radius (top corners)</code>
+                – visual styling with rounded top corners.
+              </li>
+              <li>
+                <code>.table__header__actions</code> – flex container for
+                buttons, with gap between them.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p>
+              <strong>3. Table Body (<code>.table__body > table</code>)</strong>
+            </p>
+            <p>The scrollable table area with headers, rows, and cells.</p>
+            <ul>
+              <li>
+                <code>max-height: 80vh; overflow: auto;</code> – table body
+                scrolls when content is too tall.
+              </li>
+              <li>
+                <code>border-collapse: collapse;</code> – removes spacing
+                between table cells.
+              </li>
+              <li>
+                Row styling:
+                <ul>
+                  <li>Striped rows using <code>nth-child(even)</code></li>
+                  <li>Hover effect changes background color</li>
+                </ul>
+              </li>
+              <li>
+                Headers (<code>th</code>) – uppercase text, colored background,
+                flex layout for sorting icons.
+              </li>
+              <li>
+                Cells (<code>td</code>) – padding, fixed height, nowrap text.
+              </li>
+              <li>
+                Status cells (<code>.danger, .success, .warning</code>) –
+                highlight with different background colors.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p>
+              <strong
+                >4. Forms and Filters (<code>.table__form</code> &
+                <code>.table__filters</code>)</strong
+              >
+            </p>
+            <p>
+              Expandable panels for adding/updating rows or applying filters.
+            </p>
+            <ul>
+              <li>
+                Initially hidden:
+                <code>max-height: 0; opacity: 0; overflow: hidden;</code>
+              </li>
+              <li>
+                When <code>.open</code> class is added:
+                <code
+                  >max-height: fit-content; opacity: 1; padding: 1rem; border
+                  applied;</code
+                >
+              </li>
+              <li>
+                Smooth expand/collapse with
+                <code>transition: all 0.3s ease-in-out;</code>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p>
+              <strong>5. Images (<code>.table__img__preview</code>)</strong>
+            </p>
+            <p>Displays profile or item images in the table.</p>
+            <ul>
+              <li>
+                Circular shape: <code>border-radius: 50%</code> when
+                <code>.rounded</code> class is used.
+              </li>
+              <li>Size: max 10rem × 10rem</li>
+              <li>
+                Hover effect: <code>transform: scale(1.05)</code> for subtle
+                zoom
+              </li>
+              <li>
+                Images maintain aspect ratio with
+                <code>object-fit: contain;</code>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p>
+              <strong
+                >6. Pagination (<code>.pagination__container</code>)</strong
+              >
+            </p>
+            <p>Navigation controls for moving through table pages.</p>
+            <ul>
+              <li>
+                Bottom rounded corners:
+                <code
+                  >border-bottom-left-radius, border-bottom-right-radius</code
+                >
+              </li>
+              <li>Buttons styled consistently with table actions.</li>
+              <li>Information text: shows current visible results.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          <strong>Summary:</strong> The table uses a flexible container with a
+          sticky header, scrollable body, expandable forms/filters, styled rows,
+          and interactive elements like image previews and pagination. CSS
+          techniques include <code>flexbox</code>, <code>sticky</code>,
+          <code>transitions</code>, hover effects, and conditional visibility
+          using classes.
+        </p>
+        <h3>Js</h3>
+        <pre>
+  <code class="language--js">
+
+    import { toggleInertWhenState } from "../utils/Inert";
+
+// ----------------------------
+// Utility helpers
+// ----------------------------
+const updateAriaAttributes = (element, expanded, hidden) => {
+  element?.setAttribute("aria-expanded", expanded);
+  element?.setAttribute("aria-hidden", hidden);
+};
+
+const focusFirstInteractive = (container) => {
+  const firstFocusable = container?.querySelector("input, select, textarea, button");
+  if (firstFocusable) firstFocusable.focus();
+};
+
+const toggleElementVisibility = (element, isVisible) => {
+  if (!element) return;
+  element.classList.toggle("open", isVisible);
+  toggleInertWhenState(element, "open", true);
+};
+
+const openPanel = (btn, panel) => {
+  toggleElementVisibility(panel, true);
+  updateAriaAttributes(btn, true, false);
+  focusFirstInteractive(panel);
+};
+
+const closePanel = (btn, panel) => {
+  toggleElementVisibility(panel, false);
+  updateAriaAttributes(btn, false, true);
+};
+
+const closeAllPanels = (tc) => {
+  const filterBtn = tc.querySelector(".table__filters__btn");
+  const filters = tc.querySelector(".table__filters");
+  const formBtn = tc.querySelector(".table__form__opener");
+  const form = tc.querySelector(".table__form");
+
+  closePanel(filterBtn, filters);
+  closePanel(formBtn, form);
+};
+
+// ----------------------------
+// Table container logic
+// ----------------------------
+const setupTableContainer = (tc) => {
+  const filterBtn = tc.querySelector(".table__filters__btn");
+  const filtersContainer = tc.querySelector(".table__filters");
+  const formBtn = tc.querySelector(".table__form__opener");
+  const formContainer = tc.querySelector(".table__form");
+  const formCloseBtn = tc.querySelector(".table__form__close"); // new close button
+
+  if (!filterBtn || !filtersContainer || !formBtn || !formContainer) return;
+
+  // Initialize inert
+  toggleInertWhenState(filtersContainer, "open", true);
+  toggleInertWhenState(formContainer, "open", true);
+
+  // Delegated click handling on table container
+  tc.addEventListener("click", (event) => {
+    const clickedFilterBtn = event.target.closest(".table__filters__btn");
+    const clickedFormBtn = event.target.closest(".table__form__opener");
+    const clickedFormCloseBtn = event.target.closest(".table__form__close");
+
+    const isInsideFilters = filtersContainer.contains(event.target);
+    const isInsideForm = formContainer.contains(event.target);
+
+    // ---- Filter button ----
+    if (clickedFilterBtn) {
+      const isFilterOpen = filtersContainer.classList.contains("open");
+
+      // Always close form first
+      closePanel(formBtn, formContainer);
+
+      // Toggle filter
+      if (!isFilterOpen) openPanel(filterBtn, filtersContainer);
+      else closePanel(filterBtn, filtersContainer);
+      return;
+    }
+
+    // ---- Form open button ----
+    if (clickedFormBtn) {
+      const isFormOpen = formContainer.classList.contains("open");
+
+      // Always close filters
+      closePanel(filterBtn, filtersContainer);
+
+      // Only open if closed
+      if (!isFormOpen) openPanel(formBtn, formContainer);
+      return;
+    }
+
+    // ---- Form close button ----
+    if (clickedFormCloseBtn) {
+      closePanel(formBtn, formContainer);
+      return;
+    }
+
+    // ---- Click inside panels ----
+    if (isInsideFilters || isInsideForm) return;
+
+    // ---- All other clicks ----
+    closeAllPanels(tc);
+  });
+
+  // ---- Click outside table closes everything ----
+  document.addEventListener("click", (event) => {
+    if (!tc.contains(event.target)) {
+      closeAllPanels(tc);
+    }
+  });
+};
+
+// ----------------------------
+// Module entry point
+// ----------------------------
+const Table = () => {
+  const tableContainers = document.querySelectorAll(".table__container");
+  if (!tableContainers.length) return;
+
+  tableContainers.forEach(setupTableContainer);
+};
+
+export default Table;
+
+  </code>
+</pre>
+
+        <h2>Table Module JavaScript Explanation</h2>
+
+        <ul>
+          <li>
+            <p><strong>1. Utility Helpers</strong></p>
+            <p>
+              These functions help manage ARIA attributes, focus, and panel
+              visibility.
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <code>updateAriaAttributes(element, expanded, hidden)</code>
+                </p>
+                <p>Sets ARIA attributes for accessibility:</p>
+                <ul>
+                  <li>
+                    <code>aria-expanded</code> – indicates if the panel is open.
+                  </li>
+                  <li>
+                    <code>aria-hidden</code> – indicates if the panel is hidden.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p><code>focusFirstInteractive(container)</code></p>
+                <p>
+                  Focuses the first interactive element (input, select,
+                  textarea, button) inside the container.
+                </p>
+              </li>
+
+              <li>
+                <p><code>toggleElementVisibility(element, isVisible)</code></p>
+                <p>
+                  Adds/removes the <code>open</code> class to show/hide a panel
+                  and toggles inert state using
+                  <code>toggleInertWhenState</code>.
+                </p>
+              </li>
+
+              <li>
+                <p><code>openPanel(btn, panel)</code></p>
+                <p>
+                  Opens a panel, updates ARIA attributes on the button, and
+                  focuses the first interactive element.
+                </p>
+              </li>
+
+              <li>
+                <p><code>closePanel(btn, panel)</code></p>
+                <p>Closes a panel and updates ARIA attributes accordingly.</p>
+              </li>
+
+              <li>
+                <p><code>closeAllPanels(tc)</code></p>
+                <p>
+                  Closes both the filter panel and the form panel inside a given
+                  table container.
+                </p>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p>
+              <strong
+                >2. Table Container Setup
+                (<code>setupTableContainer(tc)</code>)</strong
+              >
+            </p>
+            <p>
+              This function sets up event handling and initial state for a
+              single table container.
+            </p>
+            <ul>
+              <li>
+                Selects key elements:
+                <ul>
+                  <li><code>filterBtn</code> – button to open filter panel</li>
+                  <li><code>filtersContainer</code> – filter panel element</li>
+                  <li><code>formBtn</code> – button to open add/update form</li>
+                  <li><code>formContainer</code> – form panel element</li>
+                  <li>
+                    <code>formCloseBtn</code> – optional close button inside
+                    form
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                Initializes inert state for panels using
+                <code>toggleInertWhenState</code>.
+              </li>
+
+              <li>
+                Delegates clicks inside the table container:
+                <ul>
+                  <li>
+                    Clicking <code>.table__filters__btn</code> toggles filter
+                    panel, closing form if open.
+                  </li>
+                  <li>
+                    Clicking <code>.table__form__opener</code> opens form panel,
+                    closing filters if open.
+                  </li>
+                  <li>
+                    Clicking <code>.table__form__close</code> closes the form
+                    panel.
+                  </li>
+                  <li>Clicking inside a panel does nothing.</li>
+                  <li>
+                    Clicking anywhere else inside the table closes all panels.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                Clicking outside the table container closes all panels as well.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p><strong>3. Module Entry Point (<code>Table()</code>)</strong></p>
+            <ul>
+              <li>
+                Selects all <code>.table__container</code> elements on the page.
+              </li>
+              <li>
+                Calls <code>setupTableContainer</code> for each container to
+                initialize the interactive logic.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p><strong>4. Key Concepts</strong></p>
+            <ul>
+              <li><code>open</code> class – indicates panel visibility.</li>
+              <li>
+                ARIA attributes – improve accessibility for screen readers.
+              </li>
+              <li>
+                Focus management – ensures keyboard users are placed in the
+                first interactive element of a panel when it opens.
+              </li>
+              <li>
+                Delegated event handling – clicks inside the container are
+                efficiently managed with one listener.
+              </li>
+              <li>
+                Panels are mutually exclusive – opening one panel closes the
+                other.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          <strong>Summary:</strong> This module provides a clean way to manage
+          table-related panels (filters and forms). It ensures accessibility,
+          handles mutual exclusivity between panels, and automatically closes
+          panels when clicking outside the table.
+        </p>
+        <p>
+          For more information about JavaScript integration, visit the
+          documentation
+          <a href="javascript.html">[here]</a>.
+        </p>
+      </section>
+    </main>
+    <div id="tip-content-id" role="tooltip" class="tooltip"></div>
+    
+  </body>
+</html>

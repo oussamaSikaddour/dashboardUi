@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Errors Notifications | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="img/logo.ico" />
+    
+    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
+    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+    <link rel="stylesheet" href="./assets/style-e408b1ef.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+
+        <!-- Logo -->
+        <div class="nav__addons" role="menubar">
+          <a class="nav__logo" href="index.html" aria-label="Go to homepage">
+            <img src="./assets/Logo-c0442a44.png" alt="App Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hamburger -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="navPhone"
+      aria-label="Show phone navigation"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Phone menu -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+
+      <ul class="nav__items" id="navPhone" hidden role="menubar">
+        <li class="nav__item" role="none">
+          <a class="nav__link" href="index.html" role="menuitem">Home</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Errors Notifications</h1>
+
+        <div class="row">
+          <button class="button errors__opener button--danger">
+            Send Errors Event
+          </button>
+        </div>
+      </div>
+
+      <section class="section" id="errors-section">
+        <p>
+          The <strong>Errors Handler</strong> component provides a visually
+          accessible and semantic way to display form or process error messages.
+          This module uses ARIA roles and attributes to ensure that assistive
+          technologies can announce the error states properly.
+        </p>
+
+        <p>
+          The structure consists of an opener button (to trigger or simulate an
+          error event) and a container that lists the error messages inside a
+          dismissible alert box. It is built with accessibility and clarity in
+          mind.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.errors__container</strong> — the main wrapper of the error
+            messages. Uses <code>role="alert"</code> to announce messages to
+            screen readers immediately.
+          </li>
+          <li>
+            <strong>.errors__opener</strong> — a button used to trigger or
+            simulate error messages appearing in the interface.
+          </li>
+          <li>
+            <strong>.errors__closer</strong> — a close button allowing users to
+            dismiss the visible error box. Usually shown as an "X" icon made of
+            two spans.
+          </li>
+          <li>
+            <strong>.errors</strong> — the unordered list
+            (<code>&lt;ul&gt;</code>) containing all individual error items.
+          </li>
+          <li>
+            <strong>.error</strong> — represents a single error message entry
+            inside the list.
+          </li>
+        </ul>
+
+        <p>
+          The component supports multiple errors simultaneously, providing a
+          clean and readable layout. Developers can dynamically inject or remove
+          errors from the list for form validation or API response handling.
+        </p>
+
+        <p><strong>Accessibility Notes:</strong></p>
+
+        <ul>
+          <li>
+            <code>role="alert"</code> ensures screen readers immediately
+            announce new errors.
+          </li>
+          <li>
+            <code>aria-labelledby="errors_label"</code> links the container to
+            its descriptive title for better context.
+          </li>
+          <li>
+            The close button uses <code>aria-label</code> for clear intent even
+            without visible text.
+          </li>
+        </ul>
+
+        <p><strong>Usage Tips:</strong></p>
+
+        <ul>
+          <li>Use concise and descriptive error messages for clarity.</li>
+          <li>
+            Avoid overly technical jargon—make sure the user understands the
+            issue and possible next steps.
+          </li>
+          <li>
+            Combine this component with form validation or API responses to
+            display real-time feedback.
+          </li>
+          <li>
+            Ensure the <code>errors__closer</code> is always visible and
+            keyboard accessible.
+          </li>
+          <li>
+            For more information about JavaScript integration, visit the
+            documentation
+            <a href="javascript.html">[here]</a>.
+          </li>
+        </ul>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+
+  &lt;button class="button errors__opener button--danger"&gt;
+    Send Errors Event
+  &lt;/button&gt;
+
+  &lt;div
+      role="alert"
+      aria-labelledby="errors_label"
+      class="errors__container"
+      id="defaultModal"
+      tabindex="-1"
+  &gt;
+      &lt;h2 id="errors_label" class="sr-only"&gt;Form Submission Errors&lt;/h2&gt;
+
+      &lt;button
+          class="errors__closer"
+          aria-label="Close Error Messages"
+      &gt;
+          &lt;span&gt;&lt;/span&gt;
+          &lt;span&gt;&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;ul class="errors" tabindex="0"&gt;
+          &lt;li class="error"&gt;&lt;strong&gt;Password too weak:&lt;/strong&gt; Your new password must be stronger...&lt;/li&gt;
+          &lt;li class="error"&gt;&lt;strong&gt;Email already registered:&lt;/strong&gt; A user account with this email already exists...&lt;/li&gt;
+          &lt;li class="error"&gt;&lt;strong&gt;Invalid login credentials:&lt;/strong&gt; We couldn't match that email and password...&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/div&gt;
+
+</code></pre>
+
+        <p><strong>Css:</strong></p>
+
+        <pre><code class="language--css"> 
+  .errors {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 50rem;
+  padding: 1rem;
+  gap: 1rem;
+  overflow: auto;
+
+}
+
+.errors .error {
+
+  font-size: var(--fs);
+  color: var(--clr-light);
+  font-weight: bold;
+
+}
+
+.errors__container {
+
+  padding: 0.2rem 0.3rem;
+  font-family: var(--ff);
+  display: none;
+  position: fixed;
+  z-index: 25;
+  margin: auto;
+  background-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  border-radius: var(--br);
+  min-width: 27rem;
+  max-width: 60rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -300%) scale(0);
+  animation: 1s ease-in-out forwards slideCenterForAbsolute;
+  box-shadow: rgba(156, 25, 25, 0.19) 0 1rem 2rem, rgba(156, 25, 25, 0.23) 0 0.6rem 0.6rem;
+
+}
+
+.errors__container.open {
+
+  display: flex;
+
+}
+
+.errors__container ::-webkit-scrollbar-thumb {
+
+  background-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  border-radius: var(--br);
+
+}
+
+.errors__container ::-webkit-scrollbar-track {
+
+  background-color: rgb(241.25, 169.75, 169.75);
+
+}
+
+.errors__closer {
+
+  position: absolute;
+  right: -1.75rem;
+  top: -1.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 0.5rem solid rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  border-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  border-radius: 50%;
+  background-color: rgb(241.25, 169.75, 169.75);
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+
+}
+
+.errors__closer span {
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2.8rem;
+  height: 0.2rem;
+  background-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  border-radius: 40rem;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+
+}
+
+.errors__closer span:first-of-type {
+
+  transform: rotate(45deg);
+
+}
+
+.errors__closer span:nth-of-type(2) {
+
+  transform: rotate(135deg);
+
+}
+  </code></pre>
+        <p><strong>JS:</strong></p>
+
+        <pre><code class="language--js"> 
+// Import utility to manage `inert` attribute for elements outside the opened container
+
+import { toggleInertForAllExceptOpenedElement } from '../utils/Inert';
+
+// Import utility to set appropriate ARIA accessibility attributes
+
+import { dispatchCustomEvent } from '../utils/DespatchCustomEvent';
+
+// Error State Management
+
+const getErrorState = (errorsContainer) => {
+
+  return errorsContainer.classList.contains("open");
+
+};
+
+const closeErrorContainer = (errorsContainer, closeButton) => {
+
+  errorsContainer.classList.remove("open");
+
+  toggleInertForAllExceptOpenedElement(errorsContainer, "open");
+
+};
+
+const openErrorContainer = (errorsContainer, closeButton) => {
+
+  errorsContainer.classList.add("open");
+
+  toggleInertForAllExceptOpenedElement(errorsContainer, "open");
+
+  closeButton.focus();
+
+};
+
+// Event Handlers
+
+const handleOpenErrorsClick = () => {
+
+  dispatchCustomEvent("errors-notifications");
+
+};
+
+const handleCloseErrorsClick = (errorsContainer, closeButton) => {
+
+  return () => closeErrorContainer(errorsContainer, closeButton);
+
+};
+
+const handleErrorsHappenedEvent = (errorsContainer, closeButton) => {
+
+  return (e) => {
+
+    e.preventDefault();
+
+    openErrorContainer(errorsContainer, closeButton);
+
+  };
+
+};
+
+// Element Selection
+
+const getErrorElements = () => {
+
+  const openButton = document.querySelector(".errors__opener");
+
+  const errorsContainer = document.querySelector(".errors__container");
+
+  const closeButton = errorsContainer?.querySelector(".errors__closer");
+
+  
+  return { openButton, errorsContainer, closeButton };
+
+};
+
+const validateErrorElements = (openButton, errorsContainer, closeButton) => {
+
+  if (!openButton) {
+
+    console.warn('Errors opener element not found');
+
+    return false;
+
+  }
+  
+  if (!errorsContainer) {
+
+    console.warn('Errors container element not found');
+
+    return false;
+
+  }
+  
+  if (!closeButton) {
+
+    console.warn('Errors closer element not found');
+
+    return false;
+
+  }
+  
+  return true;
+
+};
+
+// Event Listener Setup
+
+const setupErrorEventListeners = (openButton, errorsContainer, closeButton) => {
+
+  const openHandler = handleOpenErrorsClick;
+
+  const closeHandler = handleCloseErrorsClick(errorsContainer, closeButton);
+
+  const customEventHandler = handleErrorsHappenedEvent(errorsContainer, closeButton);
+
+  
+  openButton.addEventListener("click", openHandler);
+
+  closeButton.addEventListener("click", closeHandler);
+
+  document.addEventListener('errors-notifications', customEventHandler);
+
+};
+
+// Main Errors Component
+
+const ErrorsNotifications = () => {
+
+  const { openButton, errorsContainer, closeButton } = getErrorElements();
+
+  
+  if (!validateErrorElements(openButton, errorsContainer, closeButton)) {
+
+    return;
+
+  }
+  
+  setupErrorEventListeners(openButton, errorsContainer, closeButton);
+  
+};
+
+export default ErrorsNotifications;
+        </code>
+      </pre>
+      </section>
+    </main>
+
+    <div
+      role="alert"
+      aria-labelledby="errors_label"
+      class="errors__container"
+      id="defaultModal"
+      tabindex="-1"
+    >
+      <h2 id="errors_label" class="sr-only">Form Submission Errors</h2>
+
+      <button class="errors__closer" aria-label="Close Error Messages">
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="errors" tabindex="0">
+        <li class="error">
+          . **Password too weak:** Your new password must be stronger. It needs
+          at least 12 characters, including one uppercase letter, one number,
+          and one special character (e.g., #, $, @).
+        </li>
+        <li class="error">
+          . **Email already registered:** A user account with this email address
+          already exists. Please try logging in or use the 'Forgot Password'
+          link to regain access to your profile.
+        </li>
+        <li class="error">
+          . **Invalid login credentials:** We couldn't match that email and
+          password combination in our system. Double-check your spelling or try
+          resetting your password if you've forgotten it.
+        </li>
+        <li class="error">
+          . **Date of birth missing:** We require your date of birth to verify
+          you meet the minimum age requirement for account creation. Please fill
+          in the field using the DD/MM/YYYY format.
+        </li>
+        <li class="error">
+          . **Payment processing failed:** Your credit card issuer declined the
+          transaction. Please verify your card details, ensure funds are
+          available, or try using an alternative payment method.
+        </li>
+        <li class="error">
+          . **Item out of stock:** The quantity you requested for 'Midnight
+          Black Eyeliner' exceeds our current inventory. We have adjusted your
+          cart to the maximum available quantity of 2 units.
+        </li>
+      </ul>
+    </div>
+
+    <!-- breadcrumb -->
+    
+  </body>
+</html>

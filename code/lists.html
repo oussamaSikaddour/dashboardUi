@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Lists | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Lists</h1>
+
+        <div class="row">
+          <div class="column">
+            <h2>My Favorite Fruits</h2>
+            <ul>
+              <li>Apple</li>
+              <li>Banana</li>
+              <li>Cherry</li>
+              <li>Mango</li>
+            </ul>
+          </div>
+          <div class="column">
+            <h2>Steps to Make Tea</h2>
+            <ol>
+              <li>Boil water</li>
+              <li>Add tea leaves</li>
+              <li>Pour into cup</li>
+              <li>Add sugar or milk</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" id="lists-section">
+        <h2>Usage of Lists</h2>
+
+        <p>
+          Lists are used to display items in an organized manner. There are two
+          main types: unordered lists (<code>&lt;ul&gt;</code>) for items
+          without a specific order, and ordered lists (<code>&lt;ol&gt;</code>)
+          for sequences or steps. Each list item is contained within a
+          <code>&lt;li&gt;</code> element.
+        </p>
+
+        <ul>
+          <li>
+            <strong>&lt;ul&gt;</strong> — unordered list, used when item order
+            does not matter
+          </li>
+          <li>
+            <strong>&lt;ol&gt;</strong> — ordered list, used for sequences or
+            steps
+          </li>
+          <li>
+            <strong>&lt;li&gt;</strong> — list item, used inside both
+            <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>
+          </li>
+          <li>Lists can be nested for complex hierarchies</li>
+          <li>
+            Accessible lists should use proper semantic markup and avoid using
+            lists purely for layout
+          </li>
+        </ul>
+
+        <p>
+          Lists are ideal for displaying structured content such as steps,
+          instructions, or collections. Use ordered lists for procedures or
+          rankings, and unordered lists for general items or bullet points.
+        </p>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre>
+<code class="language--html">
+&lt;!-- Unordered List --&gt;
+
+&lt;ul&gt;
+
+  &lt;li&gt;Apple&lt;/li&gt;
+
+  &lt;li&gt;Banana&lt;/li&gt;
+
+  &lt;li&gt;Cherry&lt;/li&gt;
+
+  &lt;li&gt;Mango&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+
+&lt;ol&gt;
+
+  &lt;li&gt;Boil water&lt;/li&gt;
+
+  &lt;li&gt;Add tea leaves&lt;/li&gt;
+
+  &lt;li&gt;Pour into cup&lt;/li&gt;
+
+  &lt;li&gt;Add sugar or milk&lt;/li&gt;
+
+&lt;/ol&gt;
+</code>
+</pre>
+
+        <p><strong>CSS:</strong></p>
+
+        <pre>
+<code class="language--css">
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+/* Remove default list styles for ul and ol */
+
+ul,
+ol {
+
+  list-style: none; /* Removes bullets/numbers */
+  font-size: 1.5rem;
+  
+}
+
+/* Ensure lists with role="list" also have no style */
+
+ul[role=list],
+ol[role=list] {
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+</code>
+</pre>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Modal | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/Logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Modal</h1>
+
+        <div class="row">
+          <button class="button button--primary modal__opener">
+            Open Modal <i class="fa-sharp fa-solid fa-users"></i>
+          </button>
+        </div>
+      </div>
+
+      <section class="section" id="modal-section">
+        <h2>Modal Component</h2>
+
+        <p>
+          The <strong>Modal</strong> component provides a centered overlay
+          dialog for displaying content such as messages, forms, or tables
+          without leaving the current page. It remains hidden by default and
+          becomes visible when the <code>.open</code> class is added.
+        </p>
+
+        <p>
+          It includes a flexible structure with a header, a scrollable body
+          area, and an optional sticky footer for action buttons. The
+          <code>.transparent</code> modifier hides the header and
+          background for minimalist use cases, such as image previews or
+          embedded content.
+        </p>
+
+        <ul>
+          <li>
+            <strong>.modal</strong> — the full-screen overlay with a
+            translucent, blurred backdrop.
+          </li>
+          <li><strong>.modal.open</strong> — visible and interactive state.</li>
+          <li>
+            <strong>.modal__content</strong> — the inner dialog container
+            managing layout, animations, and transitions.
+          </li>
+          <li>
+            <strong>.modal__header</strong> — top section with a title and
+            optional controls.
+          </li>
+          <li>
+            <strong>.modal__closer</strong> — circular “X” button positioned
+            slightly outside the top-right corner.
+          </li>
+          <li>
+            <strong>.modal__body</strong> — main content area with flexible
+            vertical layout.
+          </li>
+          <li>
+            <strong>.modal__body__content</strong> — scrollable inner wrapper
+            for text, images, or forms.
+          </li>
+          <li>
+            <strong>.form__actions</strong> — optional footer for buttons, fixed
+            at the bottom inside the modal.
+          </li>
+          <li>
+            <strong>.transparent</strong> — variant modifier hiding the
+            header and removing shadows/background color for simple content.
+          </li>
+        </ul>
+
+        <p>
+          The modal fades and slides into view using transitions on opacity and
+          transform, with flexible centering via flexbox.
+        </p>
+
+        <p><strong>Example markup:</strong></p>
+
+        <pre><code class="language--html">
+&lt;button class="button button--primary modal__opener"&gt;
+  Open Modal &lt;i class="fa-sharp fa-solid fa-users"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;div role="dialog"
+     aria-labelledby="dialog_label"
+     class="modal"
+     id="defaultModal"
+     aria-modal="true"&gt;
+
+  &lt;div class="modal__content"&gt;
+
+    &lt;button class="modal__closer" role="button" tabindex="0" aria-label="Close modal"&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;header class="modal__header"&gt;
+      &lt;h2 id="dialog_label"&gt;Modal Title&lt;/h2&gt;
+    &lt;/header&gt;
+
+    &lt;div class="modal__body"&gt;
+      &lt;div class="modal__body__content"&gt;
+        &lt;p&gt;
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          consequatur voluptas temporibus sapiente magni excepturi...
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class="form__actions"&gt;
+        &lt;button class="button button--primary"&gt;Confirm&lt;/button&gt;
+        &lt;button class="button button--outline modal__closer"&gt;Cancel&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <p><strong>CSS:</strong></p>
+
+        <pre><code class="language--css">
+/* =================================================================
+   2.  Modal Overlay
+================================================================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* Hidden by default */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.modal.open {
+  z-index: 15;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal .table__container {
+  padding: 0.5rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+.modal.transparent .modal__header {
+  display: none;
+}
+.modal.transparent .modal__content {
+  background-color: transparent;
+  box-shadow: unset;
+}
+.modal.transparent .modal__closer {
+  box-shadow: var(--div-shadow);
+}
+
+/* =================================================================
+   3.  Dialog Box
+================================================================= */
+.modal__content {
+  --header-h: 6rem;
+  --actions-h: 6rem;
+  font-family: var(--ff);
+  background-color: var(--clr-light);
+  border-radius: var(--br);
+  box-shadow: var(--div-shadow);
+  min-width: 27rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-3rem);
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+.modal.open .modal__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================================================
+   4.  Header
+================================================================= */
+.modal__header {
+  flex: 0 0 var(--header-h);
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.2rem solid #CED0D4;
+  border-radius: var(--br) var(--br) 0 0;
+}
+.modal__header h2 {
+  flex: 1 1 auto;
+  text-align: center;
+  color: var(--clr-font);
+}
+
+/* =================================================================
+   5.  Close Button
+================================================================= */
+.modal__closer {
+  z-index: 1;
+  position: absolute;
+  right: -1.75rem;
+  top: -1.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 0.5rem solid var(--clr-light);
+  border-radius: 50%;
+  background: #E9EAF4;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.modal__closer:hover {
+  transform: scale(1.08);
+}
+.modal__closer span {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2.8rem;
+  height: 0.2rem;
+  background: #6D6F73;
+  border-radius: 1rem;
+  transform-origin: center;
+}
+.modal__closer span:first-child {
+  transform: rotate(45deg);
+}
+.modal__closer span:last-child {
+  transform: rotate(-45deg);
+}
+.modal__closer:focus-visible {
+  outline: 0.2rem solid var(--clr-accent);
+  outline-offset: 0.2rem;
+}
+
+/* =================================================================
+   6.  Body
+================================================================= */
+.modal__body {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+  border-radius: 0 0 var(--br) var(--br);
+  overflow: hidden;
+}
+.modal__body__content {
+  padding: 0.5rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+  background-color: inherit;
+  scrollbar-gutter: stable;
+  padding-bottom: var(--actions-h);
+}
+.modal__body__content > img:not([class]) {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.modal__body .form__actions {
+  position: absolute;
+  bottom: 0;
+  flex: 0 0 var(--actions-h);
+  background: #fff;
+  border-top: 0.2rem solid var(--clr-bg);
+  z-index: 1;
+}
+</code></pre>
+
+        <p>
+          This CSS sheet controls the <strong>overlay</strong> and the
+          <strong>dialog box</strong> that pops up when the user clicks the open
+          button. It keeps everything hidden until JavaScript adds the class
+          <code>open</code>; then the overlay fades in, the dialog slides down,
+          and the rest of the page is blurred.
+        </p>
+
+        <ul>
+          <li>
+            <code>.modal</code> is a full-screen layer that starts invisible
+            (<code>opacity: 0</code> and <code>z-index: -1</code>). When
+            <code>.open</code> is added it jumps to <code>z-index: 15</code>,
+            fades to full opacity, and lets clicks reach the dialog (<code
+              >pointer-events: auto</code
+            >).
+          </li>
+          <li>
+            <code>.modal__content</code> is the actual white box: rounded
+            corners, shadow, and a slide-in animation (<code
+              >transform: translateY(-3rem)</code
+            >
+            → <code>0</code>).
+          </li>
+          <li>
+            <code>.modal__header</code> holds the title and the round close
+            button; it can be hidden with the extra class
+            <code>transparent</code> (useful for image-only pop-ups).
+          </li>
+          <li>
+            The close button (<code>.modal__closer</code>) sits half-outside the
+            corner, scales on hover, and gets a visible focus ring for keyboard
+            users.
+          </li>
+          <li>
+            <code>.modal__body__content</code> scrolls if the content is tall,
+            while <code>.form__actions</code> stays glued to the bottom so
+            buttons are always reachable.
+          </li>
+          <li>
+            Everything is capped at 90 % of the viewport width/height, so the
+            modal never overflows the screen.
+          </li>
+        </ul>
+        <p>
+          <strong>JS</strong>
+        </p>
+
+        <pre><code class="language--js">
+// Import utility to handle 'inert' state management
+import { toggleInertForAllExceptOpenedElement } from "../utils/Inert";
+
+
+// Import utility to set appropriate ARIA attributes for accessibility
+import { setAriaAttributes } from "../utils/Aria";
+
+
+// ======================
+// DOM ELEMENT SELECTORS
+// ======================
+
+const getModalElements = () => ({
+
+  openButton: document.querySelector(".modal__opener"),
+  closeButton: document.querySelector(".modal__closer"),
+  modal: document.querySelector(".modal"),
+
+});
+
+const hasValidModalElements = ({ modal, openButton, closeButton }) => {
+
+  return !!(modal && openButton && closeButton);
+
+};
+
+// ======================
+// MODAL STATE MANAGEMENT
+// ======================
+
+const getModalState = (modal) => {
+
+  return modal.classList.contains("open");
+
+};
+
+const setModalState = (modal, isOpen) => {
+
+  if (isOpen) {
+
+    modal.classList.add("open");
+    const modalCloser = modal.querySelector(".modal__closer");
+    modalCloser.focus();
+
+  } else {
+
+    modal.classList.remove("open");
+
+  }
+
+};
+
+// ======================
+// ACCESSIBILITY MANAGEMENT
+// ======================
+const updateModalAccessibility = (modal, isOpen) => {
+
+  const tabIndex = isOpen ? "0" : "-1";
+  setAriaAttributes(!isOpen, tabIndex, modal);
+
+};
+
+const manageFocus = (closeButton, shouldFocus) => {
+
+  if (shouldFocus) {
+    closeButton.focus();
+  }
+
+};
+
+// ======================
+// INERT STATE MANAGEMENT
+// ======================
+const updateInertState = (modal, isOpen) => {
+
+  toggleInertForAllExceptOpenedElement(modal, "open");
+
+};
+
+// ======================
+// MODAL TOGGLE LOGIC
+// ======================
+const toggleModal = (modal, closeButton) => {
+
+  const wasOpen = getModalState(modal);
+  const willBeOpen = !wasOpen;
+
+  // Update visual state
+  setModalState(modal, willBeOpen);
+
+  // Update accessibility
+  updateModalAccessibility(modal, willBeOpen);
+
+  // Update inert states
+  updateInertState(modal, willBeOpen);
+
+  // Manage focus
+  manageFocus(closeButton, !willBeOpen);
+
+};
+
+// ======================
+// EVENT HANDLERS
+// ======================
+const createOpenHandler = (modal, closeButton) => () => {
+
+  toggleModal(modal, closeButton);
+
+};
+
+const createCloseHandler = (modal, closeButton) => () => {
+
+  toggleModal(modal, closeButton);
+
+};
+
+// ======================
+// EVENT BINDING
+// ======================
+const bindModalEvents = (openButton, closeButton, modal) => {
+
+  const openHandler = createOpenHandler(modal, closeButton);
+  const closeHandler = createCloseHandler(modal, closeButton);
+
+  openButton.addEventListener("click", openHandler);
+  closeButton.addEventListener("click", closeHandler);
+
+};
+
+// ======================
+// MAIN INITIALIZER
+// ======================
+const Modal = () => {
+
+  const elements = getModalElements();
+
+  if (!hasValidModalElements(elements)) {
+    console.warn("Modal: Required elements not found");
+    return;
+
+  }
+
+  const { openButton, closeButton, modal } = elements;
+  bindModalEvents(openButton, closeButton, modal);
+
+};
+
+export default Modal;
+
+</code></pre>
+
+        <p>
+          This JavaScript module wires up the modal . It shows the box when the
+          user clicks the “open” button, hides it when the “close” button (the
+          ×) is clicked, and keeps the experience friendly for keyboard users
+          and screen-reader users.
+        </p>
+
+        <ul>
+          <li>
+            <code>toggleInertForAllExceptOpenedElement</code> makes everything
+            <em>except</em> the modal unfocusable while the dialog is open, so
+            tabbing can’t accidentally leave the box.
+          </li>
+          <li>
+            <code>setAriaAttributes</code> flips <code>aria-hidden</code> and
+            <code>tabindex</code> so assistive technology knows when the modal
+            is visible or hidden.
+          </li>
+          <li>
+            When the modal opens, keyboard focus is moved immediately to the ×
+            button; when it closes, focus is returned to the element that
+            triggered it.
+          </li>
+          <li>
+            All state changes (open/close) are done by simply adding or removing
+            the CSS class <code>open</code>; the rest (fade-in, slide-down,
+            blur, etc.) is handled by the CSS we wrote earlier.
+          </li>
+          <li>
+            The module self-initialises: import it once (<code
+              >import Modal from './modal'; Modal();</code
+            >) and it finds the correct buttons and modal element automatically.
+          </li>
+          <li>
+            For more information about JavaScript integration, visit the
+            documentation
+            <a href="javascript.html">[here]</a>.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <div
+      role="dialog"
+      aria-labelledby="dialog_label"
+      class="modal "
+      id="defaultModal"
+      aria-modal="true"
+    >
+      <div class="modal__content">
+        <button class="modal__closer" role="button" tabindex="0">
+          <span></span>
+          <span></span>
+        </button>
+        <div class="modal__header">
+          <h2 id="dialog_label" class="sr-only">info modal</h2>
+          <h2>Modal Title</h2>
+        </div>
+
+        <div class="modal__body">
+          <div class="modal__body__content">
+            <!-- <img src="assets/img/default/hill.jpg" alt="trees"> -->
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              laboriosam atque similique reprehenderit aliquid non architecto
+              ratione earum iusto sint, eos consectetur qui quaerat, nobis,
+              libero dolor vero provident enim!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

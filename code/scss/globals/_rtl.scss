@@ -1,0 +1,187 @@
+@use "../util/" as u;
+@use "variables" as v;
+
+//////////////////////////////////////////////////////////////////////////////
+/// RTL Styles
+//////////////////////////////////////////////////////////////////////////////
+
+html.rtl {
+  direction: rtl;
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// Code
+  //////////////////////////////////////////////////////////////////////////////
+
+  code {
+    direction: ltr;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// Combobox
+  //////////////////////////////////////////////////////////////////////////////
+
+  .combobox__group {
+    direction: ltr;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// DATA DISPLAY
+  //////////////////////////////////////////////////////////////////////////////
+
+  // Pagination
+  .pagination__links {
+    direction: ltr;
+  }
+
+  // Tables
+  .table {
+    direction: rtl;
+
+    &__container {
+      direction: ltr;
+
+      > div {
+        direction: rtl;
+      }
+    }
+
+    &__filters__btn--reset {
+      margin-left: unset;
+      margin-right: auto;
+    }
+
+    thead {
+      left: unset;
+      right: 0;
+    }
+
+    tr {
+      &:last-of-type td:last-of-type {
+        border-bottom-right-radius: unset;
+        border-bottom-left-radius: 0.6rem;
+      }
+
+      th:first-child {
+        left: unset;
+        right: 0;
+      }
+
+      td:first-child {
+        left: unset;
+        right: 0;
+      }
+    }
+
+    th,
+    td {
+      text-align: right;
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// FORM ELEMENTS
+  //////////////////////////////////////////////////////////////////////////////
+
+  // Forms
+  .form {
+    &__container {
+      direction: rtl;
+    }
+
+    &s {
+      direction: ltr;
+    }
+  }
+
+  // Input fields
+  .input {
+    &__error {
+      text-align: right;
+    }
+
+    &__label {
+      left: unset;
+      right: 1rem;
+    }
+
+    &__span {
+      right: unset;
+      left: 0;
+    }
+  }
+
+  // Textarea
+  .textarea {
+    &__label {
+      left: unset;
+      right: 1rem;
+    }
+  }
+
+
+
+  //////////////////////////////////////////////////////////////////////////////
+  /// NAVIGATION & LAYOUT
+  //////////////////////////////////////////////////////////////////////////////*
+  
+///Header
+  
+  .nav--phone {
+    .nav__btn i {
+      margin-left: unset;
+      margin-right: auto;
+    }
+  }
+
+  .nav__btn {
+    .badge {
+      right: unset;
+      left: -1rem;
+    }
+  }
+
+  .nav {
+    // Language menu
+    .lang__menu {
+      left: 0;
+    }
+
+    &__items {
+      &:nth-of-type(1) {
+        margin-right: unset;
+        margin-left: auto;
+
+        .nav__items--sub {
+          right: 0;
+          left: unset;
+        }
+      }
+
+      &--sub {
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+
+  // Footer
+  .footer > p {
+    margin-left: unset;
+    margin-right: auto;
+  }
+
+  // Section
+  .section {
+    h2 {
+      &::after {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  // Sidebar (commented out)
+  // .sidebar {
+  //   direction: ltr;
+  // }
+}

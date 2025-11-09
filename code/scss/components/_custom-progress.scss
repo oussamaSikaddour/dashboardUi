@@ -1,0 +1,69 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+@property --percentage {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+.custom__progress {
+    --size: 13.2rem;
+    --bar-width: 2rem;
+
+    font-size: 3rem;
+    position: fixed;
+    bottom: 5rem;
+    right: 2.5rem;
+    z-index: 200;
+    width: var(--size);
+    height: var(--size);
+    aspect-ratio: 1 / 1;
+    background: conic-gradient(g.$clr-primary-dark var(--percentage, 0), g.$clr-primary 0%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--div-shadow);
+    transition: --percentage 500ms;
+
+    &__percentage {
+        background-color: g.$clr-primary;
+        color: var(--clr-light);
+        border-radius: inherit;
+        width: calc(100% - var(--bar-width));
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        strong {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            span {
+                margin-top: 1rem;
+                font-size: 2rem;
+            }
+
+        }
+        .check-icon {
+            display: none;
+            transform: scale(0);
+            font-size: 6rem;
+            transition: transform 0.1s ease-in-out 0.1s;
+        }
+    }
+    &.completed {
+        .custom__progress__percentage {
+            background-color: g.$clr-primary-dark;
+        }
+        strong {
+            display: none;
+        }
+        .check-icon {
+            display: block;
+            transform: scale(1);
+        }
+    }
+}

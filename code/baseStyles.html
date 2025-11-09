@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Base Style | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/Logo.ico" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/img/Logo.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+
+  <h1>📘 Base Style Overview</h1>
+
+      <section class="section">
+<p><strong>CSS:</strong></p>
+<pre><code class="language--css">
+
+    @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+:root {
+  --clr-primary: #087EA4;
+  --clr-secondary: #6366f1;
+  --clr-danger: #dc2626;
+  --clr-success: #22c55e;
+  --clr-warning: #f59e0b;
+  --clr-info: #3b82f6;
+  --clr-accent: #ec4899;
+  --clr-neutral: #9ca3af;
+  --clr-bg-light: #E9EAF4;
+  --clr-bg: #CED0D4;
+  --clr-bg-dark: #6D6F73;
+  --clr-font: #050505;
+  --clr-light: #ffffff;
+  --clr-dark: #000000;
+  --clr-primary-light: rgb(78.6046511628, 205.523255814, 246.3953488372);
+  --clr-primary-dark: rgb(4.4418604651, 69.9593023256, 91.0581395349);
+  --clr-secondary-light: rgb(239.4, 239.7, 253.6);
+  --clr-secondary-dark: rgb(28.8, 33.15, 234.7);
+  --clr-danger-light: rgb(241.25, 169.75, 169.75);
+  --clr-danger-dark: rgb(156.2916666667, 25.2083333333, 25.2083333333);
+  --clr-success-light: rgb(147.5454545455, 236.4545454545, 180.2727272727);
+  --clr-success-dark: rgb(22.7402597403, 131.7597402597, 62.8701298701);
+  --clr-warning-light: rgb(251.0236220472, 216.4291338583, 157.9763779528);
+  --clr-warning-dark: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+  --clr-info-light: rgb(205.2829268293, 223.2926829268, 252.7170731707);
+  --clr-info-dark: rgb(10.0317073171, 89.1707317073, 218.4682926829);
+  --clr-accent-light: rgb(250.3910891089, 210.6089108911, 230.2574257426);
+  --clr-accent-dark: rgb(209.7252475248, 21.7747524752, 114.603960396);
+  --clr-neutral-light: rgb(240.6201117318, 241.6368715084, 243.3798882682);
+  --clr-neutral-dark: rgb(113.7430167598, 123.6955307263, 140.7569832402);
+  --gradient-primary: linear-gradient(135deg, var(--clr-primary), #0ea5e9);
+  --gradient-secondary: linear-gradient(135deg, var(--clr-secondary), #4338ca);
+  --gradient-success: linear-gradient(135deg, var(--clr-success), #16a34a);
+  --gradient-danger: linear-gradient(135deg, var(--clr-danger), #b91c1c);
+  --ff: "Ubuntu", sans-serif;
+  --fs: 1.5rem;
+  --lh: 1.5;
+  --br: 0.8rem;
+  --size-bezel: 0.5rem;
+  --div-shadow: rgba(0, 0, 0, 0.19) 0rem 1rem 2rem,
+                rgba(0, 0, 0, 0.23) 0rem 0.6rem 0.6rem;
+  --border: 0.1rem solid var(--clr-bg);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow: scroll;
+  /* Hide scrollbars */
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+::-moz-selection {
+  background-color: #6D6F73;
+  color: var(--clr-light);
+}
+
+::selection {
+  background-color: #6D6F73;
+  color: var(--clr-light);
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E9EAF4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CED0D4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(178.8369565217, 181.9456521739, 188.1630434783);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff);
+  font-size: var(--fs-body);
+  line-height: var(--lh);
+  color: var(--clr-font);
+  background-color: var(--clr-light);
+  text-rendering: optimizeLegibility;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  z-index: -1;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  color: #050505;
+  text-transform: uppercase;
+}
+@media (min-width: 36em) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  color: #050505;
+  text-transform: uppercase;
+}
+@media (min-width: 36em) {
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  color: #050505;
+  text-transform: uppercase;
+}
+@media (min-width: 36em) {
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+
+
+/* =====================
+   SLIDE-IN CENTER
+===================== */
+@keyframes slideInCentre {
+  80% {
+    transform: translate(0, 30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/* =====================
+   SCROLL (Marquee Effect)
+===================== */
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+/* =====================
+   SCALE IN (Center Pop)
+===================== */
+@keyframes scaleInCenter {
+  80% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+/* =====================
+   SLIDE-IN ABSOLUTE CENTER
+===================== */
+@keyframes slideCenterForAbsolute {
+  80% {
+    transform: translate(-50%, 0%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+/* =====================
+   SLIDE-IN LEFT / RIGHT
+===================== */
+@keyframes slideInLeft {
+  0% {
+    transform: translate(-300%, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(30%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes slideInRight {
+  80% {
+    transform: translate(-30%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/* =====================
+   FADE IN
+===================== */
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+/* =====================
+   BUTTON ICON MOVE
+===================== */
+@keyframes animateButtonIcon {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100%, 0);
+  }
+}
+/* =====================
+   BACKGROUND SLIDE (Parallax)
+===================== */
+@keyframes bgSlide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+/* =====================
+   ARROW SLIDE (Up/Down)
+===================== */
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translate(-50%, 0%);
+  }
+  50% {
+    transform: translate(-50%, 25%);
+  }
+}
+/* =====================
+   SLIDE FROM BOTTOM
+===================== */
+@keyframes slideFromBottom {
+  0% {
+    transform: translate(0, 300%);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(0, -30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/*------------------------------------------------------------------------------*/
+/* LOADING CIRCLE ANIMATION */
+/*------------------------------------------------------------------------------*/
+@keyframes animateLoadingCircle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+    transform-origin: left;
+  }
+  50.01% {
+    transform: scale(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: right;
+  }
+}
+/*------------------------------------------------------------------------------*/
+/* ROTATION LOADING ANIMATION */
+/*------------------------------------------------------------------------------*/
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+</code></pre>
+
+
+  <p>
+    This CSS file defines the foundational styles, color palette, typography, animations, and accessibility
+    utilities used throughout the application. It establishes global variables in <code>:root</code>,
+    resets browser defaults, and introduces reusable animations.
+  </p>
+
+  <h3>🎨 Root Variables</h3>
+  <p>
+    The <code>:root</code> section defines CSS custom properties (variables) for colors, typography, and
+    common layout settings. These are used throughout the application to maintain consistent styling.
+  </p>
+  <ul>
+    <li><strong>Color Palette:</strong> Includes variables for primary, secondary, success, danger, warning, info, accent, and neutral tones (both light and dark variations).</li>
+    <li><strong>Background Colors:</strong> Variables for <code>--clr-bg-light</code>, <code>--clr-bg</code>, and <code>--clr-bg-dark</code>.</li>
+    <li><strong>Gradients:</strong> Predefined gradient variables like <code>--gradient-primary</code> and <code>--gradient-success</code>.</li>
+    <li><strong>Typography:</strong> Uses the <code>Ubuntu</code> font via Google Fonts and defines base font size, line height, and radius variables.</li>
+    <li><strong>Layout and Shadows:</strong> Includes reusable values for spacing, borders, and shadow effects.</li>
+  </ul>
+
+  <pre><code>:root {
+  --clr-primary: #087EA4;
+  --clr-secondary: #6366f1;
+  --clr-danger: #dc2626;
+  --ff: "Ubuntu", sans-serif;
+  --br: 0.8rem;
+  --gradient-primary: linear-gradient(135deg, var(--clr-primary), #0ea5e9);
+}</code></pre>
+
+  <h3>🌍 Global Resets</h3>
+  <p>
+    The global reset normalizes layout behavior and improves consistency across browsers.
+  </p>
+  <ul>
+    <li>Sets <code>box-sizing: border-box</code> for all elements.</li>
+    <li>Removes default margins and paddings.</li>
+    <li>Improves scroll behavior with <code>scroll-behavior: smooth</code>.</li>
+    <li>Customizes <code>::selection</code> colors for better contrast.</li>
+  </ul>
+
+  <pre><code>html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}</code></pre>
+
+  <h3>🖱️ Scrollbar Styling</h3>
+  <p>
+    The file customizes scrollbars using <code>::-webkit-scrollbar</code> selectors for a cleaner UI.
+  </p>
+  <ul>
+    <li><code>::-webkit-scrollbar</code> – sets the scrollbar size.</li>
+    <li><code>::-webkit-scrollbar-track</code> – defines the track background.</li>
+    <li><code>::-webkit-scrollbar-thumb</code> – customizes the thumb color and hover effect.</li>
+  </ul>
+
+  <pre><code>::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #CED0D4;
+  border-radius: 4px;
+}</code></pre>
+
+  <h3>🧠 Accessibility Utilities</h3>
+  <p>
+    A utility class <code>.sr-only</code> (screen reader only) is included to hide elements visually but
+    keep them accessible to screen readers.
+  </p>
+
+  <pre><code>.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}</code></pre>
+
+  <h3>🧱 Typography</h3>
+  <ul>
+    <li>Heading levels <code>h1</code>, <code>h2</code>, and <code>h3</code> are uppercase and scale with responsive breakpoints.</li>
+    <li>Paragraphs use a readable base font size of <code>1.5rem</code>.</li>
+  </ul>
+
+  <pre><code>h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #050505;
+}
+p {
+  font-size: 1.5rem;
+}</code></pre>
+
+  <h3>✨ Animations</h3>
+  <p>
+    Several keyframe animations are defined for motion effects, such as sliding, fading, scaling, and parallax.
+    These are applied to interactive UI elements like modals, buttons, loaders, and banners.
+  </p>
+  <ul>
+    <li><code>slideInCentre</code> – slides content from below with opacity.</li>
+    <li><code>scroll</code> – creates a horizontal marquee scrolling effect.</li>
+    <li><code>scaleInCenter</code> – scales elements from center for pop effects.</li>
+    <li><code>slideInLeft</code> / <code>slideInRight</code> – directional slide-in animations.</li>
+    <li><code>fadeIn</code> – smooth fade-in transition.</li>
+    <li><code>animateButtonIcon</code> – shifts button icons horizontally on hover.</li>
+    <li><code>bgSlide</code> – simulates background parallax motion.</li>
+    <li><code>arrowSlide</code> – vertical up/down arrow motion.</li>
+    <li><code>slideFromBottom</code> – introduces elements from the bottom of the screen.</li>
+    <li><code>animateLoadingCircle</code> – loading circle scale animation.</li>
+    <li><code>loading</code> – infinite rotation for loaders or spinners.</li>
+  </ul>
+
+  <pre><code>@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translate(-300%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}</code></pre>
+
+  <h3>🧩 Summary</h3>
+  <p>
+    This base stylesheet provides the visual foundation for the entire UI system:
+  </p>
+  <ul>
+    <li>Defines global design tokens via CSS variables.</li>
+    <li>Normalizes element styles and scroll behavior.</li>
+    <li>Improves accessibility and visual polish.</li>
+    <li>Introduces rich animation primitives for UI interactions.</li>
+  </ul>
+
+  <p><strong>Use this stylesheet as the root import for all components and pages to ensure consistency.</strong></p>
+
+
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

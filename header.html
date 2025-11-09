@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Header | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="img/logo.ico" />
+    
+    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
+    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+    <link rel="stylesheet" href="./assets/style-e408b1ef.css">
+  </head>
+  <body>
+<header class="header">
+  <nav class="nav" aria-labelledby="main-nav">
+    <h2 id="main-nav" class="sr-only">Main navigation</h2>
+
+    <!-- Logo -->
+    <div class="nav__addons" role="menubar">
+      <a class="nav__logo" href="index.html" aria-label="Go to homepage">
+        <img src="./assets/Logo-c0442a44.png" alt="App Logo">
+      </a>
+    </div>
+
+    <!-- Desktop menu -->
+    <ol class="nav__items" role="menubar">
+      <li class="nav__item" role="none">
+        <a class="nav__link" href="index.html" role="menuitem">
+          <span aria-hidden="true"><i class="fa-solid fa-house"></i></span>
+          <span class="sr-only">Home</span>
+        </a>
+      </li>
+
+      <li class="nav__item" role="none">
+        <a class="nav__link active" href="index.html" aria-current="page" role="menuitem">
+          Home
+        </a>
+      </li>
+
+      <li class="nav__item" role="none">
+        <a class="nav__link" href="index.html" role="menuitem">
+          Home
+        </a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav__item" role="none">
+        <div
+          id="dropDown-btn"
+          class="nav__btn nav__btn--dropdown"
+          role="menuitem"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="subItems-desktop"
+          aria-label="Show dropdown links"
+          tabindex="0"
+        >
+          DropDown
+          <i class="fa-solid fa-bell" aria-hidden="true"></i>
+          <span class="badge">5000</span>
+        </div>
+
+        <ul class="nav__items--sub" id="subItems-desktop" role="menu" hidden>
+          <li role="none">
+            <a href="#" role="menuitem" tabindex="0">Page Link</a>
+          </li>
+          <li role="none">
+            <a href="#" role="menuitem" tabindex="0">
+              Profile <span><i class="fa-solid fa-user"></i></span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </nav>
+</header>
+
+<!-- Hamburger -->
+<button
+  id="showPhoneNav-btn"
+  class="button nav__humb"
+  aria-expanded="false"
+  aria-controls="navPhone"
+  aria-label="Show phone navigation"
+>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Phone menu -->
+<nav class="nav--phone" aria-labelledby="main-nav-phone">
+  <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+
+  <ul class="nav__items" id="navPhone" hidden role="menubar">
+    <li class="nav__item" role="none">
+      <a class="nav__link" href="index.html" role="menuitem">Home</a>
+    </li>
+
+    <li class="nav__item nav__item--dropDown" role="none">
+      <div
+        class="nav__btn nav__btn--dropdown"
+        role="menuitem"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="subItems-phone"
+        tabindex="0"
+      >
+        DropDown
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">5000</span>
+      </div>
+
+      <ul id="subItems-phone" class="nav__items--sub" role="menu" hidden>
+        <li role="none">
+          <a href="#" role="menuitem" tabindex="0">Page Link</a>
+        </li>
+        <li role="none">
+          <a href="#" role="menuitem" tabindex="0">
+            Profile <span><i class="fa-solid fa-user"></i></span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<main class="container container--fit">
+<section class="section" id="navigation">
+  <h2>Navigation</h2>
+
+  <p>
+    This navigation component combines semantic HTML, ARIA attributes, and a BEM class structure to create an accessible, responsive menu. 
+    It supports desktop navigation, dropdown submenus, and a mobile hamburger menu, which automatically toggles based on screen size.
+  </p>
+
+  <h3>Class Reference</h3>
+  <ul>
+    <li><strong>.nav</strong> — main navigation wrapper</li>
+    <li><strong>.nav__items</strong> — container for link groups</li>
+    <li><strong>.nav__item</strong> — individual navigation item</li>
+    <li><strong>.nav__link</strong> — link styling and focus management</li>
+    <li><strong>.nav__btn--dropdown</strong> — toggles submenu visibility</li>
+    <li><strong>.nav__items--sub</strong> — submenu list</li>
+    <li><strong>.nav--phone</strong> — mobile navigation container</li>
+    <li><strong>.nav__humb</strong> — hamburger menu toggle</li>
+    <li><strong>.badge</strong> — notification indicator</li>
+    <li><strong>.sr-only</strong> — screen-reader-only text for accessibility</li>
+  </ul>
+
+  <h3>Accessibility</h3>
+  <p>
+    The menu uses <code>role="menubar"</code> for the main navigation and <code>role="menuitem"</code> for individual items. 
+    Dropdowns are controlled with <code>aria-expanded</code> and <code>aria-controls</code> to ensure state changes are announced by screen readers.
+  </p>
+
+  <h3>Keyboard Navigation</h3>
+  <p>
+    Users can navigate between links and dropdowns using the <strong>Tab</strong> key, and select options with <strong>Enter</strong> or <strong>Spacebar</strong>.
+    Detailed instructions for integrating JavaScript functionality are available <a href="javascript.html">here</a>.
+  </p>
+
+<p><strong>Example markup:</strong></p>
+<pre><code class="language--html">
+&lt;header class="header"&gt;
+
+  &lt;nav class="nav" aria-labelledby="main-nav"&gt;
+
+    &lt;h2 id="main-nav" class="sr-only"&gt;Main navigation&lt;/h2&gt;
+
+
+    &lt;!-- Logo --&gt;
+
+    &lt;div class="nav__addons" role="menubar"&gt;
+
+      &lt;a class="nav__logo" href="index.html" aria-label="Go to homepage"&gt;
+
+        &lt;img src="assets/img/Logo.png" alt="App Logo"&gt;
+
+      &lt;/a&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- Desktop menu --&gt;
+
+    &lt;ol class="nav__items" role="menubar"&gt;
+
+      &lt;li class="nav__item" role="none"&gt;
+
+        &lt;a class="nav__link" href="index.html" role="menuitem"&gt;
+
+          &lt;span aria-hidden="true"&gt;&lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;&lt;/span&gt;
+
+          &lt;span class="sr-only"&gt;Home&lt;/span&gt;
+
+        &lt;/a&gt;
+
+      &lt;/li&gt;
+
+      &lt;li class="nav__item" role="none"&gt;
+
+        &lt;a class="nav__link active" href="index.html" aria-current="page" role="menuitem"&gt;
+
+          Home
+        &lt;/a&gt;
+
+      &lt;/li&gt;
+
+
+      &lt;li class="nav__item" role="none"&gt;
+
+        &lt;a class="nav__link" href="index.html" role="menuitem"&gt;
+
+          Home
+
+        &lt;/a&gt;
+
+      &lt;/li&gt;
+
+      &lt;!-- Dropdown --&gt;
+
+      &lt;li class="nav__item" role="none"&gt;
+
+        &lt;div
+
+          id="dropDown-btn"
+          class="nav__btn nav__btn--dropdown"
+          role="menuitem"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="subItems-desktop"
+          aria-label="Show dropdown links"
+          tabindex="0"
+
+        &gt;
+
+          DropDown
+
+          &lt;i class="fa-solid fa-bell" aria-hidden="true"&gt;&lt;/i&gt;
+
+          &lt;span class="badge"&gt;5000&lt;/span&gt;
+
+        &lt;/div&gt;
+
+        &lt;ul class="nav__items--sub" id="subItems-desktop" role="menu" hidden&gt;
+
+          &lt;li role="none"&gt;
+
+            &lt;a href="#" role="menuitem" tabindex="0"&gt;Page Link&lt;/a&gt;
+
+          &lt;/li&gt;
+
+          &lt;li role="none"&gt;
+
+            &lt;a href="#" role="menuitem" tabindex="0"&gt;
+
+              Profile &lt;span&gt;&lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;&lt;/span&gt;
+
+            &lt;/a&gt;
+
+          &lt;/li&gt;
+
+        &lt;/ul&gt;
+
+      &lt;/li&gt;
+
+    &lt;/ol&gt;
+
+  &lt;/nav&gt;
+
+&lt;/header&gt;
+
+&lt;!-- Hamburger --&gt;
+
+&lt;button
+
+  id="showPhoneNav-btn"
+  class="button nav__humb"
+  aria-expanded="false"
+  aria-controls="navPhone"
+  aria-label="Show phone navigation"
+&gt;
+
+  &lt;span&gt;&lt;/span&gt;
+
+  &lt;span&gt;&lt;/span&gt;
+
+&lt;/button&gt;
+
+
+&lt;!-- Phone menu --&gt;
+
+&lt;nav class="nav--phone" aria-labelledby="main-nav-phone"&gt;
+
+  &lt;h2 id="main-nav-phone" class="sr-only"&gt;Main navigation for phone&lt;/h2&gt;
+
+
+  &lt;ul class="nav__items" id="navPhone" hidden role="menubar"&gt;
+
+    &lt;li class="nav__item" role="none"&gt;
+
+      &lt;a class="nav__link" href="index.html" role="menuitem"&gt;Home&lt;/a&gt;
+
+    &lt;/li&gt;
+
+    &lt;li class="nav__item nav__item--dropDown" role="none"&gt;
+
+      &lt;div
+        class="nav__btn nav__btn--dropdown"
+        role="menuitem"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="subItems-phone"
+        tabindex="0"
+      &gt;
+
+        DropDown
+        &lt;i class="fa-solid fa-bell"&gt;&lt;/i&gt;
+
+        &lt;span class="badge"&gt;5000&lt;/span&gt;
+
+      &lt;/div&gt;
+
+      &lt;ul id="subItems-phone" class="nav__items--sub" role="menu" hidden&gt;
+
+        &lt;li role="none"&gt;
+
+          &lt;a href="#" role="menuitem" tabindex="0"&gt;Page Link&lt;/a&gt;
+
+        &lt;/li&gt;
+
+        &lt;li role="none"&gt;
+
+          &lt;a href="#" role="menuitem" tabindex="0"&gt;
+
+            Profile &lt;span&gt;&lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;&lt;/span&gt;
+
+          &lt;/a&gt;
+
+        &lt;/li&gt;
+
+      &lt;/ul&gt;
+
+    &lt;/li&gt;
+
+  &lt;/ul&gt;
+
+&lt;/nav&gt;
+
+</code></pre>
+
+<p><strong>Css :</strong></p>
+<pre>
+  <code class="language--css">
+
+.nav {
+
+  height: 5.6rem;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0.3rem 0.3rem -0.3rem rgba(0, 0, 0, 0.75);
+  background-color: var(--clr-light);
+
+}
+
+.nav a, .nav a:focus, .nav a:hover {
+
+  text-decoration: none !important;
+
+}
+
+.nav__logo {
+
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.nav__logo:focus {
+
+  border: 0.1rem solid rgb(4.4418604651, 69.9593023256, 91.0581395349);
+}
+
+.nav__logo img {
+
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+
+}
+
+.nav__addons {
+  
+  height: 100%;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.nav__addons .menu__btn {
+
+  transform: rotate(0);
+  transition: transform 0.6s ease-in-out;
+
+}
+
+.nav__addons .menu__btn.clicked {
+
+  transform: rotate(360deg);
+}
+
+.nav__addons i {
+
+  font-size: 2rem;
+}
+
+.nav__addons img {
+
+  width: 5.5rem;
+  height: 5.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+
+}
+
+.nav__items {
+  
+  display: flex;
+  gap: 1rem;
+
+}
+
+.nav__items:first-of-type {
+
+  margin-right: auto;
+
+}
+
+.nav__items:first-of-type .nav__items--sub {
+
+  right: unset;
+  left: 0;
+
+}
+
+.nav__items--sub {
+
+  position: absolute;
+  top: 5.5rem;
+  right: 0;
+  background-color: var(--clr-light);
+  display: none;
+  flex-direction: column;
+  width: 25rem;
+  z-index: 5;
+  border-radius: var(--br);
+  box-shadow: var(--div-shadow);
+  transition: transform 0.3s ease-in-out;
+  max-height: 30rem;
+  overflow-y: auto;
+
+}
+
+.nav__items--sub li {
+
+  padding: 0.5rem 1rem;
+  height: 5rem;
+  min-height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav__items--sub li:first-child {
+
+  border-top-left-radius: var(--br);
+  border-top-right-radius: var(--br);
+
+}
+
+.nav__items--sub li:last-child {
+
+  border-bottom-left-radius: var(--br);
+  border-bottom-right-radius: var(--br);
+
+}
+
+.nav__items--sub li:hover {
+
+  background-color: #E9EAF4;
+  
+}
+
+.nav__items--sub li:focus {
+
+  border: 0.1rem solid black;
+
+}
+
+.nav__items--sub li a {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: var(--clr-font);
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.nav__items--sub li a:focus {
+
+  text-decoration: none;
+
+}
+
+.nav__item {
+
+  position: relative;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: var(--br);
+  font-size: var(--fs);
+  cursor: pointer;
+  color: var(--clr-font);
+
+}
+
+.nav__item:hover {
+
+  background-color: #E9EAF4;
+
+}
+
+.nav__item.active {
+
+  background-color: #087EA4;
+
+}
+
+.nav__item.active .nav__link {
+
+  color: var(--clr-light);
+
+}
+
+.nav__item .badge {
+
+  position: absolute;
+  top: -0.5rem;
+  right: -1rem;
+  border-radius: var(--br);
+  z-index: 1;
+
+}
+
+
+.nav__link {
+
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  text-align: center;
+  border-radius: var(--br);
+  color: var(--clr-font);
+  
+}
+
+.nav__link.active {
+
+  background-color: #087EA4;
+  color: var(--clr-light);
+
+}
+.nav__link:focus {
+
+  border: 0.1rem solid black;
+
+}
+
+.nav__btn {
+
+  display: inline-flex;
+  cursor: pointer;
+  outline: transparent;
+  height: 100%;
+  padding: 0 1rem;
+  background-color: inherit;
+  width: 100%;
+  align-items: center;
+  border: var(--border);
+  border-radius: var(--br);
+  font-size: var(--fs);
+  gap: 2rem;
+  color: var(--clr-font);
+
+}
+
+.nav__btn img {
+
+  width: 4.5rem;
+  height: 4.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.nav__btn:hover {
+
+  background-color: var(--clr-light);
+
+}
+
+.nav__btn:focus {
+
+  outline: black;
+  border: 0.1rem solid black;
+
+}
+
+.nav__btn.clicked {
+
+  background-color: #087EA4;
+  color: var(--clr-light);
+  border-color: rgb(4.4418604651, 69.9593023256, 91.0581395349);
+
+}
+
+.nav__btn.clicked + .nav__items--sub {
+
+  display: flex;
+
+}
+
+.nav__humb {
+
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  max-width: 4rem;
+  max-height: 4rem;
+  border: var(--border);
+  border-color: var(--clr-font);
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
+  margin-right: 1rem;
+  z-index: 10;
+  background-color: var(--clr-light);
+  cursor: pointer;
+  box-shadow: var(--div-shadow);
+
+}
+
+@media (min-width: 48em) {
+
+  .nav__humb {
+
+    display: none;
+
+  }
+
+}
+
+.nav__humb span {
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.3rem;
+  height: 0.3rem;
+  background-color: #087EA4;
+  border-radius: 40rem;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+
+}
+
+.nav__humb span:first-of-type {
+
+  transform: rotate(0deg);
+
+}
+
+.nav__humb span:nth-of-type(2) {
+
+  transform: rotate(90deg);
+  transition-delay: 0.3s;
+
+}
+
+.nav__humb.open span:first-of-type {
+
+  transform: rotate(45deg);
+
+}
+
+.nav__humb.open span:nth-of-type(2) {
+
+  transform: rotate(135deg);
+
+}
+
+.nav--phone {
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 7rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 5;
+  background-color: transparent;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  transform: translateX(110%);
+  transition: transform 0.3s ease-in-out;
+  max-height: calc(100vh - 10rem);
+  overflow-y: auto;
+
+}
+
+.nav--phone a, .nav--phone a:focus, .nav--phone a:hover {
+
+  text-decoration: none;
+
+}
+
+.nav--phone.open {
+
+  transform: translateX(0);
+
+}
+
+@media (min-width: 48em) {
+
+  .nav--phone {
+    display: none;
+  }
+
+}
+
+.nav--phone .nav__items {
+
+  background-color: var(--clr-light);
+  flex-direction: column;
+  gap: 0;
+  width: 26.5rem;
+  border-radius: var(--br);
+
+}
+
+.nav--phone .nav__items--sub {
+
+  position: unset;
+  background-color: var(--clr-light);
+  display: flex;
+  width: 100%;
+  border-radius: unset;
+  z-index: unset;
+  transform-origin: top;
+  transform: scaleY(1);
+  box-shadow: unset;
+
+}
+
+.nav--phone .nav__items--sub li {
+
+  padding: 0.5rem 1rem;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav--phone .nav__items--sub li:last-child, .nav--phone .nav__items--sub li:first-child {
+
+  border-radius: unset;
+
+}
+
+.nav--phone .nav__items--sub li:hover {
+
+  background-color: #E9EAF4;
+
+}
+
+.nav--phone .nav__items--sub li a {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: var(--clr-font);
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.nav--phone .nav__item {
+
+  border: var(--border);
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  min-height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: unset;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.nav--phone .nav__item:not(:last-child) {
+
+  border-bottom: unset;
+
+}
+
+.nav--phone .nav__item:first-of-type {
+
+  border-top-left-radius: var(--br);
+
+}
+
+.nav--phone .nav__item--dropDown {
+
+  flex-direction: column;
+  gap: unset;
+  max-height: 5rem;
+  overflow: hidden;
+
+}
+
+.nav--phone .nav__item--dropDown.clicked {
+
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+
+}
+
+.nav--phone .nav__link {
+
+  width: 100%;
+  font-size: var(--fs);
+  justify-content: space-between;
+
+}
+
+.nav--phone .nav__btn {
+
+  justify-content: space-between;
+  border: unset;
+  gap: 0.2rem;
+  border-radius: unset;
+  min-height: 5rem;
+
+}
+
+.nav--phone .nav__btn:focus {
+
+  border: 0.3rem solid black;
+
+}
+
+.nav--phone .nav__btn i {
+
+  margin-left: auto;
+
+}
+
+.nav--phone .nav__btn .badge {
+
+  position: unset;
+  
+}
+
+
+  </code>
+</pre>
+<p><strong>JS :</strong></p>
+<pre>
+  <code class="language--js">
+
+import { handleKeyEvents } from "../utils/KeyEventHandlers";
+
+import { toggleInertForChildElement } from "../utils/Inert";
+
+
+
+/**
+ * Toggles inert state on dropdown submenus (for accessibility on mobile).
+ */
+
+const toggleSubMenuPhoneInert = (dropDownMenu) => {
+
+  if (!dropDownMenu) return;
+  const submenu = dropDownMenu.querySelector(".nav__items--sub");
+  if (!submenu) return;
+
+  // Apply inverted inert: submenu is inert when parent is NOT clicked
+  toggleInertForChildElement(dropDownMenu, submenu, "clicked", true);
+
+};
+
+/**
+ * Updates ARIA attributes and visibility of a submenu based on button state.
+ */
+
+const updateNavSubMenuState = (navButton) => {
+
+  if (!navButton) return;
+  const submenu = navButton.nextElementSibling;
+  if (!submenu) return;
+  const isExpanded = navButton.classList.contains("clicked");
+  // Nav button ARIA updates
+  navButton.setAttribute("aria-expanded", isExpanded);
+  navButton.setAttribute("aria-hidden", !isExpanded);
+  navButton.toggleAttribute("hidden", !isExpanded);
+  // Submenu inert state
+  toggleSubMenuPhoneInert(navButton.parentElement);
+
+};
+
+/**
+ * Controls which nav button and submenu are active, hides others.
+ */
+
+
+const toggleNavButton = (index, navButtons) => {
+
+  const clickedButton = navButtons[index];
+  if (!clickedButton) return;
+
+  navButtons.forEach((btn, i) => {
+    const parent = btn.parentElement;
+    if (!parent) return;
+
+    if (i === index) {
+      btn.classList.toggle("clicked");
+      parent.classList.toggle("clicked");
+    } else {
+      btn.classList.remove("clicked");
+      parent.classList.remove("clicked");
+    }
+
+    updateNavSubMenuState(btn);
+  });
+
+};
+
+/**
+ * Quits/Closes menu and focuses the button that triggered it.
+ */
+
+
+const closeMenuAndFocus = (index, navButtons) => {
+
+  toggleNavButton(index, navButtons);
+  navButtons[index]?.focus();
+};
+
+/**
+ * Handles keyboard navigation inside a submenu.
+ */
+const handleSubMenuKeyboard = (index, navButtons) => {
+  const navButton = navButtons[index];
+  if (!navButton) return;
+
+  const submenu = navButton.nextElementSibling;
+  if (!submenu) return;
+
+  const menuItems = Array.from(submenu.querySelectorAll("[role='menuitem']"));
+  menuItems[0]?.focus();
+
+  submenu.addEventListener("keydown", (event) => {
+    const pressedItem = event.target.closest("[role='menuitem']");
+    const i = menuItems.indexOf(pressedItem);
+
+    handleKeyEvents(event, i, null, menuItems, () => closeMenuAndFocus(index, navButtons));
+  });
+
+};
+
+/**
+ * Attaches click and keydown handlers for all nav buttons.
+ */
+
+const setupNavButtonHandlers = (navButtons) => {
+
+  navButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => toggleNavButton(index, navButtons));
+
+    btn.addEventListener("keydown", (event) => {
+      if (event.code === "Enter" || event.code === "Space") {
+        toggleNavButton(index, navButtons);
+      }
+
+      if (btn.classList.contains("clicked")) {
+        handleSubMenuKeyboard(index, navButtons);
+      }
+    });
+  });
+
+};
+
+
+/**
+ * Applies inert handling to each mobile dropdown menu initially.
+ */
+
+
+const initInertForMobileMenus = (dropDownMenus) => {
+
+  dropDownMenus?.forEach((menu) => toggleSubMenuPhoneInert(menu));
+
+};
+
+/**
+ * Toggles mobile nav menu visibility and updates ARIA attributes.
+ */
+
+const toggleMobileMenu = (hamburgerBtn, navPhone) => {
+
+  if (!hamburgerBtn || !navPhone) return;
+
+  const isOpen = hamburgerBtn.classList.toggle("open");
+  navPhone.classList.toggle("open");
+
+  hamburgerBtn.setAttribute("aria-expanded", isOpen);
+  hamburgerBtn.setAttribute("aria-hidden", !isOpen);
+  navPhone.toggleAttribute("hidden", !isOpen);
+
+
+};
+
+
+
+const Navigation = () => {
+
+  const navButtons = Array.from(document.querySelectorAll(".nav__btn--dropdown"));
+  const hamburgerBtn = document.querySelector(".nav__humb");
+  const navPhone = document.querySelector(".nav--phone");
+  const dropDownMenus = document.querySelectorAll(".nav--phone .nav__item--dropDown");
+
+  // Mobile menu toggle
+  hamburgerBtn?.addEventListener("click", () => toggleMobileMenu(hamburgerBtn, navPhone));
+
+  setupNavButtonHandlers(navButtons);
+  initInertForMobileMenus(dropDownMenus);
+  
+};
+
+export default Navigation;
+
+
+  </code>
+</pre>
+
+</section>
+
+</main>
+    <!-- breadcrumb -->
+    
+  </body>
+</html>

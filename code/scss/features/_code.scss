@@ -1,0 +1,46 @@
+/* ===========================
+   Inline Code
+=========================== */
+code {
+  background: #f4f4f5;
+  color: #db2777;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 1.3rem;
+  font-family: "Fira Code", Consolas, monospace;
+}
+
+.language{
+
+  &--html{
+      color: greenyellow;
+  }
+  &--css{
+     color: #c586c0; 
+  }
+  &--js{
+    color:#569cd6;
+  }
+}
+/* ===========================
+   Code Blocks
+=========================== */
+pre {
+  margin-top: 1rem;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+pre code {
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  display: block;
+  font-family: "Fira Code", Consolas, monospace;
+}
+
+
+
+

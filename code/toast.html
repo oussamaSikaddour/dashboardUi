@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Toast | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="img/logo.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+
+        <!-- Logo -->
+        <div class="nav__addons" role="menubar">
+          <a class="nav__logo" href="index.html" aria-label="Go to homepage">
+            <img src="assets/img/Logo.png" alt="App Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hamburger -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="navPhone"
+      aria-label="Show phone navigation"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Phone menu -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+
+      <ul class="nav__items" id="navPhone" hidden role="menubar">
+        <li class="nav__item" role="none">
+          <a class="nav__link" href="index.html" role="menuitem">Home</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Toast Notifications</h1>
+
+        <div class="row">
+          <button class="button toast__opener button--info">
+            Send Toast Event
+          </button>
+        </div>
+      </div>
+
+      <section class="section" id="toast-section">
+        <h2>Toast Notification Component</h2>
+
+        <p>
+          The <strong>Toast</strong> component provides lightweight, temporary
+          notifications that appear to inform users of success, warnings, or
+          general system messages. Toasts are meant to be unobtrusive,
+          automatically dismissible, and accessible.
+        </p>
+
+        <p>
+          The component is built using ARIA roles for screen reader
+          compatibility and includes customizable modifier classes to define its
+          purpose (such as
+          <code>.info</code> or <code>.warning</code>).
+        </p>
+
+        <ul>
+          <li>
+            <strong>.toast__container</strong> — the main wrapper for the toast
+            notification. It handles the toast’s visibility, styling, and
+            accessibility context.
+          </li>
+          <li>
+            <strong>.toast__closer</strong> — a close button that allows users
+            to manually dismiss the notification. Typically styled as a small
+            “×” (close) icon made from two spans.
+          </li>
+          <li>
+            <strong>.toast</strong> — the message area inside the container,
+            containing the notification text.
+          </li>
+          <li>
+            <strong>.toast__opener</strong> — button used to trigger or simulate
+            a toast event, such as after a form submission or an action.
+          </li>
+          <li>
+            <strong>.info</strong> — modifier class applied to
+            <code>.toast__container</code> to indicate an informational message
+            (e.g., success, neutral updates).
+          </li>
+          <li>
+            <strong>.warning</strong> — modifier class applied to
+            <code>.toast__container</code> to indicate warnings or alerts (e.g.,
+            caution messages).
+          </li>
+        </ul>
+
+        <p><strong>Accessibility Notes:</strong></p>
+
+        <ul>
+          <li>
+            <code>role="status"</code> is used to announce toast content changes
+            without interrupting screen readers.
+          </li>
+          <li>
+            <code>aria-labelledby="toast_label"</code> links the container to
+            its descriptive heading for context.
+          </li>
+          <li>
+            The close button includes an <code>aria-label</code> for clear
+            purpose even if the icon is purely visual.
+          </li>
+          <li>
+            For more information about JavaScript integration, visit the
+            documentation
+            <a href="javascript.html">[here]</a>.
+          </li>
+        </ul>
+        <p><strong>Usage Tips:</strong></p>
+
+        <ul>
+          <li>
+            Use <code>.info</code> for general updates or success confirmations.
+          </li>
+          <li>
+            Use <code>.warning</code> for cautionary or attention-grabbing
+            messages.
+          </li>
+          <li>
+            Toasts should disappear automatically after a short delay or when
+            closed manually.
+          </li>
+          <li>
+            Avoid using toasts for critical, blocking errors — use the
+            <strong>Errors Handler</strong> component instead.
+          </li>
+        </ul>
+
+        <p><strong>Example markup (Info Toast):</strong></p>
+
+        <pre><code class="language--html">
+
+  &lt;button class="button toast__opener button--info"&gt;
+    Send Toast Event
+  &lt;/button&gt;
+
+  &lt;div
+      role="status"
+      aria-labelledby="toast_label"
+      class="toast__container info"
+      id="defaultToast"
+  &gt;
+      &lt;h2 id="toast_label" class="sr-only"&gt;Success Notification&lt;/h2&gt;
+
+      &lt;button
+          class="toast__closer"
+          aria-label="Close notification"
+      &gt;
+          &lt;span&gt;&lt;/span&gt;
+          &lt;span&gt;&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;div class="toast"&gt;
+          You have succeeded in completing the operation.
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+</code></pre>
+
+        <p><strong>Example markup (Warning Toast):</strong></p>
+
+        <pre><code class="language--html">
+
+  &lt;div
+      role="status"
+      aria-labelledby="toast_label"
+      class="toast__container warning"
+      id="warningToast"
+  &gt;
+      &lt;h2 id="toast_label" class="sr-only"&gt;Warning Notification&lt;/h2&gt;
+
+      &lt;button
+          class="toast__closer"
+          aria-label="Close warning"
+      &gt;
+          &lt;span&gt;&lt;/span&gt;
+          &lt;span&gt;&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;div class="toast"&gt;
+          Please review your input. Some fields require attention.
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+</code></pre>
+
+        <p><strong>CSS:</strong></p>
+
+        <pre><code class="language--css">
+
+.toast{
+
+  font-size: var(--fs);
+  color: var(--clr-light);
+
+}
+
+.toast__container {
+
+  position: fixed;
+  bottom: 10rem;
+  right: 2rem;
+  z-index: 25;
+  transform: scale(1) translate(300%, 0);
+  opacity: 0;
+  border-radius: var(--br);
+  background-color: rgb(22.7402597403, 131.7597402597, 62.8701298701);
+  box-shadow: rgba(23, 132, 0.25, 0.19) 0rem 1rem 2rem, rgba(23, 132, 0.25, 0.23) 0rem 0.6rem 0.6rem;
+  padding: 1.75rem;
+  transition: transform 0.3s ease-in-out 0.2s;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 28rem;
+
+}
+
+@media (min-width: 48em) {
+
+  .toast__container {
+
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 40rem;
+
+  }
+
+}
+
+.toast__container.open {
+
+  display: flex;
+  animation: 0.3s ease-in-out forwards slideInRight;
+
+}
+
+.toast__container.warning {
+
+  background-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+  box-shadow: rgba(172, 111, 7, 0.19) 0rem 1rem 2rem, rgba(172, 111, 7, 0.23) 0rem 0.6rem 0.6rem;
+
+}
+
+.toast__container.warning > .toast__closer {
+
+  border-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+  background-color: rgb(251.0236220472, 216.4291338583, 157.9763779528);
+
+}
+
+.toast__container.warning > .toast__closer span {
+
+  background-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+
+}
+
+.toast__container.warning {
+
+  background-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+  box-shadow: rgba(172, 111, 7, 0.19) 0rem 1rem 2rem, rgba(172, 111, 7, 0.23) 0rem 0.6rem 0.6rem;
+
+}
+
+.toast__container.warning > .toast__closer {
+
+  border-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+  background-color: rgb(251.0236220472, 216.4291338583, 157.9763779528);
+
+}
+
+.toast__container.warning > .toast__closer span {
+
+  background-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
+
+}
+
+.toast__container.info {
+
+  background-color: rgb(10.0317073171, 89.1707317073, 218.4682926829);
+  box-shadow: rgba(59, 130, 246, 0.19) 0rem 1rem 2rem, rgba(59, 130, 246, 0.19) 0rem 0.6rem 0.6rem;
+
+}
+
+.toast__container.info > .toast__closer {
+
+  border-color: rgb(10.0317073171, 89.1707317073, 218.4682926829);
+  background-color: rgb(205.2829268293, 223.2926829268, 252.7170731707);
+
+}
+
+.toast__container.info > .toast__closer span {
+
+  background-color: rgb(10.0317073171, 89.1707317073, 218.4682926829);
+
+}
+
+.toast__closer {
+
+  position: absolute;
+  right: -1.75rem;
+  top: -1.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 0.5rem solid rgb(22.7402597403, 131.7597402597, 62.8701298701);
+  border-color: rgb(22.7402597403, 131.7597402597, 62.8701298701);
+  border-radius: 50%;
+  background-color: rgb(147.5454545455, 236.4545454545, 180.2727272727);
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+
+}
+
+.toast__closer span {
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2.8rem;
+  height: 0.2rem;
+  background-color: rgb(22.7402597403, 131.7597402597, 62.8701298701);
+  border-radius: 40rem;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+
+}
+
+.toast__closer span:first-of-type {
+
+  transform: rotate(45deg);
+
+}
+
+.toast__closer span:nth-of-type(2) {
+
+  transform: rotate(135deg);
+
+}
+
+
+    </code>
+    </pre>
+        <p><strong>JS:</strong></p>
+        <pre><code class="language--js">
+      
+import { setAriaAttributes } from "../utils/Aria"; // Accessibility helper
+import { dispatchCustomEvent } from "../utils/DespatchCustomEvent";
+
+// Toast State Management
+
+const getToastState = (toast) => {
+
+  return toast.classList.contains("open");
+
+};
+
+const closeToast = (toast) => {
+
+  toast.classList.remove("open");
+  setAriaAttributes(true, "-1", toast);
+
+};
+
+const openToast = (toast) => {
+
+  toast.classList.add("open");
+  setAriaAttributes(false, "0", toast);
+  toast.focus(); // Bring focus for accessibility
+  setTimeout(() => {
+
+    closeToast(toast); 
+
+  }, 30000); 
+
+};
+
+// Event Handlers
+
+const handleOpenToastClick = () => {
+
+  dispatchCustomEvent("show-toast");
+
+};
+
+const handleToastClick = (toast) => {
+
+  return () => closeToast(toast);
+
+};
+
+const handleToastKeyDown = (toast) => {
+
+  return (e) => {
+
+    if (e.key === "Enter" || e.key === " ") {
+
+      closeToast(toast);
+
+    }
+
+  };
+
+};
+
+const handleShowToastEvent = (toast) => {
+
+  return (e) => {
+
+    e.preventDefault();
+
+    openToast(toast);
+
+  };
+
+};
+
+// Element Selection
+const getToastElements = () => {
+
+  const openButton = document.querySelector(".toast__opener");
+
+  const closeButton = document.querySelector(".toast__closer");
+
+  const toast = document.querySelector(".toast__container");
+
+  
+  return { openButton, closeButton, toast };
+};
+
+const validateToastElements = (openButton, closeButton, toast) => {
+
+  if (!toast) {
+
+    console.warn('Toast container element not found');
+
+    return false;
+
+  }
+  
+  if (!openButton) {
+
+    console.warn('Toast opener element not found');
+
+    return false;
+
+  }
+  
+  if (!closeButton) {
+
+    console.warn('Toast closer element not found');
+
+    return false;
+
+  }
+  
+  return true;
+
+};
+
+// Event Listener Setup
+const setupToastEventListeners = (openButton, closeButton, toast) => {
+
+  const openHandler = handleOpenToastClick;
+
+  const clickHandler = handleToastClick(toast);
+
+  const keyDownHandler = handleToastKeyDown(toast);
+
+  const customEventHandler = handleShowToastEvent(toast);
+
+  
+  openButton.addEventListener("click", openHandler);
+
+  closeButton.addEventListener("click", clickHandler);
+
+  toast.addEventListener("click", clickHandler);
+
+  toast.addEventListener("keydown", keyDownHandler);
+
+  document.addEventListener('show-toast', customEventHandler);
+
+};
+
+// Main Toast Component
+
+const Toast = () => {
+
+  const { openButton, closeButton, toast } = getToastElements();
+
+  
+  if (!validateToastElements(openButton, closeButton, toast)) {
+
+    return;
+
+  }
+  
+  setupToastEventListeners(openButton, closeButton, toast);
+  
+};
+
+export default Toast;
+    </code>
+  </pre>
+      </section>
+    </main>
+
+    <div
+      role="status"
+      aria-labelledby="toast_label"
+      class="toast__container info"
+      id="defaultModal"
+    >
+      <h2 id="toast_label" class="sr-only">Success Notification</h2>
+
+      <button class="toast__closer" aria-label="Close notification">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="toast">You have succeeded in completing the operation.</div>
+    </div>
+
+    <!-- breadcrumb -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

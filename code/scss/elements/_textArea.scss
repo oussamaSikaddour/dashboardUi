@@ -1,0 +1,68 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+.textarea {
+  font-family: inherit;
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--br);
+  resize: none;
+  outline: transparent;
+  font-size: var(--fs);
+  color: var(--clr-font);
+  padding: 1rem;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent; // hides placeholder for floating label
+  }
+
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &:focus {
+    background-color: var(--clr-light) !important;
+    border-color: g.$clr-primary;
+  }
+
+  /* --- Floating label --- */
+  &:placeholder-shown ~ .textarea__label {
+    transform: translateY(0%) scale(1); // label inside textarea
+  }
+
+  /* Slide label up on focus OR when textarea has content */
+  &:focus ~ .textarea__label,
+   &:not(:placeholder-shown) ~ .textarea__label{
+    transform: translateY(-100%) scale(0.9);
+    color: g.$clr-primary;
+  }
+
+  /* --- Group wrapper --- */
+  &__group {
+    position: relative;
+    margin-top: 1rem;
+    width: 28rem;
+    height: 12rem;
+
+    @include u.breakpoint(md) {
+      width: 40rem;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: block;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--clr-light);
+    padding: 0 1rem;
+    font-size: var(--fs);
+    color: var(--clr-bg-dark);
+    pointer-events: none; // lets clicks go through
+  }
+
+}

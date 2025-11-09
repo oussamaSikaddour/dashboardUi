@@ -1,0 +1,28 @@
+@use "../util/" as u;
+@use "../globals/" as g;
+
+
+.tooltip{
+
+    &__content{
+        display: none;
+    }
+
+position: absolute;
+z-index: -1;
+visibility:hidden;
+ padding: 0.5rem 1rem;
+ background-color: g.$clr-primary-dark;
+ max-height: fit-content;
+ max-width: 28rem;
+ font-size: var(--fs);
+ border-radius: 40rem;
+ color:var(--clr-light);
+ box-shadow:var(--div-shadow);
+  transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+ 
+ &.show{
+    z-index: 300;
+    visibility: visible;
+ }
+}
