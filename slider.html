@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,81 +11,67 @@
       referrerpolicy="no-referrer"
     />
 
-    <title>Toast | DashboardUi</title>
+    <title>SLider | DashboardUi</title>
 
-    <link rel="icon" type="image/icon" href="img/logo.ico" />
-    
+    <link rel="icon" type="image/icon" href="assets/images/logo.ico" />
     <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
     <link rel="stylesheet" href="/assets/main-62f7b5df.css">
-    <link rel="stylesheet" href="/assets/style-f9c2effe.css">
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header">
       <nav class="nav" aria-labelledby="main-nav">
         <h2 id="main-nav" class="sr-only">Main navigation</h2>
-
-        <!-- Logo -->
         <div class="nav__addons" role="menubar">
-          <a class="nav__logo" href="index.html" aria-label="Go to homepage">
-            <img src="/assets/logo-c0442a44.png" alt="App Logo" />
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="/assets/logo-c0442a44.png" alt="app Logo" />
           </a>
         </div>
       </nav>
     </header>
 
-    <!-- Hamburger -->
+    <!-- PHONE NAV TOGGLE -->
     <button
       id="showPhoneNav-btn"
       class="button nav__humb"
       aria-expanded="false"
-      aria-controls="navPhone"
+      aria-controls="options"
       aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
     >
       <span></span>
       <span></span>
     </button>
 
-    <!-- Phone menu -->
+    <!-- PHONE NAV -->
     <nav class="nav--phone" aria-labelledby="main-nav-phone">
       <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
-
-      <ul class="nav__items" id="navPhone" hidden role="menubar">
+      <ul class="nav__items" id="options" hidden>
         <li class="nav__item" role="none">
-          <a class="nav__link" href="index.html" role="menuitem">Home</a>
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
         </li>
       </ul>
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main class="container container--fit">
-      <div class="column">
-        <h1>Toast Notifications</h1>
-
-        <div class="row">
-          <button class="button toast__opener button--info">
-            Send Toast Event
-          </button>
-        </div>
-      </div>
-
+      <section class="section">
+  
+      </section>
     </main>
 
-    <div
-      role="status"
-      aria-labelledby="toast_label"
-      class="toast__container info"
-      id="defaultModal"
-    >
-      <h2 id="toast_label" class="sr-only">Success Notification</h2>
-
-      <button class="toast__closer" aria-label="Close notification">
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="toast">You have succeeded in completing the operation.</div>
-    </div>
-
-    <!-- breadcrumb -->
     
   </body>
 </html>

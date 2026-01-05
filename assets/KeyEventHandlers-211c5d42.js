@@ -1,1 +1,0 @@
-const r=(u,s,c=null,f,p=null)=>{const{key:o}=u,t=f.length-1;if(o==="Escape"&&p){u.preventDefault(),p();return}if((o==="Enter"||o===" ")&&c){u.preventDefault(),c();return}const n={ArrowDown:()=>{s<t&&f[s+1].focus()},ArrowUp:()=>{s>0&&f[s-1].focus()},Home:()=>f[0].focus(),End:()=>f[t].focus()};n[o]&&(u.preventDefault(),n[o]())};export{r as h};

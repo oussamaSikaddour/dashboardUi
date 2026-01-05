@@ -13,9 +13,9 @@
 
     <title>Input | DashboardUi</title>
 
-    <link rel="icon" type="image/icon" href="./assets/Logo-14f4ddeb.ico" />
-    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
-    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+    <link rel="icon" type="image/icon" href="assets/images/logo.ico" />
+    <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="/assets/main-62f7b5df.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -29,7 +29,7 @@
             tabindex="0"
             aria-label="Description of the overall image"
           >
-            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+            <img src="/assets/logo-c0442a44.png" alt="app Logo" />
           </a>
         </div>
       </nav>
@@ -89,201 +89,7 @@
           </div>
         </div>
       </div>
-      <section class="section" id="inputs">
-        <h2>Form Inputs</h2>
 
-        <p>
-          The input component uses semantic HTML and BEM-structured utility
-          classes to create floating labels, icons, and validation feedback
-          without relying on external libraries. Every input begins with the
-          base
-          <code>.input</code> class, while supporting elements like
-          <code>.input__label</code>, <code>.input__span</code>, and
-          <code>.input__error</code> provide structure for icons and messages.
-        </p>
-
-        <ul>
-          <li>
-            <strong>.input</strong> — base class for styling, spacing, and
-            behavior
-          </li>
-          <li>
-            <strong>.input__group</strong> — wrapper that positions label and
-            icons
-          </li>
-          <li>
-            <strong>.input__label</strong> — floating label that animates on
-            focus or input
-          </li>
-          <li>
-            <strong>.input__span</strong> — optional icon (e.g., visibility
-            toggle or dropdown)
-          </li>
-          <li>
-            <strong>.input__error</strong> — validation message shown on error
-          </li>
-        </ul>
-
-        <p>
-          Inputs are grouped inside <code>.input__group</code> to align floating
-          labels and icons. Validation messages appear beneath the input using
-          <code>.input__error</code>, and icons inside
-          <code>.input__span</code> can trigger interactions, such as toggling
-          password visibility via JavaScript.
-        </p>
-
-        <p><strong>Example markup:</strong></p>
-
-        <pre><code class="language--html">
-&lt;div class="input__item"&gt;
-  &lt;div class="input__group"&gt;
-    &lt;input class="input" type="text" placeholder=" " required /&gt;
-    &lt;label class="input__label"&gt;Username&lt;/label&gt;
-    &lt;span class="input__span"&gt;
-      &lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;
-    &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p class="input__error"&gt;This field is required.&lt;/p&gt;
-&lt;/div&gt;
-  </code></pre>
-        <p><strong>Css : </strong></p>
-
-        <pre>
-  <code class="language--css">
-.input {
-  font-family: inherit;
-  width: 100%;
-  border: var(--border);
-  border-radius: var(--br);
-  outline: 0;
-  line-height: var(--lh);
-  font-size: var(--fs);
-  color: var(--clr-bg-dark);
-  padding: 1rem 3rem 1rem 1rem;
-  background: transparent;
-  transition: border-color 0.2s;
-}
-
-
-.input__item {
-  display: flex;
-  height: -moz-fit-content;
-  height: fit-content;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-
-.input__group {
-  position: relative;
-  width: 28rem;
-}
-
-
-@media (min-width: 48em) {
-  .input__group {
-    width: 30rem;
-  }
-}
-
-
-.input__label {
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-150%) scale(0.9);
-  display: block;
-  transition: all 0.2s ease-in-out;
-  background-color: var(--clr-light);
-  padding: 0 0.5rem;
-  font-size: var(--fs);
-  color: #087EA4;
-}
-
-
-.input__span {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: var(--fs);
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  color: #6D6F73;
-  cursor: pointer;
-}
-
-
-.input__error {
-  font-size: 1.3rem;
-  color: #dc2626;
-  text-align: left;
-  min-width: 28rem;
-  max-width: 30rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-
-.input::-moz-placeholder {
-  color: transparent;
-}
-
-
-.input::placeholder {
-  color: transparent;
-}
-
-
-.input:-moz-placeholder ~ .input__label {
-  transform: translateY(-50%) scale(1);
-  color: #6D6F73;
-}
-
-
-.input:placeholder-shown ~ .input__label {
-  transform: translateY(-50%) scale(1);
-  color: #6D6F73;
-}
-
-
-.input:focus {
-  background-color: var(--clr-light) !important;
-}
-
-
-.input:focus, .input[aria-expanded=true] {
-  border-color: #087EA4;
-}
-
-
-.input:focus ~ .input__label, .input[aria-expanded=true] ~ .input__label {
-  display: block;
-  transform: translateY(-150%) scale(0.9);
-  color: #087EA4;
-  transition: 0.2s;
-}
-
-
-.input:focus ~ .input__span, .input[aria-expanded=true] ~ .input__span {
-  color: #087EA4;
-}
-
-
-.input:required, .input:invalid {
-  box-shadow: none;
-}
-
-
-  </code>
-</pre>
-      </section>
     </main>
 
     

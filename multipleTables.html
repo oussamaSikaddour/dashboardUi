@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Multiple Tables| DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/img/Logo.ico" />
+    <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="/assets/main-62f7b5df.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="/assets/logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <div class="grid">
+        <div class="grid__slot">
+          <div class="column">
+            <h1>Table</h1>
+            <div class="table__container">
+              <div class="table__header">
+                <h3>Table Header</h3>
+                <div class="table__header__actions">
+                  <div
+                    class="file__input__group icon_only hasTooltip"
+                    role="input"
+                    tabindex="0"
+                  >
+                    <span class="tooltip__content">Upload File</span>
+                    <button class="button rounded">
+                      <i class="fa-solid fa-file-import"></i>
+                    </button>
+                    <input type="file" name="myfile" />
+                  </div>
+
+                  <button
+                    class="button rounded hasTooltip"
+                    id="tabel-to-excel-btn"
+                    aria-label="export data to excel"
+                  >
+                    <span class="tooltip__content">
+                      telecharger fichier Excel
+                    </span>
+                    <i class="fa-solid fa-file-excel"></i>
+                  </button>
+
+                  <button
+                    class="button rounded table__filters__btn hasTooltip"
+                    id="filter"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="tableFilters"
+                  >
+                    <span class="tooltip__content"> Manage Filters </span>
+                    <i class="fa-solid fa-filter"></i>
+                  </button>
+
+                  <div class="select__group hasTooltip">
+                    <span class="tooltip__content">Per Page</span>
+                    <div class="select">
+                      <select id="perPageId" aria-invalid="false">
+                        <option value="25" selected disabled>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="table__filters"
+                id="tableFilters"
+                role="menu"
+                aria-labelledby="filter"
+              >
+                <div class="form__container">
+                  <form class="form" method="POST">
+                    <div class="row">
+                      <div class="input__item">
+                        <div class="input__group">
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Name"
+                            name="name"
+                            id="nameIdF"
+                            required
+                          />
+                          <label for="nameIdF" class="input__label">Name</label>
+                          <span class="input__span"
+                            ><i class="fa-solid fa-user"></i
+                          ></span>
+                        </div>
+                        <div class="input__error">
+                          ⚠ Example error message to demonstrate form validation
+                        </div>
+                      </div>
+                      <div class="input__item">
+                        <div class="input__group">
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Email"
+                            name="email"
+                            id="emailIdF"
+                            required
+                          />
+                          <label for="emailIdF" class="input__label"
+                            >Email</label
+                          >
+                          <span class="input__span"
+                            ><i class="fa-solid fa-message"></i
+                          ></span>
+                        </div>
+                        <div class="input__error">
+                          ⚠ Example error message to demonstrate form validation
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form__actions">
+                      <button class="button rounded button--primary hasTooltip">
+                        <span class="tooltip__content"> reset Filters </span>
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="table__body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><div>actions</div></th>
+                      <th scope="col">
+                        <div>Last Name<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>First Name<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Email<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Address<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Phone<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Status <i class="fa-solid fa-sort"></i></div>
+                      </th>
+
+                      <th scope="col">
+                        <div>Image</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-1"
+                            aria-label="Delete Person-1"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Williams</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-1"
+                            aria-label="Update Person-1"
+                          >
+                            <span class="tooltip__content"
+                              >Update Williams</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Williams</td>
+                      <td>Michael</td>
+                      <td>michael.w@email.com</td>
+                      <td>789 Pine Rd, Chicago, IL</td>
+                      <td>(555) 345-6789</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-1-29ae7ee9.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-2"
+                            aria-label="Delete Person-2"
+                          >
+                            <span class="tooltip__content">Delete Smith</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-2"
+                            aria-label="Update Person-2"
+                          >
+                            <span class="tooltip__content">Update Smith</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Smith</td>
+                      <td>Emma</td>
+                      <td>emma.smith@email.com</td>
+                      <td>123 Maple St, New York, NY</td>
+                      <td>(555) 111-2233</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-2-c5e18c6d.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-3"
+                            aria-label="Delete Person-3"
+                          >
+                            <span class="tooltip__content">Delete Johnson</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-3"
+                            aria-label="Update Person-3"
+                          >
+                            <span class="tooltip__content">Update Johnson</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Johnson</td>
+                      <td>Oliver</td>
+                      <td>oliver.j@email.com</td>
+                      <td>456 Oak Ave, Dallas, TX</td>
+                      <td>(555) 987-6543</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-3-95e2b600.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-4"
+                            aria-label="Delete Person-4"
+                          >
+                            <span class="tooltip__content">Delete Brown</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-4"
+                            aria-label="Update Person-4"
+                          >
+                            <span class="tooltip__content">Update Brown</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Brown</td>
+                      <td>Sophia</td>
+                      <td>sophia.b@email.com</td>
+                      <td>321 Cedar Ln, Miami, FL</td>
+                      <td>(555) 222-3344</td>
+                      <td class="success">Active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-4-a8d4f3e0.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-5"
+                            aria-label="Delete Person-5"
+                          >
+                            <span class="tooltip__content">Delete Jones</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-5"
+                            aria-label="Update Person-5"
+                          >
+                            <span class="tooltip__content">Update Jones</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Jones</td>
+                      <td>Lucas</td>
+                      <td>lucas.j@email.com</td>
+                      <td>999 Elm Blvd, Seattle, WA</td>
+                      <td>(555) 333-4455</td>
+                      <td class="danger">Inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-5-d7ef2087.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-6"
+                            aria-label="Delete Person-6"
+                          >
+                            <span class="tooltip__content">Delete Davis</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-6"
+                            aria-label="Update Person-6"
+                          >
+                            <span class="tooltip__content">Update Davis</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Davis</td>
+                      <td>Ava</td>
+                      <td>ava.d@email.com</td>
+                      <td>14 Birch St, Denver, CO</td>
+                      <td>(555) 444-5566</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-6-16146e0d.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-7"
+                            aria-label="Delete Person-7"
+                          >
+                            <span class="tooltip__content">Delete Garcia</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-7"
+                            aria-label="Update Person-7"
+                          >
+                            <span class="tooltip__content">Update Garcia</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Garcia</td>
+                      <td>Noah</td>
+                      <td>noah.g@email.com</td>
+                      <td>77 Pineview Dr, Austin, TX</td>
+                      <td>(555) 555-6677</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-7-345e3ac6.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-8"
+                            aria-label="Delete Person-8"
+                          >
+                            <span class="tooltip__content">Delete Miller</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-8"
+                            aria-label="Update Person-8"
+                          >
+                            <span class="tooltip__content">Update Miller</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Miller</td>
+                      <td>Charlotte</td>
+                      <td>charlotte.m@email.com</td>
+                      <td>42 Palm Rd, Phoenix, AZ</td>
+                      <td>(555) 666-7788</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-8-1140b87c.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-9"
+                            aria-label="Delete Person-9"
+                          >
+                            <span class="tooltip__content">Delete Wilson</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-9"
+                            aria-label="Update Person-9"
+                          >
+                            <span class="tooltip__content">Update Wilson</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Wilson</td>
+                      <td>James</td>
+                      <td>james.w@email.com</td>
+                      <td>65 Bay St, San Diego, CA</td>
+                      <td>(555) 777-8899</td>
+                      <td class="danger">inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-9-400cc508.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-10"
+                            aria-label="Delete Person-10"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Martinez</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-10"
+                            aria-label="Update Person-10"
+                          >
+                            <span class="tooltip__content"
+                              >Update Martinez</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Martinez</td>
+                      <td>Amelia</td>
+                      <td>amelia.m@email.com</td>
+                      <td>301 Ridge Ave, Atlanta, GA</td>
+                      <td>(555) 888-9900</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-10-34b6499f.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-11"
+                            aria-label="Delete Person-11"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Anderson</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-11"
+                            aria-label="Update Person-11"
+                          >
+                            <span class="tooltip__content"
+                              >Update Anderson</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Anderson</td>
+                      <td>Harper</td>
+                      <td>harper.a@email.com</td>
+                      <td>505 Willow Way, Boston, MA</td>
+                      <td>(555) 999-0011</td>
+                      <td class="danger">inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-11-8b613a50.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-12"
+                            aria-label="Delete Person-12"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Thompson</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-12"
+                            aria-label="Update Person-12"
+                          >
+                            <span class="tooltip__content"
+                              >Update Thompson</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Thompson</td>
+                      <td>Ella</td>
+                      <td>ella.t@email.com</td>
+                      <td>777 Grove Rd, Portland, OR</td>
+                      <td>(555) 000-1122</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-12-2e4b3547.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="pagination__container">
+                <nav
+                  role="navigation"
+                  aria-label="Pagination Navigation"
+                  class="pagination"
+                >
+                  <div class="pagination__content">
+                    <div class="pagination__info">
+                      <p>
+                        Showing
+                        <strong>1</strong>
+                        to
+                        <strong>2</strong>
+                        of
+                        <strong>3</strong>
+                        results
+                      </p>
+                    </div>
+
+                    <div class="pagination__links">
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="First page"
+                        disabled
+                      >
+                        <i class="fa-solid fa-angles-left"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Previous page"
+                        disabled
+                      >
+                        <i class="fa-solid fa-angle-left"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Next page"
+                      >
+                        <i class="fa-solid fa-angle-right"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Last page"
+                      >
+                        <i class="fa-solid fa-angles-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="grid__divider"
+          role="separator"
+          aria-orientation="vertical"
+          tabindex="0"
+        ></div>
+        <div class="grid__slot">
+          <div class="column">
+            <h1>Table</h1>
+            <div class="table__container">
+              <div class="table__header">
+                <h3>Table Header</h3>
+                <div class="table__header__actions">
+                  <div
+                    class="file__input__group icon_only hasTooltip"
+                    role="input"
+                    tabindex="0"
+                  >
+                    <span class="tooltip__content">Upload File</span>
+                    <button class="button rounded">
+                      <i class="fa-solid fa-file-import"></i>
+                    </button>
+                    <input type="file" name="myfile" />
+                  </div>
+
+                  <button
+                    class="button rounded hasTooltip"
+                    id="tabel-to-excel-btn"
+                    aria-label="export data to excel"
+                  >
+                    <span class="tooltip__content">
+                      telecharger fichier Excel
+                    </span>
+                    <i class="fa-solid fa-file-excel"></i>
+                  </button>
+
+                  <button
+                    class="button rounded table__filters__btn hasTooltip"
+                    id="filter"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="tableFilters"
+                  >
+                    <span class="tooltip__content"> Manage Filters </span>
+                    <i class="fa-solid fa-filter"></i>
+                  </button>
+
+                  <div class="select__group hasTooltip">
+                    <span class="tooltip__content">Per Page</span>
+                    <div class="select">
+                      <select id="perPageId" aria-invalid="false">
+                        <option value="25" selected disabled>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="table__filters"
+                id="tableFilters"
+                role="menu"
+                aria-labelledby="filter"
+              >
+                <div class="form__container">
+                  <form class="form" method="POST">
+                    <div class="row">
+                      <div class="input__item">
+                        <div class="input__group">
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Name"
+                            name="name"
+                            id="nameIdF"
+                            required
+                          />
+                          <label for="nameIdF" class="input__label">Name</label>
+                          <span class="input__span"
+                            ><i class="fa-solid fa-user"></i
+                          ></span>
+                        </div>
+                        <div class="input__error">
+                          ⚠ Example error message to demonstrate form validation
+                        </div>
+                      </div>
+                      <div class="input__item">
+                        <div class="input__group">
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Email"
+                            name="email"
+                            id="emailIdF"
+                            required
+                          />
+                          <label for="emailIdF" class="input__label"
+                            >Email</label
+                          >
+                          <span class="input__span"
+                            ><i class="fa-solid fa-message"></i
+                          ></span>
+                        </div>
+                        <div class="input__error">
+                          ⚠ Example error message to demonstrate form validation
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form__actions">
+                      <button class="button rounded button--primary hasTooltip">
+                        <span class="tooltip__content"> reset Filters </span>
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="table__body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><div>actions</div></th>
+                      <th scope="col">
+                        <div>Last Name<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>First Name<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Email<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Address<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Phone<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Status <i class="fa-solid fa-sort"></i></div>
+                      </th>
+
+                      <th scope="col">
+                        <div>Image</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-1"
+                            aria-label="Delete Person-1"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Williams</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-1"
+                            aria-label="Update Person-1"
+                          >
+                            <span class="tooltip__content"
+                              >Update Williams</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Williams</td>
+                      <td>Michael</td>
+                      <td>michael.w@email.com</td>
+                      <td>789 Pine Rd, Chicago, IL</td>
+                      <td>(555) 345-6789</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-1-29ae7ee9.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-2"
+                            aria-label="Delete Person-2"
+                          >
+                            <span class="tooltip__content">Delete Smith</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-2"
+                            aria-label="Update Person-2"
+                          >
+                            <span class="tooltip__content">Update Smith</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Smith</td>
+                      <td>Emma</td>
+                      <td>emma.smith@email.com</td>
+                      <td>123 Maple St, New York, NY</td>
+                      <td>(555) 111-2233</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-2-c5e18c6d.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-3"
+                            aria-label="Delete Person-3"
+                          >
+                            <span class="tooltip__content">Delete Johnson</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-3"
+                            aria-label="Update Person-3"
+                          >
+                            <span class="tooltip__content">Update Johnson</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Johnson</td>
+                      <td>Oliver</td>
+                      <td>oliver.j@email.com</td>
+                      <td>456 Oak Ave, Dallas, TX</td>
+                      <td>(555) 987-6543</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-3-95e2b600.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-4"
+                            aria-label="Delete Person-4"
+                          >
+                            <span class="tooltip__content">Delete Brown</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-4"
+                            aria-label="Update Person-4"
+                          >
+                            <span class="tooltip__content">Update Brown</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Brown</td>
+                      <td>Sophia</td>
+                      <td>sophia.b@email.com</td>
+                      <td>321 Cedar Ln, Miami, FL</td>
+                      <td>(555) 222-3344</td>
+                      <td class="success">Active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-4-a8d4f3e0.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-5"
+                            aria-label="Delete Person-5"
+                          >
+                            <span class="tooltip__content">Delete Jones</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-5"
+                            aria-label="Update Person-5"
+                          >
+                            <span class="tooltip__content">Update Jones</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Jones</td>
+                      <td>Lucas</td>
+                      <td>lucas.j@email.com</td>
+                      <td>999 Elm Blvd, Seattle, WA</td>
+                      <td>(555) 333-4455</td>
+                      <td class="danger">Inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-5-d7ef2087.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-6"
+                            aria-label="Delete Person-6"
+                          >
+                            <span class="tooltip__content">Delete Davis</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-6"
+                            aria-label="Update Person-6"
+                          >
+                            <span class="tooltip__content">Update Davis</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Davis</td>
+                      <td>Ava</td>
+                      <td>ava.d@email.com</td>
+                      <td>14 Birch St, Denver, CO</td>
+                      <td>(555) 444-5566</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-6-16146e0d.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-7"
+                            aria-label="Delete Person-7"
+                          >
+                            <span class="tooltip__content">Delete Garcia</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-7"
+                            aria-label="Update Person-7"
+                          >
+                            <span class="tooltip__content">Update Garcia</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Garcia</td>
+                      <td>Noah</td>
+                      <td>noah.g@email.com</td>
+                      <td>77 Pineview Dr, Austin, TX</td>
+                      <td>(555) 555-6677</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-7-345e3ac6.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-8"
+                            aria-label="Delete Person-8"
+                          >
+                            <span class="tooltip__content">Delete Miller</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-8"
+                            aria-label="Update Person-8"
+                          >
+                            <span class="tooltip__content">Update Miller</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Miller</td>
+                      <td>Charlotte</td>
+                      <td>charlotte.m@email.com</td>
+                      <td>42 Palm Rd, Phoenix, AZ</td>
+                      <td>(555) 666-7788</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-8-1140b87c.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-9"
+                            aria-label="Delete Person-9"
+                          >
+                            <span class="tooltip__content">Delete Wilson</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-9"
+                            aria-label="Update Person-9"
+                          >
+                            <span class="tooltip__content">Update Wilson</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Wilson</td>
+                      <td>James</td>
+                      <td>james.w@email.com</td>
+                      <td>65 Bay St, San Diego, CA</td>
+                      <td>(555) 777-8899</td>
+                      <td class="danger">inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-9-400cc508.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-10"
+                            aria-label="Delete Person-10"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Martinez</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-10"
+                            aria-label="Update Person-10"
+                          >
+                            <span class="tooltip__content"
+                              >Update Martinez</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Martinez</td>
+                      <td>Amelia</td>
+                      <td>amelia.m@email.com</td>
+                      <td>301 Ridge Ave, Atlanta, GA</td>
+                      <td>(555) 888-9900</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-10-34b6499f.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-11"
+                            aria-label="Delete Person-11"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Anderson</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-11"
+                            aria-label="Update Person-11"
+                          >
+                            <span class="tooltip__content"
+                              >Update Anderson</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Anderson</td>
+                      <td>Harper</td>
+                      <td>harper.a@email.com</td>
+                      <td>505 Willow Way, Boston, MA</td>
+                      <td>(555) 999-0011</td>
+                      <td class="danger">inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-11-8b613a50.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-12"
+                            aria-label="Delete Person-12"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Thompson</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-12"
+                            aria-label="Update Person-12"
+                          >
+                            <span class="tooltip__content"
+                              >Update Thompson</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Thompson</td>
+                      <td>Ella</td>
+                      <td>ella.t@email.com</td>
+                      <td>777 Grove Rd, Portland, OR</td>
+                      <td>(555) 000-1122</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="/assets/person-12-2e4b3547.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="pagination__container">
+                <nav
+                  role="navigation"
+                  aria-label="Pagination Navigation"
+                  class="pagination"
+                >
+                  <div class="pagination__content">
+                    <div class="pagination__info">
+                      <p>
+                        Showing
+                        <strong>1</strong>
+                        to
+                        <strong>2</strong>
+                        of
+                        <strong>3</strong>
+                        results
+                      </p>
+                    </div>
+
+                    <div class="pagination__links">
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="First page"
+                        disabled
+                      >
+                        <i class="fa-solid fa-angles-left"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Previous page"
+                        disabled
+                      >
+                        <i class="fa-solid fa-angle-left"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Next page"
+                      >
+                        <i class="fa-solid fa-angle-right"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Last page"
+                      >
+                        <i class="fa-solid fa-angles-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="tip-content-id" role="tooltip" class="tooltip"></div>
+    
+  </body>
+</html>

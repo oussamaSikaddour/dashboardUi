@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Carousel | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/images/logo.ico" />
+    <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="/assets/main-62f7b5df.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="/assets/logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <section class="section">
+        <div
+          class="carousel"
+          aria-roledescription="carousel"
+          aria-label="Highlighted television shows"
+        >
+          <div class="controls">
+            <button
+              type="button"
+              class="button transparent rounded previous"
+              aria-controls="myCarousel-items"
+              aria-label="Previous Slide"
+            >
+              <span><i class="fa-solid fa-arrow-left"></i></span>
+            </button>
+            <button
+              type="button"
+              class="button transparent rounded rotation"
+              aria-label="Stop automatic slide show"
+            ></button>
+            <button
+              type="button"
+              class="button transparent rounded next"
+              aria-controls="myCarousel-items"
+              aria-label="Next Slide"
+            >
+              <span><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </div>
+          <div id="myCarousel-items" class="carousel__items" aria-live="off">
+            <div
+              class="carousel__item"
+              role="group"
+              aria-roledescription="slide"
+            >
+              <div class="carousel__item__image">
+                <a href="#">
+                  <img src="/assets/1-7777ad37.avif" alt="boat" />
+                </a>
+              </div>
+              <div class="carousel__item__caption">
+                <h3>SLIDE 1</h3>
+                <div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Dolores, enim qui sapiente rerum nostrum iste! Nesciunt
+                    assumenda laboriosam eaque! Sapiente autem temporibus ipsam
+                    veritatis ducimus maiores hic repellendus fugit quidem!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="carousel__item"
+              role="group"
+              aria-roledescription="slide"
+            >
+              <div class="carousel__item__image">
+                <a href="#">
+                  <img src="/assets/2-e81b846a.avif" alt="fishing" />
+                </a>
+              </div>
+              <div class="carousel__item__caption">
+                <h3>Slide 2</h3>
+                <div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Dolores, enim qui sapiente rerum nostrum iste! Nesciunt
+                    assumenda laboriosam eaque! Sapiente autem temporibus ipsam
+                    veritatis ducimus maiores hic repellendus fugit quidem!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="carousel__item"
+              role="group"
+              aria-roledescription="slide"
+            >
+              <div class="carousel__item__image">
+                <a href="#">
+                  <img src="/assets/3-3c3f8432.avif" alt="anchor" />
+                </a>
+              </div>
+              <div class="carousel__item__caption">
+                <h3>Slide 3</h3>
+                <div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Dolores, enim qui sapiente rerum nostrum iste! Nesciunt
+                    assumenda laboriosam eaque! Sapiente autem temporibus ipsam
+                    veritatis ducimus maiores hic repellendus fugit quidem!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+  </body>
+</html>

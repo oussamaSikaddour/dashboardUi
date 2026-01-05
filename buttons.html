@@ -13,9 +13,9 @@
 
     <title>Buttons | DashboardUi</title>
 
-    <link rel="icon" type="image/icon" href="./assets/Logo-14f4ddeb.ico" />
-    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
-    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+    <link rel="icon" type="image/icon" href="assets/images/logo.ico" />
+    <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="/assets/main-62f7b5df.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -29,7 +29,7 @@
             tabindex="0"
             aria-label="Description of the overall image"
           >
-            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+            <img src="/assets/logo-c0442a44.png" alt="app Logo" />
           </a>
         </div>
       </nav>
@@ -183,205 +183,7 @@
           </button>
         </div>
       </div>
-      <section class="section" id="buttons">
-        <h2>Buttons</h2>
 
-        <p>
-          The button system uses semantic HTML and a combination of utility and
-          modifier classes. Every button begins with the base
-          <code>.button</code> class, while visual variations are applied using
-          modifiers like <code>.button--primary</code>,
-          <code>.button--danger</code> or the optional
-          <code>.rounded</code> class for circular icon buttons. Icons can be
-          added using <code>&lt;i&gt;</code> elements from Font Awesome for
-          visual clarity.
-        </p>
-
-        <ul>
-          <li>
-            "<strong>.button</strong> " base class for sizing, spacing, font,
-            and transitions
-          </li>
-          <li>
-            "<strong>.button--primary</strong>" changes the button color theme
-          </li>
-          <li>
-            "<strong>.rounded</strong>" creates circular icon-only buttons
-          </li>
-          <li>
-            "<strong>&lt;i class='fa-solid …'&gt;&lt;/i&gt;</strong> " optional
-            icon
-          </li>
-        </ul>
-
-        <p><strong>Example markup:</strong></p>
-
-        <pre><code class="language-html">
-&lt;button class="button button--primary"&gt;
-  Click me &lt;i class="fa-solid fa-check"&gt;&lt;/i&gt;
-&lt;/button&gt;
-
-  </code></pre>
-
-        <pre><code class="language--css">
-
-
-  .button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: var(--fs);
-  line-height: var(--lh);
-  border: var(--border);
-  border-radius: var(--br);
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
-  color: var(--button-color);
-  background-color: var(--button-bg);
-  border-color: var(--button-border);
-  cursor: pointer;
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  box-shadow: rgba(27, 31, 35, 0.04) 0 0.1rem 0, rgba(255, 255, 255, 0.25) 0 0.1rem 0 inset;
-  /* Color Variants (1 line each now 😄) */
-  /* Variants with dark text on default state */
-  /* Shape Variant */
-}
-
-
-.button:hover {
-  background-color: #E9EAF4;
-  border-color: #CED0D4;
-  transition-duration: 0.1s;
-}
-
-
-.button--primary {
-  background-color: #087EA4;
-  border-color: rgb(4.4418604651, 69.9593023256, 91.0581395349);
-  color: var(--clr-light);
-}
-
-
-.button--primary:hover {
-  background-color: rgb(4.4418604651, 69.9593023256, 91.0581395349);
-  border-color: #087EA4;
-}
-
-
-.button--secondary {
-  background-color: #6366f1;
-  border-color: rgb(28.8, 33.15, 234.7);
-  color: var(--clr-light);
-}
-
-.button--secondary:hover {
-  background-color: rgb(28.8, 33.15, 234.7);
-  border-color: #6366f1;
-}
-
-.button--success {
-  background-color: #22c55e;
-  border-color: rgb(22.7402597403, 131.7597402597, 62.8701298701);
-  color: var(--clr-light);
-}
-
-.button--success:hover {
-  background-color: rgb(22.7402597403, 131.7597402597, 62.8701298701);
-  border-color: #22c55e;
-}
-
-.button--danger {
-  background-color: #dc2626;
-  border-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
-  color: var(--clr-light);
-}
-.button--danger:hover {
-  background-color: rgb(156.2916666667, 25.2083333333, 25.2083333333);
-  border-color: #dc2626;
-}
-
-.button--info {
-  background-color: #3b82f6;
-  border-color: rgb(10.0317073171, 89.1707317073, 218.4682926829);
-  color: var(--clr-light);
-}
-
-.button--info:hover {
-  background-color: rgb(10.0317073171, 89.1707317073, 218.4682926829);
-  border-color: #3b82f6;
-}
-
-.button--accent {
-  background-color: #ec4899;
-  border-color: rgb(209.7252475248, 21.7747524752, 114.603960396);
-  color: var(--clr-light);
-}
-
-.button--accent:hover {
-  background-color: rgb(209.7252475248, 21.7747524752, 114.603960396);
-  border-color: #ec4899;
-}
-
-.button--warning {
-  background-color: #f59e0b;
-  border-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
-  color: var(--clr-dark);
-}
-
-.button--warning:hover {
-  background-color: rgb(172.4330708661, 110.9507874016, 7.0669291339);
-  border-color: #f59e0b;
-  color: var(--clr-light);
-}
-
-.button--neutral {
-  background-color: #9ca3af;
-  border-color: rgb(113.7430167598, 123.6955307263, 140.7569832402);
-  color: var(--clr-dark);
-}
-
-.button--neutral:hover {
-  background-color: rgb(113.7430167598, 123.6955307263, 140.7569832402);
-  border-color: #9ca3af;
-  color: var(--clr-light);
-}
-
-.button.rounded {
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  min-width: 4rem;
-  min-height: 4rem;
-  padding: 0;
-  justify-content: center;
-}
-
-.button.rounded a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.button a {
-  color: inherit;
-}
-</code></pre>
-
-        <p>
-          For layout, buttons are placed inside <code>.row</code> containers,
-          and each category (Primary, Secondary, Danger, etc.) is wrapped inside
-          its own <code>.column</code> to maintain a clean and scalable
-          structure.
-        </p>
-      </section>
     </main>
 
     

@@ -1,1 +1,0 @@
-const u=(e,n=void 0,t=document)=>{t.dispatchEvent(new CustomEvent(e,{detail:n,bubbles:!0,composed:!0}))},c=(e,n,t={},d=document)=>{const s=o=>n(o.detail,o);return d.addEventListener(e,s,t),()=>{d.removeEventListener(e,s,t)}};export{u as d,c as o};

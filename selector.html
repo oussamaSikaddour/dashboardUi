@@ -13,9 +13,9 @@
 
     <title>Select | DashboardUi</title>
 
-    <link rel="icon" type="image/icon" href="./assets/Logo-14f4ddeb.ico" />
-    <script type="module" crossorigin src="./assets/main-9e5c3a03.js"></script>
-    <link rel="stylesheet" href="./assets/main-dde1cee1.css">
+    <link rel="icon" type="image/icon" href="assets/img/logo.ico" />
+    <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="/assets/main-62f7b5df.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -29,7 +29,7 @@
             tabindex="0"
             aria-label="Description of the overall image"
           >
-            <img src="./assets/Logo-c0442a44.png" alt="app Logo" />
+            <img src="assets/img/Logo.png" alt="app Logo" />
           </a>
         </div>
       </nav>
@@ -65,8 +65,8 @@
       </ul>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main class="container container--fit">
+
+        <main class="container container--fit">
       <div class="column">
         <h1>Select</h1>
         <div class="row">
@@ -91,163 +91,7 @@
           </div>
         </div>
       </div>
-      <section class="section" id="selects">
-        <h2>Select / Dropdown Inputs</h2>
 
-        <p>
-          The select component uses semantic HTML and BEM-structured utility
-          classes to create accessible dropdowns with optional icons and
-          validation messages. Every select begins with the base
-          <code>.select</code> class, while supporting elements like
-          <code>.select__label</code>, <code>.select__item</code>, and
-          <code>.select__error</code> provide structure for options and
-          feedback.
-        </p>
-
-        <ul>
-          <li>
-            <strong>.select</strong> — base class for dropdown styling, spacing,
-            and behavior
-          </li>
-          <li>
-            <strong>.select__group</strong> — wrapper that positions label,
-            select box, and icons
-          </li>
-          <li>
-            <strong>.select__label</strong> — label describing the dropdown
-          </li>
-          <li>
-            <strong>.select__item</strong> — individual option or item inside
-            the select
-          </li>
-          <li>
-            <strong>.item__error</strong> — validation message shown on error
-          </li>
-        </ul>
-
-        <p>
-          Options are wrapped inside <code>.select__group</code> for layout
-          consistency. Each item is marked with <code>.select__item</code> for
-          styling and accessibility. Validation messages appear beneath the
-          select using <code>.item__error</code>.
-        </p>
-        <p><strong>Example markup:</strong></p>
-
-        <pre><code class="language--html">
-&lt;div class="select__input"&gt;
-  &lt;div class="select__group"&gt;
-    &lt;label class="select__label" for="selectOne"&gt;Choose an Option:&lt;/label&gt;
-  &lt;div  class="select" &gt;
-    &lt;select id="selectOne"  required&gt;
-      &lt;option class="select__item" value="" disabled selected&gt;--Select--&lt;/option&gt;
-      &lt;option class="select__item" value="option 1"&gt;Option One&lt;/option&gt;
-      &lt;option class="select__item" value="option 2"&gt;Option Two&lt;/option&gt;
-    &lt;/select&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="item__error"&gt;Please select an Option.&lt;/div&gt;
-&lt;/div&gt;
-  </code></pre>
-        <p><strong>Css :</strong></p>
-
-        <pre><code class="language--css">
-.select {
-  position: relative;
-  background-color: var(--clr-light);
-  border-radius: var(--br);
-  max-height: 5rem;
-}
-
-
-.select, .select * {
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-
-.select select {
-  font-size: var(--fs);
-  font-weight: normal;
-  max-width: 100%;
-  min-width: 10rem;
-  color: var(--clr-font);
-  height: 44.5px;
-  padding: 0.8rem 1.6rem;
-  padding-right: 2.8rem;
-  border: var(--border);
-  border-radius: var(--br);
-  background-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline-color: #087EA4;
-  width: 28rem;
-  width: 28rem;
-}
-
-
-@media (min-width: 48em) {
-  .select select {
-    width: 30rem;
-  }
-}
-
-
-.select select:active {
-  outline: none;
-  box-shadow: none;
-}
-
-
-.select:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0.8rem;
-  width: 0;
-  height: 0;
-  margin-top: -0.2rem;
-  border-top: 0.7rem solid #087EA4;
-  border-right: 0.7rem solid transparent;
-  border-left: 0.7rem solid transparent;
-}
-
-
-.select:hover {
-  background-color: #E9EAF4;
-}
-
-
-.select__input {
-  margin-top: 1rem;
-  display: flex;
-  font-size: var(--fs);
-  flex-direction: column;
-}
-
-@media (min-width: 48em) {
-  .select__input > .input__error {
-    max-width: 60rem;
-  }
-}
-
-
-.select__group {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-direction: column;
-}
-
-@media (min-width: 48em) {
-  .select__group {
-    flex-direction: row;
-  }
-}
-
-  </code></pre>
-      </section>
     </main>
 
     

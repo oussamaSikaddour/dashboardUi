@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Modal Table| DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/images/logo.ico" />
+    <script type="module" crossorigin src="/assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="/assets/main-62f7b5df.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="/assets/logo-c0442a44.png" alt="app Logo" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PHONE NAV TOGGLE -->
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="options"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- PHONE NAV -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">Main navigation for phone</h2>
+      <ul class="nav__items" id="options" hidden>
+        <li class="nav__item" role="none">
+          <a
+            class="nav__link"
+            href="index.html"
+            aria-current="page"
+            tabindex="0"
+            role="menuitem"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container container--fit">
+      <div class="column">
+        <h1>Modal</h1>
+
+        <div class="row">
+          <button class="button button--primary modal__opener">
+            Open Modal <i class="fa-sharp fa-solid fa-users"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div
+      role="dialog"
+      aria-labelledby="dialog_label"
+      class="modal"
+      id="defaultModal"
+      aria-modal="true"
+    >
+      <div class="modal__content">
+        <button class="modal__closer" role="button" tabindex="0">
+          <span></span>
+          <span></span>
+        </button>
+        <div class="modal__header">
+          <h2 id="dialog_label" class="sr-only">info modal</h2>
+          <h2>Modal Title</h2>
+        </div>
+
+        <div class="modal__body">
+          <div class="modal__body__content">
+            <form class="table__form">
+          
+                <div class="table__form__inputs">
+                  <div class="row">
+                    <div class="checkbox__group">
+                      <h2 id="checkbox-choices" class="sr-only">
+                        List des choix
+                      </h2>
+                      <div
+                        class="choices"
+                        role="group"
+                        aria-labelledby="checkbox-choices"
+                      >
+                        <input
+                          type="checkbox"
+                          id="optionOneId"
+                          name="options"
+                          value="option-1"
+                          aria-checked="false"
+                          aria-describedby="option-error"
+                        />
+                        <label for="optionOneId" tabindex="0">Option One</label>
+
+                        <input
+                          type="checkbox"
+                          id="optionTwoId"
+                          name="options"
+                          value="option-2"
+                          aria-checked="false"
+                          aria-describedby="option-error"
+                        />
+                        <label for="optionTwoId" tabindex="0">Option Two</label>
+
+                        <input
+                          type="checkbox"
+                          id="optionThreeId"
+                          name="options"
+                          value="option-3"
+                          aria-checked="false"
+                          aria-describedby="option-error"
+                        />
+                        <label for="optionThreeId" tabindex="0"
+                          >Option Three</label
+                        >
+                      </div>
+                      <div id="option-error" class="input__error">
+                        ⚠ Example error message to demonstrate form validation
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="combobox__group">
+                      <div class="combobox" id="comboxTwo">
+                        <div class="combobox__input">
+                          <div class="input__group">
+                            <input
+                              placeholder="Select Employee"
+                              name="selectEmployee"
+                              id="selectEmpleeId"
+                              class="input"
+                              type="text"
+                              role="combobox"
+                              aria-autocomplete="both"
+                              aria-expanded="false"
+                              aria-controls="listbox"
+                              autocomplete="off"
+                            />
+                            <label for="selectEmployee" class="input__label"
+                              >Select Employee</label
+                            >
+                          </div>
+                          <button
+                            type="button"
+                            id="cb1-button"
+                            aria-label="States"
+                            aria-expanded="false"
+                            aria-controls="listbox"
+                            tabindex="-1"
+                          >
+                            <i class="fa-solid fa-caret-down"></i>
+                          </button>
+                        </div>
+                        <ul id="cb1-listbox" role="listbox" aria-label="States">
+                          <li id="employee-1" role="option">
+                            <strong class="key">1</strong>
+                            <div>130257</div>
+                            <div>Si Kaddour</div>
+                            <div>Oussama</div>
+                          </li>
+
+                          <li id="employee-2" role="option">
+                            <strong class="key">2</strong>
+                            <div>130321</div>
+                            <div>Djawed</div>
+                            <div>Mansouri</div>
+                          </li>
+
+                          <li id="employee-3" role="option">
+                            <strong class="key">3</strong>
+                            <div>130458</div>
+                            <div>Amine</div>
+                            <div>Belkacem</div>
+                          </li>
+
+                          <li id="employee-4" role="option">
+                            <strong class="key">4</strong>
+                            <div>130562</div>
+                            <div>Sara</div>
+                            <div>Mehdi</div>
+                          </li>
+
+                          <li id="employee-5" role="option">
+                            <strong class="key">5</strong>
+                            <div>130678</div>
+                            <div>Youssef</div>
+                            <div>Hamraoui</div>
+                          </li>
+
+                          <li id="employee-6" role="option">
+                            <strong class="key">6</strong>
+                            <div>130789</div>
+                            <div>Leila</div>
+                            <div>Bensalem</div>
+                          </li>
+
+                          <li id="employee-7" role="option">
+                            <strong class="key">7</strong>
+                            <div>130890</div>
+                            <div>Hassan</div>
+                            <div>Chakroun</div>
+                          </li>
+
+                          <li id="employee-8" role="option">
+                            <strong class="key">8</strong>
+                            <div>131002</div>
+                            <div>Imane</div>
+                            <div>Zerrouki</div>
+                          </li>
+
+                          <li id="employee-9" role="option">
+                            <strong class="key">9</strong>
+                            <div>131118</div>
+                            <div>Walid</div>
+                            <div>Benali</div>
+                          </li>
+
+                          <li id="employee-10" role="option">
+                            <strong class="key">10</strong>
+                            <div>131225</div>
+                            <div>Nadia</div>
+                            <div>Saidi</div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="input__error">error msg</div>
+                    </div>
+                    <div class="combobox__group">
+                      <div class="combobox" id="comboxOne">
+                        <div class="combobox__input">
+                          <div class="input__group">
+                            <input
+                              placeholder="Select Department"
+                              name="selectDepartment"
+                              id="selectDepartmentId"
+                              class="input"
+                              type="text"
+                              role="combobox"
+                              aria-autocomplete="both"
+                              aria-expanded="false"
+                              aria-controls="listbox"
+                              autocomplete="off"
+                            />
+                            <label for="selectDepartment" class="input__label"
+                              >Select Department</label
+                            >
+                          </div>
+                          <button
+                            type="button"
+                            id="cb2-button"
+                            aria-label="Departments"
+                            aria-expanded="false"
+                            aria-controls="listbox"
+                            tabindex="-1"
+                          >
+                            <i class="fa-solid fa-caret-down"></i>
+                          </button>
+                        </div>
+                        <ul
+                          id="cb2-listbox"
+                          role="listbox"
+                          aria-label="Departments"
+                        >
+                          <li id="dept-1" role="option">
+                            <strong class="key">1</strong>
+                            <div>HR001</div>
+                            <div>Human Resources</div>
+                            <div>Management</div>
+                          </li>
+
+                          <li id="dept-2" role="option">
+                            <strong class="key">2</strong>
+                            <div>IT001</div>
+                            <div>Information Technology</div>
+                            <div>Development</div>
+                          </li>
+
+                          <li id="dept-3" role="option">
+                            <strong class="key">3</strong>
+                            <div>FN001</div>
+                            <div>Finance</div>
+                            <div>Accounting</div>
+                          </li>
+
+                          <li id="dept-4" role="option">
+                            <strong class="key">4</strong>
+                            <div>MK001</div>
+                            <div>Marketing</div>
+                            <div>Digital</div>
+                          </li>
+
+                          <li id="dept-5" role="option">
+                            <strong class="key">5</strong>
+                            <div>OP001</div>
+                            <div>Operations</div>
+                            <div>Logistics</div>
+                          </li>
+
+                          <li id="dept-6" role="option">
+                            <strong class="key">6</strong>
+                            <div>SL001</div>
+                            <div>Sales</div>
+                            <div>Enterprise</div>
+                          </li>
+
+                          <li id="dept-7" role="option">
+                            <strong class="key">7</strong>
+                            <div>RD001</div>
+                            <div>Research & Development</div>
+                            <div>Innovation</div>
+                          </li>
+
+                          <li id="dept-8" role="option">
+                            <strong class="key">8</strong>
+                            <div>CS001</div>
+                            <div>Customer Service</div>
+                            <div>Support</div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="input__error">error msg</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="radio__group">
+                      <h2 id="radioBtns-choices" class="sr-only">
+                        Input Choice
+                      </h2>
+                      <div
+                        class="choices"
+                        role="radiogroup"
+                        aria-labelledby="radioBtns-choices"
+                      >
+                        <input
+                          type="radio"
+                          id="choice1"
+                          name="radio"
+                          value="choice 1"
+                        />
+                        <label for="choice1" role="radio" tabindex="0"
+                          >Choice 1</label
+                        >
+
+                        <input
+                          type="radio"
+                          id="choice2"
+                          name="radio"
+                          value="choice 2"
+                        />
+                        <label for="choice2" role="radio" tabindex="0"
+                          >Choice 2</label
+                        >
+
+                        <input
+                          type="radio"
+                          id="choice3"
+                          name="radio"
+                          value="choice 3"
+                        />
+                        <label for="choice3" role="radio" tabindex="0"
+                          >Choice 3</label
+                        >
+                      </div>
+                      <div class="input__error">
+                        ⚠ Example error message to demonstrate form validation
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="file__input__item show-uri" role="input">
+                      <div class="file__input__group">
+                        <button class="button button--info">
+                          Upload Files (No Images)
+                          <span><i class="fa-solid fa-file-import"></i></span>
+                        </button>
+                        <input type="file" name="myfile" />
+                      </div>
+
+                      <div class="file__input__uri">
+                        <p>https://www.example.com/file.pdf</p>
+                      </div>
+
+                      <div class="input__error">
+                        ⚠ Example error message to demonstrate form validation
+                      </div>
+                    </div>
+                  </div>
+                  <div class="imgs__container">
+                    <h2>List of Required Documents</h2>
+
+                    <div
+                      class="imgs"
+                      role="list"
+                      aria-label="List of documents"
+                    >
+                      <button
+                        class="img__button"
+                        aria-label="View document - National Identity Card"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/id-card.jpg"
+                          alt="Front and back of national identity card"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Proof of Address"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/proof-of-address.jpg"
+                          alt="Recent electricity bill"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Bank Account Statement"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/bank-statement.jpg"
+                          alt="Bank account identification statement"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Tax Notice"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/tax-notice.jpg"
+                          alt="Recent tax notice"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Employment Contract"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/employment-contract.jpg"
+                          alt="Signed employment contract"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Passport Photo"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/passport-photo.jpg"
+                          alt="Recent passport-style photo"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Diploma"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/diploma.jpg"
+                          alt="Education diploma"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Health Insurance Card"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/health-insurance.jpg"
+                          alt="Social security card"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Driving License"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/driving-license.jpg"
+                          alt="Front and back of driving license"
+                        />
+                      </button>
+
+                      <button
+                        class="img__button"
+                        aria-label="View document - Birth Certificate"
+                      >
+                        <img
+                          class="img"
+                          src="assets/images/core/documents/birth-certificate.jpg"
+                          alt="Birth certificate"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+ 
+
+              <div class="table__form__actions">
+
+                         <div class="loader">
+            <div class="loader__circle"></div>
+            <div class="loader__circle"></div>
+          </div>
+
+             <button class="button button--primary rounded">
+            <i class="fa-solid fa-check"></i>
+          </button>
+             <button class="button button--warning rounded">
+            <i class="fa-solid fa-refresh"></i>
+          </button>
+              </div>
+            </form>
+            <div class="table__container">
+              <div class="table__header">
+                <h3>Table Header</h3>
+                <div class="table__header__actions">
+                  <div
+                    class="file__input__group icon_only hasTooltip"
+                    role="input"
+                    tabindex="0"
+                  >
+                    <span class="tooltip__content">Upload File</span>
+                    <button class="button rounded">
+                      <i class="fa-solid fa-file-import"></i>
+                    </button>
+                    <input type="file" name="myfile" />
+                  </div>
+
+                  <button
+                    class="button rounded hasTooltip"
+                    id="tabel-to-excel-btn"
+                    aria-label="export data to excel"
+                  >
+                    <span class="tooltip__content">
+                      telecharger fichier Excel
+                    </span>
+                    <i class="fa-solid fa-file-excel"></i>
+                  </button>
+
+                  <button
+                    class="button rounded table__filters__btn hasTooltip"
+                    id="filter"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="tableFilters"
+                  >
+                    <span class="tooltip__content"> Manage Filters </span>
+                    <i class="fa-solid fa-filter"></i>
+                  </button>
+
+                  <div class="select__group hasTooltip">
+                    <span class="tooltip__content">Per Page</span>
+                    <div class="select">
+                      <select id="perPageId" aria-invalid="false">
+                        <option value="25" selected disabled>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="table__filters"
+                id="tableFilters"
+                role="menu"
+                aria-labelledby="filter"
+              >
+                <div class="form__container">
+                  <form class="form" method="POST">
+                    <div class="row">
+                      <div class="input__item">
+                        <div class="input__group">
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Name"
+                            name="name"
+                            id="nameIdF"
+                            required
+                          />
+                          <label for="nameIdF" class="input__label">Name</label>
+                          <span class="input__span"
+                            ><i class="fa-solid fa-user"></i
+                          ></span>
+                        </div>
+                        <div class="input__error">
+                          ⚠ Example error message to demonstrate form validation
+                        </div>
+                      </div>
+                      <div class="input__item">
+                        <div class="input__group">
+                          <input
+                            type="text"
+                            class="input"
+                            placeholder="Email"
+                            name="email"
+                            id="emailIdF"
+                            required
+                          />
+                          <label for="emailIdF" class="input__label"
+                            >Email</label
+                          >
+                          <span class="input__span"
+                            ><i class="fa-solid fa-message"></i
+                          ></span>
+                        </div>
+                        <div class="input__error">
+                          ⚠ Example error message to demonstrate form validation
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <button class="button rounded button--primary hasTooltip">
+                        <span class="tooltip__content"> reset Filters </span>
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="table__body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><div>actions</div></th>
+                      <th scope="col">
+                        <div>Last Name<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>First Name<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Email<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Address<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Phone<i class="fa-solid fa-sort"></i></div>
+                      </th>
+                      <th scope="col">
+                        <div>Status <i class="fa-solid fa-sort"></i></div>
+                      </th>
+
+                      <th scope="col">
+                        <div>Image</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-1"
+                            aria-label="Delete Person-1"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Williams</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-1"
+                            aria-label="Update Person-1"
+                          >
+                            <span class="tooltip__content"
+                              >Update Williams</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Williams</td>
+                      <td>Michael</td>
+                      <td>michael.w@email.com</td>
+                      <td>789 Pine Rd, Chicago, IL</td>
+                      <td>(555) 345-6789</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-1.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-2"
+                            aria-label="Delete Person-2"
+                          >
+                            <span class="tooltip__content">Delete Smith</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-2"
+                            aria-label="Update Person-2"
+                          >
+                            <span class="tooltip__content">Update Smith</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Smith</td>
+                      <td>Emma</td>
+                      <td>emma.smith@email.com</td>
+                      <td>123 Maple St, New York, NY</td>
+                      <td>(555) 111-2233</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-2.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-3"
+                            aria-label="Delete Person-3"
+                          >
+                            <span class="tooltip__content">Delete Johnson</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-3"
+                            aria-label="Update Person-3"
+                          >
+                            <span class="tooltip__content">Update Johnson</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Johnson</td>
+                      <td>Oliver</td>
+                      <td>oliver.j@email.com</td>
+                      <td>456 Oak Ave, Dallas, TX</td>
+                      <td>(555) 987-6543</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-3.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-4"
+                            aria-label="Delete Person-4"
+                          >
+                            <span class="tooltip__content">Delete Brown</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-4"
+                            aria-label="Update Person-4"
+                          >
+                            <span class="tooltip__content">Update Brown</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Brown</td>
+                      <td>Sophia</td>
+                      <td>sophia.b@email.com</td>
+                      <td>321 Cedar Ln, Miami, FL</td>
+                      <td>(555) 222-3344</td>
+                      <td class="success">Active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-4.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-5"
+                            aria-label="Delete Person-5"
+                          >
+                            <span class="tooltip__content">Delete Jones</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-5"
+                            aria-label="Update Person-5"
+                          >
+                            <span class="tooltip__content">Update Jones</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Jones</td>
+                      <td>Lucas</td>
+                      <td>lucas.j@email.com</td>
+                      <td>999 Elm Blvd, Seattle, WA</td>
+                      <td>(555) 333-4455</td>
+                      <td class="danger">Inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-5.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-6"
+                            aria-label="Delete Person-6"
+                          >
+                            <span class="tooltip__content">Delete Davis</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-6"
+                            aria-label="Update Person-6"
+                          >
+                            <span class="tooltip__content">Update Davis</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Davis</td>
+                      <td>Ava</td>
+                      <td>ava.d@email.com</td>
+                      <td>14 Birch St, Denver, CO</td>
+                      <td>(555) 444-5566</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-6.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-7"
+                            aria-label="Delete Person-7"
+                          >
+                            <span class="tooltip__content">Delete Garcia</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-7"
+                            aria-label="Update Person-7"
+                          >
+                            <span class="tooltip__content">Update Garcia</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Garcia</td>
+                      <td>Noah</td>
+                      <td>noah.g@email.com</td>
+                      <td>77 Pineview Dr, Austin, TX</td>
+                      <td>(555) 555-6677</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-7.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-8"
+                            aria-label="Delete Person-8"
+                          >
+                            <span class="tooltip__content">Delete Miller</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-8"
+                            aria-label="Update Person-8"
+                          >
+                            <span class="tooltip__content">Update Miller</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Miller</td>
+                      <td>Charlotte</td>
+                      <td>charlotte.m@email.com</td>
+                      <td>42 Palm Rd, Phoenix, AZ</td>
+                      <td>(555) 666-7788</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-8.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-9"
+                            aria-label="Delete Person-9"
+                          >
+                            <span class="tooltip__content">Delete Wilson</span>
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-9"
+                            aria-label="Update Person-9"
+                          >
+                            <span class="tooltip__content">Update Wilson</span>
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Wilson</td>
+                      <td>James</td>
+                      <td>james.w@email.com</td>
+                      <td>65 Bay St, San Diego, CA</td>
+                      <td>(555) 777-8899</td>
+                      <td class="danger">inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-9.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-10"
+                            aria-label="Delete Person-10"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Martinez</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-10"
+                            aria-label="Update Person-10"
+                          >
+                            <span class="tooltip__content"
+                              >Update Martinez</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Martinez</td>
+                      <td>Amelia</td>
+                      <td>amelia.m@email.com</td>
+                      <td>301 Ridge Ave, Atlanta, GA</td>
+                      <td>(555) 888-9900</td>
+                      <td class="warning">Pending</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-10.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-11"
+                            aria-label="Delete Person-11"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Anderson</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-11"
+                            aria-label="Update Person-11"
+                          >
+                            <span class="tooltip__content"
+                              >Update Anderson</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Anderson</td>
+                      <td>Harper</td>
+                      <td>harper.a@email.com</td>
+                      <td>505 Willow Way, Boston, MA</td>
+                      <td>(555) 999-0011</td>
+                      <td class="danger">inactive</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-11.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div>
+                          <button
+                            class="button rounded hasTooltip button--danger"
+                            id="delete-person-12"
+                            aria-label="Delete Person-12"
+                          >
+                            <span class="tooltip__content"
+                              >Delete Thompson</span
+                            >
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                          <button
+                            class="button rounded hasTooltip button--info"
+                            id="update-person-12"
+                            aria-label="Update Person-12"
+                          >
+                            <span class="tooltip__content"
+                              >Update Thompson</span
+                            >
+                            <i class="fa-solid fa-edit"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td>Thompson</td>
+                      <td>Ella</td>
+                      <td>ella.t@email.com</td>
+                      <td>777 Grove Rd, Portland, OR</td>
+                      <td>(555) 000-1122</td>
+                      <td class="success">active</td>
+                      <td>
+                        <div class="table__img__preview rounded">
+                          <img
+                            src="assets/images/core/persons/person-12.png"
+                            alt="Profile"
+                            class="avatar"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="pagination__container">
+                <nav
+                  role="navigation"
+                  aria-label="Pagination Navigation"
+                  class="pagination"
+                >
+                  <div class="pagination__content">
+                    <div class="pagination__info">
+                      <p>
+                        Showing
+                        <strong>1</strong>
+                        to
+                        <strong>2</strong>
+                        of
+                        <strong>3</strong>
+                        results
+                      </p>
+                    </div>
+
+                    <div class="pagination__links">
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="First page"
+                        disabled
+                      >
+                        <i class="fa-solid fa-angles-left"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Previous page"
+                        disabled
+                      >
+                        <i class="fa-solid fa-angle-left"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Next page"
+                      >
+                        <i class="fa-solid fa-angle-right"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="button"
+                        aria-label="Last page"
+                      >
+                        <i class="fa-solid fa-angles-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="combobox__list" role="listbox"></ul>
+    
+  </body>
+</html>
