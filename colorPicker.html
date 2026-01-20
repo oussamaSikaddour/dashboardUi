@@ -1,0 +1,103 @@
+<!DOCTYPE html >
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Color Picker | DashboardUi</title>
+
+    <link rel="icon" type="image/icon" href="assets/images/logo.ico" />
+    <script type="module" crossorigin src="assets/main-644c7061.js"></script>
+    <link rel="stylesheet" href="assets/main-62f7b5df.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav" aria-labelledby="main-nav">
+        <h2 id="main-nav" class="sr-only">Main navigation</h2>
+        <div class="nav__addons" role="menubar">
+          <a
+            class="nav__logo"
+            href="index.html"
+            tabindex="0"
+            aria-label="Description of the overall image"
+          >
+            <img src="assets/app/images/logo.png" alt="app Logo" />
+          </a>
+        </div>
+
+        <div class="color__picker__container">
+          <button
+            id="colorPickerbuttonD"
+            aria-haspopup="true"
+            aria-controls="colorPickerMenuD"
+            class="color__picker__btn button rounded"
+          ></button>
+
+          <ul
+            id="colorPickerMenuD"
+            role="menu"
+            aria-labelledby="colorPickerbuttonD"
+            class="color__picker__menu"
+          ></ul>
+        </div>
+      </nav>
+    </header>
+
+    <!--                       --------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------                            Nav Phone--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+ -->
+
+    <button
+      id="showPhoneNav-btn"
+      class="button nav__humb"
+      aria-expanded="false"
+      aria-controls="navPhone"
+      aria-label="Show phone navigation"
+      aria-labelledby="showPhoneNav-btn"
+    >
+      <span></span>
+      <span></span>
+    </button>
+    <!-- Nav Phone -->
+    <nav class="nav--phone" aria-labelledby="main-nav-phone">
+      <h2 id="main-nav-phone" class="sr-only">main navigation for phone</h2>
+
+      <ul class="nav__items" id="navPhone" hidden role="menubar">
+        <li class="nav__item" role="none">
+          <a class="nav__link" href="index.html" tabindex="0">home</a>
+        </li>
+        <li class="nav__item" role="none">
+          <a class="nav__link" href="index.html" tabindex="0">home</a>
+        </li>
+        <li class="nav__item" role="none">
+          <a class="nav__link" href="index.html" tabindex="0">home</a>
+        </li>
+        <div class="color__picker__container">
+          <button
+            id="colorPickerButton"
+            aria-haspopup="true"
+            aria-controls="menu"
+            class="color__picker__btn button"
+          ></button>
+          <ul
+            id="colorPickerMenu"
+            role="menu"
+            aria-labelledby="colorPickerButton"
+            class="color__picker__menu"
+          ></ul>
+        </div>
+      </ul>
+    </nav>
+
+    <div id="tip-content-id" role="tooltip" class="tooltip"></div>
+    <!-- breadcrumb -->
+  </body>
+</html>
